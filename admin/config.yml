@@ -1,0 +1,103 @@
+# Panell d'edició (Decap CMS). Inici de sessió amb Netlify Identity.
+backend:
+  name: git-gateway
+  branch: main
+
+locale: ca
+publish_mode: simple
+
+# On es guarden les fotos que puges des del panell
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: web
+    label: Web
+    editor: { preview: false }
+    files:
+      - name: contingut
+        label: Tot el contingut de la web
+        file: content/site.json
+        fields:
+
+          - name: general
+            label: General
+            widget: object
+            collapsed: true
+            fields:
+              - { name: nom, label: "Nom a la capçalera", widget: string }
+              - { name: titol_linia_1, label: "Titular gran · línia 1", widget: string }
+              - { name: titol_linia_2, label: "Titular gran · línia 2", widget: string, required: false }
+              - { name: presentacio, label: "Text de presentació", widget: text }
+              - { name: correu, label: "Correu de contacte", widget: string }
+              - { name: estat, label: "Estat (p. ex. Disponible per a encàrrecs)", widget: string, required: false }
+              - { name: ubicacio, label: "Ubicació", widget: string }
+              - { name: zona_horaria, label: "Zona horària del rellotge", widget: string, default: "Europe/Madrid", hint: "Deixa-ho com està si ets a Catalunya." }
+              - name: xarxes
+                label: Xarxes socials
+                widget: list
+                summary: "{{fields.nom}}"
+                fields:
+                  - { name: nom, label: "Nom (p. ex. Instagram)", widget: string }
+                  - { name: usuari, label: "Usuari (p. ex. @pau)", widget: string, required: false }
+                  - { name: url, label: "Enllaç", widget: string }
+              - { name: titol_pestanya, label: "Títol de la pestanya del navegador", widget: string }
+              - { name: descripcio_seo, label: "Descripció per a Google", widget: text, required: false }
+
+          - name: menu
+            label: Menú
+            widget: object
+            collapsed: true
+            fields:
+              - { name: inici, label: "Opció 1 (inici)", widget: string }
+              - { name: sobre_mi, label: "Opció 2 (sobre mi)", widget: string }
+              - { name: personal, label: "Opció 3 (personal)", widget: string }
+
+          - name: treballs
+            label: Treballs (galeria principal)
+            label_singular: foto
+            widget: list
+            summary: "{{fields.titol}} · {{fields.categoria}} · {{fields.format}}"
+            hint: "Arrossega les fotos per canviar-ne l'ordre. La web les col·loca soles de forma dispersa."
+            fields: &foto
+              - { name: imatge, label: "Foto", widget: image, required: false, choose_url: false }
+              - { name: titol, label: "Títol", widget: string }
+              - { name: categoria, label: "Categoria", widget: string, hint: "Escriu-la sempre igual (p. ex. Retrat, Esdeveniments, Esport · Tennis, Social). Les categories del filtre surten d'aquí." }
+              - { name: format, label: "Format", widget: select, options: [ { label: "Vertical 2:3", value: vertical }, { label: "Horitzontal 3:2", value: horitzontal } ], default: vertical }
+              - { name: objectiu, label: "Objectiu (p. ex. 85 mm)", widget: string, required: false }
+              - { name: diafragma, label: "Diafragma (p. ex. f/2.8)", widget: string, required: false }
+              - { name: velocitat, label: "Velocitat (p. ex. 1/2000)", widget: string, required: false }
+              - { name: iso, label: "ISO (p. ex. 400)", widget: string, required: false }
+
+          - name: sobre_mi
+            label: About me
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titol, label: "Títol de la secció", widget: string }
+              - { name: text, label: "Text", widget: text }
+              - { name: especialitats, label: "Especialitats", widget: list, field: { name: item, label: Especialitat, widget: string } }
+              - { name: disponibilitat, label: "Disponibilitat", widget: list, field: { name: item, label: Línia, widget: string } }
+
+          - name: personal
+            label: Personal
+            widget: object
+            collapsed: true
+            fields:
+              - { name: titol, label: "Títol de la secció", widget: string }
+              - { name: subtitol, label: "Subtítol", widget: string, required: false }
+              - name: fotos
+                label: Fotos
+                label_singular: foto
+                widget: list
+                summary: "{{fields.titol}} · {{fields.format}}"
+                fields: *foto
+
+          - name: peu
+            label: Peu de pàgina
+            widget: object
+            collapsed: true
+            fields:
+              - { name: crida, label: "Crida (p. ex. Treballem junts)", widget: string }
+              - { name: nom_gran, label: "Nom gegant", widget: string }
+              - { name: drets, label: "Text de drets", widget: string }

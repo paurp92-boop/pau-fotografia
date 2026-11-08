@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pau, fotògraf</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+/* Idea de maquetació: full beix amb quadrícula de 4 columnes tenuement visible, titular condensat a tota l'amplada,
+   fotos que omplen del tot la seva casella (2:3 o 3:2), i un fotòmetre de càmera amb regles de passos de llum. */
+:root {
+  --paper: #FAF8F2;
+  --ink: #15130F;
+  --mute: #7A7568;
+  --line: rgba(21, 19, 15, .10);
+  --ball: #D9E54B;
+  --sans: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --gutter: clamp(14px, 3.2vw, 44px);
+  --gap: clamp(6px, .8vw, 11px);
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 12px; line-height: 1.5; text-transform: uppercase; letter-spacing: .02em; font-weight: 500; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.mute { color: var(--mute); }
+
+.sheet { max-width: 1480px; margin: 0 auto; background: var(--paper); padding-inline: var(--gutter); }
+.lined { position: relative; isolation: isolate; }
+.lined::before { content: ""; position: absolute; inset: 0 calc(var(--gap) * -1) 0 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(var(--line), var(--line)) 25% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--line), var(--line)) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--line), var(--line)) 75% 0 / 1px 100% no-repeat; }
+/* les files de 4 columnes s'estenen una separació cap a la dreta: l'última columna acaba just al marge */
+.top, .intro, .end-row, .grid, .facts { margin-right: calc(var(--gap) * -1); }
+.top, .intro, .end-row, .facts { display: grid; grid-template-columns: repeat(4, 1fr); }
+.top > *, .intro > *, .end-row > * > *, .facts > * { padding-right: var(--gap); }
+
+/* capçalera fixa amb menú desplegable */
+.top { position: sticky; top: 0; z-index: 15; background: var(--paper); padding-block: 10px; font-weight: 700; align-items: center; }
+.top .r { grid-column: 4; display: flex; justify-content: flex-end; position: relative; }
+.top a:hover, .intro a:hover, .end-row a:hover, .facts a:hover { background: var(--ball); }
+.burger { display: grid; gap: 5px; width: 34px; padding: 8px 0; }
+.burger i { display: block; height: 3px; background: var(--ink); transition: transform .25s ease; }
+.burger[aria-expanded="true"] i:first-child { transform: translateY(4px) rotate(45deg); }
+.burger[aria-expanded="true"] i:last-child { transform: translateY(-4px) rotate(-45deg); }
+.menu { position: absolute; right: var(--gap); top: calc(100% + 6px); min-width: min(420px, 90vw); background: var(--paper); border: 1px solid var(--ink); padding: 4px 18px 8px; }
+.menu[hidden] { display: none; }
+.menu a { display: flex; justify-content: space-between; align-items: baseline; font-weight: 850; font-stretch: 62%; font-size: clamp(44px, 6vw, 76px); line-height: 1; padding: 10px 0 8px; border-bottom: 1px solid var(--line); letter-spacing: -.01em; }
+.menu a:last-child { border-bottom: 0; }
+.menu a::after { content: attr(data-n); font-family: var(--sans); font-stretch: 100%; font-weight: 500; font-size: 12px; letter-spacing: .02em; color: var(--mute); }
+.menu a:hover, .menu a.on { background: var(--ball); }
+#home, #about-me, #personal { scroll-margin-top: 56px; }
+
+/* titular */
+.mast { padding-block: clamp(30px, 5vw, 72px) 0; }
+.mast h1 { font-weight: 850; font-stretch: 62%; font-size: 14vw; line-height: .86; letter-spacing: -.012em; white-space: nowrap; }
+.mast h1 span { display: block; width: max-content; margin-left: -.038em; }
+.intro { padding-block: clamp(22px, 3.2vw, 46px) clamp(36px, 5.5vw, 78px); align-items: start; }
+.intro p { grid-column: 1 / span 2; max-width: 46ch; }
+.intro .who { grid-column: 3; }
+.intro .who a { display: block; width: fit-content; }
+.cats { grid-column: 4; display: flex; flex-direction: column; align-items: flex-start; }
+.cats .lbl { color: var(--mute); }
+.cats button { padding: 0 4px; margin-left: -4px; text-align: left; }
+.cats button sup { font-size: 9px; color: var(--mute); margin-left: 3px; }
+.cats button:hover { background: var(--ball); }
+.cats button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.cats button[aria-pressed="true"] sup { color: var(--paper); }
+
+/* galeria: cada foto omple del tot la seva casella */
+.gallery, .personal-gallery { container-type: inline-size; }
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); row-gap: clamp(22px, 3cqw, 48px); padding-bottom: clamp(40px, 6vw, 90px); align-items: start; }
+.it { grid-column: var(--c) / span var(--s); grid-row: var(--row); margin-top: calc(var(--dy, 0) * 1cqw); padding-right: var(--gap); min-width: 0; transition: opacity .35s ease; }
+.it button { display: block; width: 100%; text-align: left; }
+.it .fr { aspect-ratio: var(--ar); overflow: hidden; background: #EFEBE0; }
+.ph { display: block; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s ease; }
+img.ph { object-fit: cover; }
+.it button:hover .ph { transform: scale(1.03); }
+.it figcaption { padding: 6px 0 clamp(18px, 2.2vw, 30px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.it button:hover figcaption span { background: var(--ball); }
+.grid.f .it.off { opacity: .1; }
+.grid.f .it.off .ph { filter: grayscale(1); }
+
+/* visor: marques de cantonada i punt d'enfocament quan passes per sobre */
+.it .fr { position: relative; }
+.vf { position: absolute; inset: 7%; pointer-events: none; opacity: 0; transform: scale(1.04); transition: opacity .25s ease, transform .35s cubic-bezier(.2, .7, .2, 1);
+  --k: 18px; --t: 1.5px; --c: rgba(255, 255, 255, .92);
+  background:
+    linear-gradient(var(--c), var(--c)) 0 0 / var(--k) var(--t), linear-gradient(var(--c), var(--c)) 0 0 / var(--t) var(--k),
+    linear-gradient(var(--c), var(--c)) 100% 0 / var(--k) var(--t), linear-gradient(var(--c), var(--c)) 100% 0 / var(--t) var(--k),
+    linear-gradient(var(--c), var(--c)) 0 100% / var(--k) var(--t), linear-gradient(var(--c), var(--c)) 0 100% / var(--t) var(--k),
+    linear-gradient(var(--c), var(--c)) 100% 100% / var(--k) var(--t), linear-gradient(var(--c), var(--c)) 100% 100% / var(--t) var(--k);
+  background-repeat: no-repeat; }
+.vf::after { content: ""; position: absolute; left: 50%; top: 50%; width: 26px; height: 18px; translate: -50% -50%; border: 1.5px solid var(--ball); opacity: 0; transition: opacity .15s ease .25s; }
+.vf b { text-transform: none; position: absolute; left: 0; bottom: calc(-1 * var(--k) - 2px); font: 700 10px/1 var(--sans); letter-spacing: .06em; color: #fff; text-shadow: 0 0 6px rgba(0, 0, 0, .5); }
+.it button:hover .vf, .it button:focus-visible .vf { opacity: 1; transform: scale(1); }
+.it button:hover .vf::after, .it button:focus-visible .vf::after { opacity: 1; }
+
+/* barra inferior: la pantalla de la càmera llegeix la foto que tens davant */
+.sheet { padding-bottom: 74px; }
+.lcd { position: fixed; left: 0; right: 0; bottom: 0; z-index: 14; background: var(--paper); border-top: 1px solid var(--ink); }
+.lcd-in { max-width: 1480px; margin: 0 auto; padding: 8px var(--gutter) 10px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: end; }
+.lcd-in > * { min-width: 0; }
+.lcd-frame { display: grid; padding-right: var(--gap); }
+.lcd-frame b { font-weight: 850; font-stretch: 62%; font-size: 30px; line-height: .9; letter-spacing: -.01em; }
+.lcd-frame span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scale { grid-column: 2 / span 2; position: relative; height: 46px; padding-inline: 14px; margin-right: var(--gap); }
+.scale .tr { position: relative; height: 100%; }
+.scale .tk { position: absolute; bottom: 18px; width: 1px; height: 6px; background: var(--ink); }
+.scale .tk.mj { height: 14px; width: 1.5px; }
+.scale .tl { position: absolute; bottom: 0; transform: translateX(-50%); font-weight: 700; text-transform: none; color: var(--mute); transition: color .2s ease; }
+.scale .tl.on { color: var(--ink); }
+.scale .nd { position: absolute; top: 0; left: calc(14px + (100% - 28px) * var(--p, .5)); transform: translateX(-50%); border-inline: 6px solid transparent; border-top: 11px solid var(--ink); transition: left .45s cubic-bezier(.2, .7, .2, 1); }
+.lcd-data { text-align: right; display: grid; text-transform: none; }
+.lcd-data b { font-weight: 700; font-size: 13px; }
+.lcd-data span { color: var(--mute); text-transform: uppercase; }
+
+/* seccions */
+.sec { border-top: 1px solid var(--ink); padding-top: clamp(24px, 3.5vw, 44px); }
+.sec-h { font-weight: 850; font-stretch: 62%; font-size: clamp(64px, 12vw, 190px); line-height: .84; letter-spacing: -.012em; margin-left: -.03em; text-transform: uppercase; }
+.sec-row { display: grid; grid-template-columns: repeat(4, 1fr); margin-right: calc(var(--gap) * -1); padding-block: clamp(18px, 2.6vw, 34px) clamp(30px, 4.5vw, 64px); }
+.sec-row > * { padding-right: var(--gap); }
+.sec-row p { grid-column: 1 / span 2; max-width: 46ch; }
+.sec-row .note { grid-column: 3 / span 2; }
+.facts { padding-bottom: clamp(60px, 8vw, 110px); row-gap: 18px; }
+.facts div { display: flex; gap: 14px; align-items: baseline; }
+.facts dt { color: var(--mute); flex: none; }
+.facts dd { font-weight: 700; font-size: 13px; }
+.facts dd a { display: block; width: fit-content; }
+.facts dd span { display: block; }
+
+/* peu: com la referència, crida a treballar + correu, nom gegant i fitxa */
+.end { border-top: 1px solid var(--ink); padding-block: clamp(20px, 3vw, 36px) 18px; }
+.work { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
+.work h2, .mail { font-weight: 800; font-stretch: 100%; font-size: clamp(24px, 3.3vw, 52px); line-height: 1; letter-spacing: -.02em; }
+.mail { position: relative; text-align: right; overflow-wrap: anywhere; }
+.mail:hover { background: var(--ball); }
+.copied { position: absolute; right: 0; top: -1.4em; font-size: 11px; font-weight: 700; letter-spacing: .06em; background: var(--ink); color: var(--paper); padding: 2px 6px; opacity: 0; transition: opacity .2s ease; }
+.copied.on { opacity: 1; }
+.end-name { padding-block: clamp(36px, 7vw, 110px) clamp(28px, 5vw, 70px); }
+.end-name span { display: block; width: max-content; font-weight: 850; font-stretch: 62%; line-height: .84; letter-spacing: -.012em; white-space: nowrap; margin-left: -.038em; }
+.end-facts { padding-bottom: clamp(30px, 4vw, 56px); }
+.end .end-row { padding-top: 14px; border-top: 1px solid var(--line); margin-right: 0; }
+.end .end-row .c4 { padding-right: 0; }
+.end-row .c1 { grid-column: 1 / span 3; }
+.end-row .c4 { grid-column: 4; text-align: right; }
+
+/* visor */
+.lb { position: fixed; inset: 0; background: var(--paper); display: none; flex-direction: column; z-index: 40; }
+.lb.open { display: flex; }
+.lb-top, .lb-cap { display: grid; grid-template-columns: repeat(4, 1fr); padding: 14px var(--gutter); align-items: baseline; }
+.lb-top { border-bottom: 1px solid var(--ink); }
+.lb-top .r { grid-column: 4; text-align: right; }
+.lb-cap { border-top: 1px solid var(--ink); }
+.lb-cap .m { grid-column: 3 / span 2; text-align: right; color: var(--mute); }
+.lb-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: clamp(10px, 2vw, 28px) var(--gutter); position: relative; }
+.lb-box { width: min(100%, calc((100vh - 200px) * var(--r))); }
+.lb-box .ph { height: auto; aspect-ratio: var(--r); }
+.lb button:hover { background: var(--ball); }
+.lb .nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 22px; padding: 10px 12px; background: var(--paper); }
+.lb .prev { left: var(--gutter); } .lb .next { right: var(--gutter); }
+
+@media (max-width: 760px) {
+  .lined::before { background: linear-gradient(var(--line), var(--line)) 50% 0 / 1px 100% no-repeat; }
+  .top, .intro, .end-row, .facts { grid-template-columns: repeat(2, 1fr); }
+  .top .mid { display: none; }
+  .top .r { grid-column: 2; }
+  .intro p, .intro .who, .cats { grid-column: 1 / -1; }
+  .intro .who { margin-top: 18px; }
+  .cats { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; margin-top: 18px; }
+  .grid { grid-template-columns: repeat(6, 1fr); row-gap: 22px; }
+  .it { grid-column: var(--mc) / span var(--ms); grid-row: var(--mrow); margin-top: calc(var(--mdy, 0) * 1cqw); }
+  .sec-row { grid-template-columns: 1fr; row-gap: 14px; }
+  .sec-row p, .sec-row .note { grid-column: 1; }
+  .facts div { flex-direction: column; gap: 0; }
+  .end-row .c1 { grid-column: 1; } .end-row .c4 { grid-column: 2; }
+  .work { flex-direction: column; align-items: flex-start; }
+  .mail { text-align: left; }
+  .copied { right: auto; left: 0; }
+  .lb-top, .lb-cap { grid-template-columns: 1fr 1fr; }
+  .lb-top .r { grid-column: 2; } .lb-cap .m { grid-column: 1 / -1; text-align: left; }
+  .lb .nav { top: auto; bottom: 8px; transform: none; }
+}
+@media (max-width: 760px) {
+  .lcd-in { grid-template-columns: auto 1fr; gap: 0 12px; }
+  .scale { grid-column: 1 / -1; grid-row: 1; margin-right: 0; height: 40px; padding-inline: 10px; }
+  .scale .tl:nth-of-type(even) { display: none; }
+  .lcd-frame b { font-size: 24px; }
+  .sheet { padding-bottom: 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+.state { padding: 40px 0; color: var(--mute); }
+.it .ph.real { background: #EFEBE0; }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="lined">
+    <header class="top">
+      <a href="#home" data-t="general.nom"></a>
+      <span class="mid"></span>
+      <span class="mid"><span data-t="general.ubicacio"></span> (<span class="clk">--:--</span>)</span>
+      <div class="r">
+        <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Obre el menú"><i></i><i></i></button>
+        <nav class="menu" id="menu" aria-label="Principal" hidden>
+          <a href="#home" data-n="01" data-t="menu.inici"></a>
+          <a href="#about-me" data-n="02" data-t="menu.sobre_mi"></a>
+          <a href="#personal" data-n="03" data-t="menu.personal"></a>
+        </nav>
+      </div>
+    </header>
+
+    <div id="home">
+      <section class="mast" aria-label="Presentació">
+        <h1><span data-t="general.titol_linia_1"></span><span data-t="general.titol_linia_2"></span></h1>
+      </section>
+
+      <section class="intro">
+        <p data-t="general.presentacio"></p>
+        <div class="who">
+          <a class="mailto" href="#"><span data-t="general.correu"></span></a>
+          <span id="socials-intro"></span>
+          <span class="mute" data-t="general.estat"></span>
+        </div>
+        <div class="cats" id="cats" role="group" aria-label="Destacar per categoria"></div>
+      </section>
+
+      <main class="gallery" id="treballs">
+        <h2 hidden>Treballs</h2>
+        <div class="grid" id="grid"><p class="state">Carregant…</p></div>
+      </main>
+    </div>
+
+    <section class="sec" id="about-me" aria-labelledby="h-about">
+      <h2 class="sec-h" id="h-about" data-t="sobre_mi.titol"></h2>
+      <div class="sec-row"><p data-t="sobre_mi.text"></p></div>
+      <dl class="facts" id="facts-about"></dl>
+    </section>
+
+    <section class="sec" id="personal" aria-labelledby="h-personal">
+      <h2 class="sec-h" id="h-personal" data-t="personal.titol"></h2>
+      <div class="sec-row"><span class="note mute" data-t="personal.subtitol"></span></div>
+      <div class="personal-gallery"><div class="grid" id="grid-personal"></div></div>
+    </section>
+  </div>
+
+  <footer class="end" id="contacte">
+    <div class="work">
+      <h2 data-t="peu.crida"></h2>
+      <button type="button" class="mail" id="mail"><span data-t="general.correu"></span><span class="copied" id="copied" aria-live="polite"></span></button>
+    </div>
+    <p class="end-name"><span data-t="peu.nom_gran"></span></p>
+    <dl class="facts end-facts" id="facts-end"></dl>
+    <div class="end-row">
+      <div class="c1 mute" data-t="peu.drets"></div>
+      <div class="c4"><a href="#home">Amunt ↑</a></div>
+    </div>
+  </footer>
+</div>
+
+<div class="lcd" id="lcd" aria-label="Dades de la foto que tens davant">
+  <div class="lcd-in">
+    <div class="lcd-frame"><b id="lcd-n">--/--</b><span id="lcd-t"></span></div>
+    <div class="scale" aria-hidden="true"><i class="nd"></i><div class="tr" id="scale-tr"></div></div>
+    <div class="lcd-data"><b id="lcd-d"></b><span id="lcd-c"></span></div>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor de fotografies" hidden>
+  <div class="lb-top">
+    <span id="lb-count"></span>
+    <span></span><span></span>
+    <button class="r" id="lb-close" aria-label="Tanca el visor">Tanca ✕</button>
+  </div>
+  <div class="lb-stage">
+    <button class="nav prev" id="lb-prev" aria-label="Foto anterior">←</button>
+    <div class="lb-box" id="lb-box"></div>
+    <button class="nav next" id="lb-next" aria-label="Foto següent">→</button>
+  </div>
+  <div class="lb-cap">
+    <span id="lb-title"></span>
+    <span></span>
+    <span class="m" id="lb-meta"></span>
+  </div>
+</div>
+
+<!-- Inici de sessió del panell d'edició (Netlify Identity): porta a /admin després d'acceptar la invitació -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  netlifyIdentity.on("init", u => { if (!u) netlifyIdentity.on("login", () => { location.href = "/admin/"; }); });
+}
+</script>
+
+<script>
+/* =====================================================================
+   El contingut NO s'edita aquí: tot ve de content/site.json,
+   que es modifica des del panell /admin.
+   ===================================================================== */
+const $ = s => document.querySelector(s);
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pad = n => String(n).padStart(2, "0");
+const get = (o, path) => path.split(".").reduce((a, k) => (a == null ? a : a[k]), o);
+let D, HOME = [], PERSONAL = [], ALL = [];
+
+fetch("content/site.json", { cache: "no-store" })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data => { D = data; boot(); })
+  .catch(() => { $("#grid").innerHTML = `<p class="state">No s'ha pogut carregar el contingut (content/site.json).</p>`; });
+
+/* ---- maquetació dispersa automàtica ----
+   Quadrícula de 12 columnes per sota (les 4 línies visibles en marquen cada 3).
+   Les fotos s'agrupen en "bandes" d'1 a 3 fotos; cada banda tria una composició diferent:
+   mides variades, posicions desplaçades i baixades verticals (dy, en % de l'amplada).
+   Formats sempre 2:3 (vertical) o 3:2 (horitzontal). [columna, amplada, baixada] */
+const TPL = {
+  h:   [[[1, 7, 0]], [[6, 7, 0]], [[3, 6, 0]], [[4, 7, 0]]],
+  v:   [[[8, 4, 0]], [[3, 4, 0]], [[10, 3, 0]], [[6, 3, 0]]],
+  hv:  [[[1, 6, 0], [8, 4, 9]], [[2, 6, 12], [9, 3, 0]], [[1, 7, 4], [10, 3, 0]]],
+  vh:  [[[1, 4, 7], [6, 6, 0]], [[2, 3, 0], [6, 7, 11]], [[1, 3, 14], [5, 7, 0]]],
+  vv:  [[[2, 4, 0], [8, 3, 11]], [[1, 3, 9], [5, 4, 0]], [[4, 3, 0], [10, 3, 15]], [[1, 4, 0], [8, 3, 18]]],
+  hh:  [[[1, 6, 0], [7, 6, 12]], [[1, 7, 10], [8, 5, 0]]],
+  vvv: [[[1, 3, 0], [5, 3, 10], [10, 3, 4]], [[2, 3, 14], [6, 3, 0], [10, 3, 22]]],
+  vhv: [[[1, 3, 12], [4, 6, 0], [10, 3, 8]]],
+};
+const BAND = [2, 1, 2, 3, 1, 2, 2, 1];
+function place(list) {
+  const used = {}; let i = 0, row = 1, b = 0;
+  while (i < list.length) {
+    let k = Math.min(BAND[b++ % BAND.length], list.length - i), key;
+    while (k > 0 && !TPL[key = list.slice(i, i + k).map(p => p.o).join("")]) k--;
+    const opts = TPL[key], t = opts[(used[key] = (used[key] || 0) + 1) % opts.length];
+    t.forEach(([c, w, dy], j) => Object.assign(list[i + j], { c, s: w, dy, row }));
+    i += k; row++;
+  }
+  /* mòbil: quadrícula de 6 columnes, una foto per banda (o dues verticals), alternant costats */
+  const MH = [[1, 6, 0], [1, 5, 0], [2, 5, 0]], MV = [[1, 4, 0], [3, 4, 0], [2, 4, 0]], MVV = [[[1, 3, 0], [4, 3, 14]], [[1, 3, 10], [4, 3, 0]]];
+  let j = 0, mr = 1, nh = 0, nv = 0, np = 0;
+  while (j < list.length) {
+    if (list[j].o === "v" && list[j + 1] && list[j + 1].o === "v" && np % 2 === 0) {
+      MVV[(np / 2) % MVV.length].forEach(([c, w, dy], k) => Object.assign(list[j + k], { mc: c, ms: w, mdy: dy, mrow: mr }));
+      j += 2; np++;
+    } else {
+      const t = list[j].o === "h" ? MH[nh++ % MH.length] : MV[nv++ % MV.length];
+      Object.assign(list[j], { mc: t[0], ms: t[1], mdy: t[2], mrow: mr }); j++; if (list[j - 1].o === "v") np++;
+    }
+    mr++;
+  }
+}
+function prep(arr, grp) {
+  return (arr || []).filter(p => p && (p.titol || p.imatge)).map(p => ({
+    ...p, grp, o: p.format === "horitzontal" ? "h" : "v",
+    r: p.format === "horitzontal" ? 3 / 2 : 2 / 3
+  }));
+}
+
+/* ---- imatge de mostra quan encara no hi ha foto ---- */
+function kind(cat) { cat = (cat || "").toLowerCase(); return /esport|tennis/.test(cat) ? "esport" : /retrat/.test(cat) ? "retrat" : /esdev|event/.test(cat) ? "esdev" : "social"; }
+const PAL = { esport: ["#CDD2CE", "#707974", "#1D2220"], retrat: ["#D3CEC7", "#8C867F", "#2A2825"], esdev: ["#DAD4CA", "#7C756D", "#1E1C1A"], social: ["#D8D5CF", "#908C85", "#34312E"] };
+function placeholder(p) {
+  const k = kind(p.categoria), [a, b, c] = PAL[k], W = 800, H = Math.round(W / p.r), m = Math.min(W, H), ang = (p.n * 41) % 360;
+  let motif = "";
+  if (k === "esport") motif = `<g fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"><rect x="${W*.12}" y="${H*.14}" width="${W*.76}" height="${H*.72}"/><line x1="${W*.5}" y1="${H*.14}" x2="${W*.5}" y2="${H*.86}"/><line x1="${W*.12}" y1="${H*.5}" x2="${W*.88}" y2="${H*.5}"/></g><circle cx="${W*(.3 + (p.n%5)*.1)}" cy="${H*.38}" r="${Math.max(10, m*.03)}" fill="#D9E54B"/>`;
+  else if (k === "retrat") motif = `<g fill="#fff" fill-opacity=".24" filter="url(#bl)"><ellipse cx="${W*.5}" cy="${H*.38}" rx="${m*.2}" ry="${m*.26}"/><ellipse cx="${W*.5}" cy="${H*1.02}" rx="${m*.42}" ry="${m*.36}"/></g>`;
+  else if (k === "esdev") for (let j = 0; j < 9; j++) motif += `<circle cx="${((p.n*131+j*197)%100)/100*W}" cy="${((p.n*71+j*113)%100)/100*H}" r="${m*(.04+(j%4)*.03)}" fill="#fff" fill-opacity="${.12+(j%3)*.1}" filter="url(#bl)"/>`;
+  else motif = `<g filter="url(#bl)"><polygon points="${W*.55},0 ${W*.85},0 ${W*.45},${H} ${W*.15},${H}" fill="#fff" fill-opacity=".22"/><ellipse cx="${W*.3}" cy="${H*.7}" rx="${W*.18}" ry="${H*.14}" fill="#000" fill-opacity=".16"/></g>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" gradientTransform="rotate(${ang} .5 .5)"><stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></linearGradient><filter id="bl"><feGaussianBlur stdDeviation="${Math.round(W/45)}"/></filter><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${p.n}"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 -.12"/></filter></defs><rect width="${W}" height="${H}" fill="url(#g)"/>${motif}<rect width="${W}" height="${H}" filter="url(#n)" opacity=".5"/><text x="${W-16}" y="${H-14}" text-anchor="end" font-family="monospace" font-size="${Math.round(W/55)}" fill="#fff" fill-opacity=".6" letter-spacing="2">FOTO DE MOSTRA</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+const altOf = p => [p.titol, p.categoria].filter(Boolean).join(", ");
+function picture(p, full) {
+  const style = full ? `aspect-ratio:${p.real || p.r}` : "";
+  if (p.imatge) return `<img class="ph real" src="${esc(p.imatge)}" alt="${esc(altOf(p))}" loading="lazy" style="${style}">`;
+  return `<div class="ph" role="img" aria-label="${esc(altOf(p))}" style="${style};background-image:url('${placeholder(p)}')"></div>`;
+}
+const exifLine = p => [p.diafragma, p.velocitat, p.iso && "ISO " + p.iso].filter(Boolean).join(" · ");
+
+/* ---- render ---- */
+function renderGrid(el, list) {
+  el.innerHTML = list.map(p => `
+    <figure data-cat="${esc(p.categoria)}" class="it" style="--c:${p.c};--s:${p.s};--dy:${p.dy};--row:${p.row};--mc:${p.mc};--ms:${p.ms};--mdy:${p.mdy};--mrow:${p.mrow};--ar:${p.o === "h" ? "3/2" : "2/3"}">
+      <button type="button" data-open="${p.n}" aria-label="Amplia: ${esc(p.titol)}">
+        <div class="fr">${picture(p)}<span class="vf"><b>${esc(p.diafragma || "")}</b></span></div>
+        <figcaption><span>${esc(p.titol)}</span></figcaption>
+      </button>
+    </figure>`).join("") || `<p class="state">Encara no hi ha fotos.</p>`;
+}
+function facts(el) {
+  const g = D.general || {}, s = D.sobre_mi || {};
+  const soc = (g.xarxes || []).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nom)}</a>`).join("");
+  const li = a => (a || []).map(x => `<span>${esc(x)}</span>`).join("");
+  el.innerHTML = `
+    <div><dt>Social:</dt><dd>${soc}</dd></div>
+    <div><dt>Especialitat:</dt><dd>${li(s.especialitats)}</dd></div>
+    <div><dt>Disponibilitat:</dt><dd>${li(s.disponibilitat)}</dd></div>
+    <div><dt>Ubicació:</dt><dd><span>${esc(g.ubicacio)}</span><span class="clk-s">--:--:--</span></dd></div>`;
+}
+
+let current = "tot";
+function renderCats() {
+  const names = [...new Set(HOME.map(p => p.categoria).filter(Boolean))];
+  const all = [["tot", "Tot", HOME.length], ...names.map(n => [n, n, HOME.filter(p => p.categoria === n).length])];
+  $("#cats").innerHTML = `<span class="lbl">Destaca</span>` + all.map(([k, nom, n]) =>
+    `<button type="button" data-cat="${esc(k)}" aria-pressed="${k === current}">${esc(nom)}<sup>${pad(n)}</sup></button>`).join("");
+  $("#grid").classList.toggle("f", current !== "tot");
+  $("#grid").querySelectorAll(".it").forEach(el => el.classList.toggle("off", current !== "tot" && el.dataset.cat !== current));
+}
+
+function boot() {
+  const g = D.general || {};
+  document.title = g.titol_pestanya || g.nom || "Fotografia";
+  const md = document.querySelector('meta[name="description"]'); if (md) md.content = g.descripcio_seo || "";
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = get(D, el.dataset.t) ?? ""; });
+  document.querySelectorAll(".mailto").forEach(a => { a.href = "mailto:" + (g.correu || ""); });
+  $("#socials-intro").innerHTML = (g.xarxes || []).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nom)}${x.usuari ? ", " + esc(x.usuari) : ""}</a>`).join("");
+  HOME = prep(D.treballs, "home"); PERSONAL = prep((D.personal || {}).fotos, "personal");
+  ALL = [...HOME, ...PERSONAL]; ALL.forEach((p, i) => { p.n = i + 1; });
+  place(HOME); place(PERSONAL);
+  renderGrid($("#grid"), HOME); renderGrid($("#grid-personal"), PERSONAL);
+  facts($("#facts-about")); facts($("#facts-end"));
+  renderCats();
+  ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = p.imatge; });
+  wire(); fitAll(); if (document.fonts) document.fonts.ready.then(fitAll);
+  tick(); setInterval(tick, 1000);
+  readPhoto(HOME[0] || PERSONAL[0]); inView();
+}
+
+/* ---- titulars ajustats exactament a l'amplada dels marges ---- */
+function fit(el, box) {
+  if (!el || !el.textContent.trim()) return;
+  el.style.fontSize = "100px";
+  const lines = [...el.querySelectorAll("span")].filter(l => l.textContent.trim());
+  const w = lines.length ? Math.max(...lines.map(l => l.getBoundingClientRect().width)) : el.getBoundingClientRect().width;
+  if (w > 0) el.style.fontSize = Math.floor(100 * box.clientWidth / (w - 3.8) * 10) / 10 + "px";
+}
+function fitAll() { fit($(".mast h1"), $(".mast")); fit($(".end-name"), $(".end")); }
+window.addEventListener("resize", () => { if (D) fitAll(); });
+
+/* ---- rellotge ---- */
+function tick() {
+  const tz = (D.general || {}).zona_horaria || "Europe/Madrid";
+  try {
+    const t = new Intl.DateTimeFormat("ca", { hour: "2-digit", minute: "2-digit", timeZone: tz }).format(new Date());
+    const ts = new Intl.DateTimeFormat("ca", { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: tz }).format(new Date());
+    document.querySelectorAll(".clk").forEach(el => { el.textContent = t; });
+    document.querySelectorAll(".clk-s").forEach(el => { el.textContent = ts.replace(/:/g, " : "); });
+  } catch (e) {}
+}
+
+/* ---- pantalla de la càmera: llegeix la foto que tens davant ---- */
+const STOPS = ["1.4", "2", "2.8", "4", "5.6", "8", "11", "16", "22"];
+const sTr = $("#scale-tr"); let sHtml = "";
+for (let i = 0; i <= 24; i++) {
+  const left = (i / 24 * 100).toFixed(3) + "%", mj = i % 3 === 0;
+  sHtml += `<i class="tk${mj ? " mj" : ""}" style="left:${left}"></i>`;
+  if (mj) sHtml += `<span class="tl" data-f="${STOPS[i / 3]}" style="left:${left}">f/${STOPS[i / 3]}</span>`;
+}
+sTr.innerHTML = sHtml;
+let shown = null, pointed = null;
+function readPhoto(p) {
+  if (!p || p === shown) return; shown = p;
+  const N = parseFloat(String(p.diafragma || "").replace(/[^\d.]/g, ""));
+  const lcd = $("#lcd");
+  if (N > 0) {
+    lcd.style.setProperty("--p", Math.max(0, Math.min(1, (2 * Math.log2(N) - 1) / 8)).toFixed(4));
+    const near = STOPS.reduce((a, b) => Math.abs(Math.log2(+b / N)) < Math.abs(Math.log2(+a / N)) ? b : a);
+    sTr.querySelectorAll(".tl").forEach(l => l.classList.toggle("on", l.dataset.f === near));
+  }
+  const group = p.grp === "personal" ? PERSONAL : HOME;
+  $("#lcd-n").textContent = `${pad(group.indexOf(p) + 1)}/${pad(group.length)}`;
+  $("#lcd-t").textContent = p.titol || "";
+  $("#lcd-d").textContent = exifLine(p);
+  $("#lcd-c").textContent = [p.objectiu, p.grp === "personal" ? (D.personal || {}).titol : p.categoria].filter(Boolean).join(" · ");
+}
+const byN = n => ALL.find(p => p.n === n);
+function inView() {
+  if (pointed || !D) return;
+  const mid = innerHeight * .45; let best = null, bd = Infinity;
+  document.querySelectorAll(".it").forEach(el => {
+    const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    const d = Math.abs((r.top + r.bottom) / 2 - mid); if (d < bd) { bd = d; best = el; }
+  });
+  if (best) readPhoto(byN(+best.querySelector("[data-open]").dataset.open));
+}
+window.addEventListener("scroll", inView, { passive: true });
+
+/* ---- interaccions ---- */
+const lb = $("#lb"); let list = [], pos = 0, opener = null;
+function show() {
+  const p = list[pos], box = $("#lb-box");
+  box.style.setProperty("--r", p.real || p.r);
+  box.innerHTML = picture(p, true);
+  $("#lb-title").textContent = p.titol || "";
+  $("#lb-meta").textContent = [p.categoria, p.objectiu, exifLine(p)].filter(Boolean).join(" · ");
+  $("#lb-count").textContent = `№ ${pad(pos + 1)} (${pos + 1}/${list.length})`;
+}
+function openLb(n, from) {
+  const ph = byN(n);
+  if (ph.grp === "personal") list = PERSONAL;
+  else { list = current === "tot" ? HOME : HOME.filter(p => p.categoria === current); if (!list.includes(ph)) list = HOME; }
+  pos = list.indexOf(ph); opener = from; lb.hidden = false; lb.classList.add("open"); show();
+  $("#lb-close").focus(); document.body.style.overflow = "hidden";
+}
+function closeLb() { lb.classList.remove("open"); lb.hidden = true; document.body.style.overflow = ""; if (opener) opener.focus(); }
+function step(d) { pos = (pos + d + list.length) % list.length; show(); }
+
+function wire() {
+  $("#cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (!b) return; current = b.dataset.cat === current ? "tot" : b.dataset.cat; renderCats(); });
+  ["#grid", "#grid-personal"].forEach(s => $(s).addEventListener("click", e => { const o = e.target.closest("[data-open]"); if (o) openLb(+o.dataset.open, o); }));
+  document.querySelectorAll(".it button").forEach(b => {
+    const go = () => { pointed = byN(+b.dataset.open); readPhoto(pointed); };
+    const leave = () => { pointed = null; inView(); };
+    b.addEventListener("mouseenter", go); b.addEventListener("focus", go);
+    b.addEventListener("mouseleave", leave); b.addEventListener("blur", leave);
+  });
+  $("#lb-close").addEventListener("click", closeLb);
+  $("#lb-prev").addEventListener("click", () => step(-1));
+  $("#lb-next").addEventListener("click", () => step(1));
+  document.addEventListener("keydown", e => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") closeLb(); if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1);
+  });
+  const mail = $("#mail"), copied = $("#copied");
+  mail.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText((D.general || {}).correu || ""); copied.textContent = "Copiat"; }
+    catch (e) { copied.textContent = "Selecciona'l i copia'l"; }
+    copied.classList.add("on"); setTimeout(() => copied.classList.remove("on"), 1600);
+  });
+}
+
+/* ---- menú desplegable ---- */
+const burger = $("#burger"), menu = $("#menu");
+function setMenu(open) { menu.hidden = !open; burger.setAttribute("aria-expanded", String(open)); burger.setAttribute("aria-label", open ? "Tanca el menú" : "Obre el menú"); }
+burger.addEventListener("click", e => { e.stopPropagation(); setMenu(menu.hidden); });
+menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("click", e => { if (!menu.hidden && !menu.contains(e.target)) setMenu(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); burger.focus(); } });
+function markActive() {
+  let on = "home";
+  ["home", "about-me", "personal"].forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= 140) on = id; });
+  menu.querySelectorAll("a").forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + on));
+}
+window.addEventListener("scroll", markActive, { passive: true }); markActive();
+</script>
+</body>
+</html>
