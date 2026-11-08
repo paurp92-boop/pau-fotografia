@@ -1,0 +1,232 @@
+{
+  "general": {
+    "nom": "Pau",
+    "titol_linia_1": "Pau",
+    "titol_linia_2": "Fotografia",
+    "ubicacio": "Catalunya",
+    "zona_horaria": "Europe/Madrid",
+    "presentacio": "Sóc fotògraf amb base a Catalunya. Faig retrat, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens un encàrrec en ment, escriu-me.",
+    "estat": "Disponible per a encàrrecs",
+    "correu": "hola@elteucorreu.cat",
+    "xarxes": [
+      {
+        "nom": "Instagram",
+        "usuari": "@elteuusuari",
+        "url": "https://www.instagram.com/"
+      }
+    ],
+    "titol_pestanya": "Pau, fotògraf",
+    "descripcio_seo": "Fotògraf a Catalunya: retrat, esdeveniments, esport i fotografia social."
+  },
+  "menu": {
+    "inici": "Home",
+    "sobre_mi": "About me",
+    "personal": "Personal"
+  },
+  "treballs": [
+    {
+      "imatge": "",
+      "titol": "Servei, final de pista",
+      "categoria": "Esport · Tennis",
+      "format": "horitzontal",
+      "objectiu": "85 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/2000",
+      "iso": "400"
+    },
+    {
+      "imatge": "",
+      "titol": "Llum de finestra",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "85 mm",
+      "diafragma": "f/1.8",
+      "velocitat": "1/250",
+      "iso": "200"
+    },
+    {
+      "imatge": "",
+      "titol": "Brindis de mitjanit",
+      "categoria": "Esdeveniments",
+      "format": "vertical",
+      "objectiu": "35 mm",
+      "diafragma": "f/1.4",
+      "velocitat": "1/160",
+      "iso": "3200"
+    },
+    {
+      "imatge": "",
+      "titol": "Estudi, sèrie blanca",
+      "categoria": "Retrat",
+      "format": "horitzontal",
+      "objectiu": "85 mm",
+      "diafragma": "f/5.6",
+      "velocitat": "1/160",
+      "iso": "100"
+    },
+    {
+      "imatge": "",
+      "titol": "Revés a una mà",
+      "categoria": "Esport · Tennis",
+      "format": "vertical",
+      "objectiu": "200 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/2500",
+      "iso": "800"
+    },
+    {
+      "imatge": "",
+      "titol": "Mirada cap a un altre lloc",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "105 mm",
+      "diafragma": "f/2",
+      "velocitat": "1/400",
+      "iso": "200"
+    },
+    {
+      "imatge": "",
+      "titol": "Rialles al jardí",
+      "categoria": "Social",
+      "format": "vertical",
+      "objectiu": "50 mm",
+      "diafragma": "f/2.2",
+      "velocitat": "1/400",
+      "iso": "200"
+    },
+    {
+      "imatge": "",
+      "titol": "Dinar de diumenge",
+      "categoria": "Social",
+      "format": "horitzontal",
+      "objectiu": "50 mm",
+      "diafragma": "f/2",
+      "velocitat": "1/320",
+      "iso": "400"
+    },
+    {
+      "imatge": "",
+      "titol": "Sala plena",
+      "categoria": "Esdeveniments",
+      "format": "vertical",
+      "objectiu": "24 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/125",
+      "iso": "4000"
+    },
+    {
+      "imatge": "",
+      "titol": "Pilota i ombra",
+      "categoria": "Esport · Tennis",
+      "format": "vertical",
+      "objectiu": "135 mm",
+      "diafragma": "f/3.2",
+      "velocitat": "1/4000",
+      "iso": "500"
+    },
+    {
+      "imatge": "",
+      "titol": "Peu a la línia",
+      "categoria": "Esport · Tennis",
+      "format": "horitzontal",
+      "objectiu": "70 mm",
+      "diafragma": "f/4",
+      "velocitat": "1/3200",
+      "iso": "640"
+    },
+    {
+      "imatge": "",
+      "titol": "Retrat de carrer",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "50 mm",
+      "diafragma": "f/2",
+      "velocitat": "1/800",
+      "iso": "200"
+    },
+    {
+      "imatge": "",
+      "titol": "Arribada al port",
+      "categoria": "Social",
+      "format": "horitzontal",
+      "objectiu": "35 mm",
+      "diafragma": "f/5.6",
+      "velocitat": "1/500",
+      "iso": "100"
+    },
+    {
+      "imatge": "",
+      "titol": "Primer ball",
+      "categoria": "Esdeveniments",
+      "format": "horitzontal",
+      "objectiu": "35 mm",
+      "diafragma": "f/2",
+      "velocitat": "1/200",
+      "iso": "2500"
+    }
+  ],
+  "sobre_mi": {
+    "titol": "About me",
+    "text": "Sóc fotògraf. Treballo retrat, esdeveniments, esport (sobretot tennis) i fotografia social. Disponible per a encàrrecs a Catalunya.",
+    "especialitats": [
+      "Retrat",
+      "Esdeveniments",
+      "Esport · Tennis",
+      "Social"
+    ],
+    "disponibilitat": [
+      "Per encàrrec"
+    ]
+  },
+  "personal": {
+    "titol": "Personal",
+    "subtitol": "Projectes propis, fora d'encàrrec",
+    "fotos": [
+      {
+        "imatge": "",
+        "titol": "Pista buida, set del matí",
+        "categoria": "Esport · Tennis",
+        "format": "horitzontal",
+        "objectiu": "35 mm",
+        "diafragma": "f/8",
+        "velocitat": "1/250",
+        "iso": "100"
+      },
+      {
+        "imatge": "",
+        "titol": "Vestidor",
+        "categoria": "Retrat",
+        "format": "vertical",
+        "objectiu": "50 mm",
+        "diafragma": "f/1.8",
+        "velocitat": "1/160",
+        "iso": "320"
+      },
+      {
+        "imatge": "",
+        "titol": "Cordills",
+        "categoria": "Esport · Tennis",
+        "format": "vertical",
+        "objectiu": "105 mm",
+        "diafragma": "f/2.8",
+        "velocitat": "1/1000",
+        "iso": "800"
+      },
+      {
+        "imatge": "",
+        "titol": "Última pilota",
+        "categoria": "Social",
+        "format": "vertical",
+        "objectiu": "85 mm",
+        "diafragma": "f/2",
+        "velocitat": "1/500",
+        "iso": "400"
+      }
+    ]
+  },
+  "peu": {
+    "crida": "Treballem junts",
+    "nom_gran": "Pau Fotografia",
+    "drets": "© 2026 Pau · Totes les imatges són de l'autor"
+  }
+}
