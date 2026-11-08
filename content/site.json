@@ -176,65 +176,39 @@
       "iso": "200"
     },
     {
-      "imatge": "",
+      "imatge": "/images/uploads/muntanya-01.jpg",
       "titol": {
-        "ca": "Servei, final de pista",
-        "es": "Saque, fondo de pista",
-        "en": "Serve, baseline"
+        "ca": "Muntanya, l'impermeable taronja",
+        "es": "Montaña, el chubasquero naranja",
+        "en": "Mountains, the orange raincoat"
+      },
+      "descripcio": {
+        "ca": "Retrat a l'aire lliure, amb llum natural",
+        "es": "Retrato al aire libre, con luz natural",
+        "en": "Outdoors, natural light"
       },
       "categoria": {
-        "ca": "Esport · Tennis",
-        "es": "Deporte · Tenis",
-        "en": "Sport · Tennis"
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
       },
       "format": "horitzontal",
-      "objectiu": "85 mm",
+      "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
-      "velocitat": "1/2000",
+      "velocitat": "1/8000",
       "iso": "400"
     },
     {
-      "imatge": "",
+      "imatge": "/images/uploads/muntanya-02.jpg",
       "titol": {
-        "ca": "Llum de finestra",
-        "es": "Luz de ventana",
-        "en": "Window light"
+        "ca": "Muntanya, entre núvols",
+        "es": "Montaña, entre nubes",
+        "en": "Mountains, among the clouds"
       },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "vertical",
-      "objectiu": "85 mm",
-      "diafragma": "f/1.8",
-      "velocitat": "1/250",
-      "iso": "200"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Brindis de mitjanit",
-        "es": "Brindis de medianoche",
-        "en": "Midnight toast"
-      },
-      "categoria": {
-        "ca": "Esdeveniments",
-        "es": "Eventos",
-        "en": "Events"
-      },
-      "format": "vertical",
-      "objectiu": "35 mm",
-      "diafragma": "f/1.4",
-      "velocitat": "1/160",
-      "iso": "3200"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Estudi, sèrie blanca",
-        "es": "Estudio, serie blanca",
-        "en": "Studio, white series"
+      "descripcio": {
+        "ca": "Retrat a l'aire lliure, amb llum natural",
+        "es": "Retrato al aire libre, con luz natural",
+        "en": "Outdoors, natural light"
       },
       "categoria": {
         "ca": "Retrat",
@@ -242,190 +216,217 @@
         "en": "Portrait"
       },
       "format": "horitzontal",
-      "objectiu": "85 mm",
-      "diafragma": "f/5.6",
-      "velocitat": "1/160",
-      "iso": "100"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Revés a una mà",
-        "es": "Revés a una mano",
-        "en": "One-handed backhand"
-      },
-      "categoria": {
-        "ca": "Esport · Tennis",
-        "es": "Deporte · Tenis",
-        "en": "Sport · Tennis"
-      },
-      "format": "vertical",
-      "objectiu": "200 mm",
+      "objectiu": "XF16-55mm · 35 mm",
       "diafragma": "f/2.8",
-      "velocitat": "1/2500",
-      "iso": "800"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Mirada cap a un altre lloc",
-        "es": "Mirada hacia otro lado",
-        "en": "Looking elsewhere"
-      },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "vertical",
-      "objectiu": "105 mm",
-      "diafragma": "f/2",
-      "velocitat": "1/400",
+      "velocitat": "1/1000",
       "iso": "200"
     },
     {
-      "imatge": "",
+      "imatge": "/images/uploads/familia-01.jpg",
       "titol": {
-        "ca": "Rialles al jardí",
-        "es": "Risas en el jardín",
-        "en": "Laughter in the garden"
+        "ca": "El puny",
+        "es": "El puño",
+        "en": "The little fist"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
       },
       "categoria": {
-        "ca": "Social",
-        "es": "Social",
-        "en": "Social"
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
       },
       "format": "vertical",
-      "objectiu": "50 mm",
-      "diafragma": "f/2.2",
-      "velocitat": "1/400",
-      "iso": "200"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Dinar de diumenge",
-        "es": "Comida de domingo",
-        "en": "Sunday lunch"
-      },
-      "categoria": {
-        "ca": "Social",
-        "es": "Social",
-        "en": "Social"
-      },
-      "format": "horitzontal",
-      "objectiu": "50 mm",
-      "diafragma": "f/2",
-      "velocitat": "1/320",
-      "iso": "400"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Sala plena",
-        "es": "Sala llena",
-        "en": "Full house"
-      },
-      "categoria": {
-        "ca": "Esdeveniments",
-        "es": "Eventos",
-        "en": "Events"
-      },
-      "format": "vertical",
-      "objectiu": "24 mm",
+      "objectiu": "XF16-55mm · 41 mm",
       "diafragma": "f/2.8",
-      "velocitat": "1/125",
-      "iso": "4000"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Pilota i ombra",
-        "es": "Pelota y sombra",
-        "en": "Ball and shadow"
-      },
-      "categoria": {
-        "ca": "Esport · Tennis",
-        "es": "Deporte · Tenis",
-        "en": "Sport · Tennis"
-      },
-      "format": "vertical",
-      "objectiu": "135 mm",
-      "diafragma": "f/3.2",
-      "velocitat": "1/4000",
-      "iso": "500"
-    },
-    {
-      "imatge": "",
-      "titol": {
-        "ca": "Peu a la línia",
-        "es": "Pie en la línea",
-        "en": "Foot on the line"
-      },
-      "categoria": {
-        "ca": "Esport · Tennis",
-        "es": "Deporte · Tenis",
-        "en": "Sport · Tennis"
-      },
-      "format": "horitzontal",
-      "objectiu": "70 mm",
-      "diafragma": "f/4",
-      "velocitat": "1/3200",
+      "velocitat": "1/80",
       "iso": "640"
     },
     {
-      "imatge": "",
+      "imatge": "/images/uploads/familia-02.jpg",
       "titol": {
-        "ca": "Retrat de carrer",
-        "es": "Retrato callejero",
-        "en": "Street portrait"
+        "ca": "Migdiada",
+        "es": "Siesta",
+        "en": "Nap time"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
       },
       "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
       },
       "format": "vertical",
-      "objectiu": "50 mm",
-      "diafragma": "f/2",
-      "velocitat": "1/800",
-      "iso": "200"
+      "objectiu": "XF16-55mm · 47 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "640"
     },
     {
-      "imatge": "",
+      "imatge": "/images/uploads/familia-03.jpg",
       "titol": {
-        "ca": "Arribada al port",
-        "es": "Llegada al puerto",
-        "en": "Arrival at the harbour"
+        "ca": "Vetllant",
+        "es": "Velando",
+        "en": "Watching over"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
       },
       "categoria": {
-        "ca": "Social",
-        "es": "Social",
-        "en": "Social"
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
       },
-      "format": "horitzontal",
-      "objectiu": "35 mm",
-      "diafragma": "f/5.6",
-      "velocitat": "1/500",
-      "iso": "100"
+      "format": "vertical",
+      "objectiu": "XF16-55mm · 35 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "640"
     },
     {
-      "imatge": "",
+      "imatge": "/images/uploads/familia-04.jpg",
       "titol": {
-        "ca": "Primer ball",
-        "es": "Primer baile",
-        "en": "First dance"
+        "ca": "L'orella",
+        "es": "La oreja",
+        "en": "Tiny ear"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
       },
       "categoria": {
-        "ca": "Esdeveniments",
-        "es": "Eventos",
-        "en": "Events"
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
+      },
+      "format": "vertical",
+      "objectiu": "XF16-55mm · 55 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "640"
+    },
+    {
+      "imatge": "/images/uploads/familia-05.jpg",
+      "titol": {
+        "ca": "Peus petits",
+        "es": "Pies pequeños",
+        "en": "Little feet"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
+      },
+      "categoria": {
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
+      },
+      "format": "vertical",
+      "objectiu": "XF16-55mm · 55 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "640"
+    },
+    {
+      "imatge": "/images/uploads/familia-06.jpg",
+      "titol": {
+        "ca": "Un petó",
+        "es": "Un beso",
+        "en": "A kiss"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
+      },
+      "categoria": {
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
       },
       "format": "horitzontal",
-      "objectiu": "35 mm",
-      "diafragma": "f/2",
-      "velocitat": "1/200",
-      "iso": "2500"
+      "objectiu": "XF16-55mm · 55 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "250"
+    },
+    {
+      "imatge": "/images/uploads/familia-07.jpg",
+      "titol": {
+        "ca": "La mà a l'esquena",
+        "es": "La mano en la espalda",
+        "en": "A hand on the back"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
+      },
+      "categoria": {
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
+      },
+      "format": "vertical",
+      "objectiu": "XF16-55mm · 53 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "250"
+    },
+    {
+      "imatge": "/images/uploads/familia-08.jpg",
+      "titol": {
+        "ca": "Pell amb pell",
+        "es": "Piel con piel",
+        "en": "Skin to skin"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
+      },
+      "categoria": {
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
+      },
+      "format": "vertical",
+      "objectiu": "XF16-55mm · 55 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "250"
+    },
+    {
+      "imatge": "/images/uploads/familia-09.jpg",
+      "titol": {
+        "ca": "Alletant",
+        "es": "Lactancia",
+        "en": "Feeding"
+      },
+      "descripcio": {
+        "ca": "Primeres setmanes a casa, amb llum natural",
+        "es": "Primeras semanas en casa, con luz natural",
+        "en": "First weeks at home, natural light"
+      },
+      "categoria": {
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
+      },
+      "format": "vertical",
+      "objectiu": "XF16-55mm · 55 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/80",
+      "iso": "250"
     }
   ],
   "sobre_mi": {
