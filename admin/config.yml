@@ -79,6 +79,24 @@ collections:
               - { name: especialitats, label: "Especialitats", widget: list, field: { name: item, label: Especialitat, widget: string } }
               - { name: disponibilitat, label: "Disponibilitat", widget: list, field: { name: item, label: Línia, widget: string } }
 
+          - name: equip
+            label: Equip (càmera i objectius)
+            widget: object
+            collapsed: true
+            fields:
+              - { name: camera, label: "Càmera", widget: string }
+              - { name: camera_detall, label: "Detall de la càmera (opcional)", widget: string, required: false }
+              - { name: camera_url, label: "Enllaç de la càmera (opcional)", widget: string, required: false }
+              - name: objectius
+                label: Objectius
+                label_singular: objectiu
+                widget: list
+                summary: "{{fields.nom}}"
+                fields:
+                  - { name: nom, label: "Nom", widget: string }
+                  - { name: detall, label: "Detall (p. ex. 35 mm · f/1.4)", widget: string, required: false }
+                  - { name: url, label: "Enllaç (opcional)", widget: string, required: false }
+
           - name: personal
             label: Personal
             widget: object

@@ -136,6 +136,23 @@ img.ph { object-fit: cover; }
 .facts dd a { display: block; width: fit-content; }
 .facts dd span { display: block; }
 
+/* equip: com el gravat d'un objectiu, una línia per peça */
+.gear { margin-right: calc(var(--gap) * -1); padding-bottom: clamp(60px, 8vw, 110px); }
+.gear:empty { display: none; }
+.gear-row { display: grid; grid-template-columns: repeat(4, 1fr); align-items: baseline; border-top: 1px solid var(--ink); padding-block: 10px 8px; }
+.gear-row:last-child { border-bottom: 1px solid var(--ink); }
+.gear-row > * { padding-right: var(--gap); min-width: 0; }
+.gear-row dt { color: var(--mute); }
+.gear-row dd { grid-column: 2 / span 3; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.gear-row .nm { text-transform: none; font-weight: 850; font-stretch: 62%; font-size: clamp(28px, 4.4vw, 66px); line-height: .92; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.gear-row .sp { color: var(--mute); text-transform: none; white-space: nowrap; }
+.gear-row a.nm:hover { background: var(--ball); }
+.facts + .gear { margin-top: calc(clamp(60px, 8vw, 110px) * -1 + 28px); }
+@media (max-width: 760px) {
+  .gear-row { grid-template-columns: 1fr; }
+  .gear-row dd { grid-column: 1; flex-direction: column; gap: 2px; }
+}
+
 /* peu: com la referència, crida a treballar + correu, nom gegant i fitxa */
 .end { border-top: 1px solid var(--ink); padding-block: clamp(20px, 3vw, 36px) 18px; }
 .work { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
@@ -246,6 +263,7 @@ img.ph { object-fit: cover; }
       <h2 class="sec-h" id="h-about" data-t="sobre_mi.titol"></h2>
       <div class="sec-row"><p data-t="sobre_mi.text"></p></div>
       <dl class="facts" id="facts-about"></dl>
+      <div class="gear" id="gear" aria-label="Equip"></div>
     </section>
 
     <section class="sec" id="personal" aria-labelledby="h-personal">
@@ -429,6 +447,10 @@ function boot() {
   place(HOME); place(PERSONAL);
   renderGrid($("#grid"), HOME); renderGrid($("#grid-personal"), PERSONAL);
   facts($("#facts-about")); facts($("#facts-end"));
+  const eq = D.equip || {}, rows = [];
+  if (eq.camera) rows.push(["Càmera", eq.camera, eq.camera_url, eq.camera_detall]);
+  (eq.objectius || []).forEach((o, i) => rows.push([`Objectiu ${pad(i + 1)}`, o.nom, o.url, o.detall]));
+  $("#gear").innerHTML = rows.length ? `<dl>${rows.map(([k, n, u, d]) => `<div class="gear-row"><dt>${esc(k)}</dt><dd>${u ? `<a class="nm" href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} ↗</a>` : `<span class="nm">${esc(n)}</span>`}<span class="sp">${esc(d || "")}</span></dd></div>`).join("")}</dl>` : "";
   renderCats();
   ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = p.imatge; });
   wire(); fitAll(); if (document.fonts) document.fonts.ready.then(fitAll);
