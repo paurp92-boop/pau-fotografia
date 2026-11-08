@@ -44,12 +44,12 @@
   },
   "menu": {
     "inici": {
-      "ca": "Home",
+      "ca": "Inici",
       "es": "Inicio",
       "en": "Home"
     },
     "sobre_mi": {
-      "ca": "About me",
+      "ca": "Sobre mi",
       "es": "Sobre mí",
       "en": "About me"
     },
@@ -405,7 +405,7 @@
   ],
   "sobre_mi": {
     "titol": {
-      "ca": "About me",
+      "ca": "Sobre mi",
       "es": "Sobre mí",
       "en": "About me"
     },
