@@ -56,6 +56,10 @@ button { font: inherit; letter-spacing: inherit; text-transform: inherit; color:
 .menu a:last-child { border-bottom: 0; }
 .menu a::after { content: attr(data-n); font-family: var(--sans); font-stretch: 100%; font-weight: 500; font-size: 12px; letter-spacing: .02em; color: var(--mute); }
 .menu a:hover, .menu a.on { background: var(--ball); }
+.langs { display: flex; gap: 6px; border-top: 1px solid var(--ink); margin-top: 6px; padding-top: 12px; }
+.langs button { flex: 1; padding: 8px 6px; border: 1px solid var(--ink); font-weight: 700; }
+.langs button:hover { background: var(--ball); }
+.langs button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 #home, #about-me, #personal { scroll-margin-top: 56px; }
 
 /* titular */
@@ -234,6 +238,11 @@ img.ph { object-fit: cover; }
           <a href="#home" data-n="01" data-t="menu.inici"></a>
           <a href="#about-me" data-n="02" data-t="menu.sobre_mi"></a>
           <a href="#personal" data-n="03" data-t="menu.personal"></a>
+          <div class="langs" role="group" aria-label="Idioma">
+            <button type="button" data-lang="ca" lang="ca">Català</button>
+            <button type="button" data-lang="es" lang="es">Español</button>
+            <button type="button" data-lang="en" lang="en">English</button>
+          </div>
         </nav>
       </div>
     </header>
@@ -255,7 +264,7 @@ img.ph { object-fit: cover; }
 
       <main class="gallery" id="treballs">
         <h2 hidden>Treballs</h2>
-        <div class="grid" id="grid"><p class="state">Carregant…</p></div>
+        <div class="grid" id="grid"><p class="state">…</p></div>
       </main>
     </div>
 
@@ -282,7 +291,7 @@ img.ph { object-fit: cover; }
     <dl class="facts end-facts" id="facts-end"></dl>
     <div class="end-row">
       <div class="c1 mute" data-t="peu.drets"></div>
-      <div class="c4"><a href="#home">Amunt ↑</a></div>
+      <div class="c4"><a href="#home" data-ui="amunt"></a></div>
     </div>
   </footer>
 </div>
@@ -299,7 +308,7 @@ img.ph { object-fit: cover; }
   <div class="lb-top">
     <span id="lb-count"></span>
     <span></span><span></span>
-    <button class="r" id="lb-close" aria-label="Tanca el visor">Tanca ✕</button>
+    <button class="r" id="lb-close" data-ui="tanca" data-ui-aria="tancaVisor"></button>
   </div>
   <div class="lb-stage">
     <button class="nav prev" id="lb-prev" aria-label="Foto anterior">←</button>
@@ -332,10 +341,35 @@ const pad = n => String(n).padStart(2, "0");
 const get = (o, path) => path.split(".").reduce((a, k) => (a == null ? a : a[k]), o);
 let D, HOME = [], PERSONAL = [], ALL = [];
 
+/* ---- idiomes ----
+   Els textos del panell poden ser {ca, es, en}; si una traducció és buida, es mostra el català. */
+const LANGS = ["ca", "es", "en"];
+const UI = {
+  ca: { destaca: "Destaca", tot: "Tot", social: "Social:", esp: "Especialitat:", disp: "Disponibilitat:", ubi: "Ubicació:", cam: "Càmera", obj: "Objectiu",
+        amunt: "Amunt ↑", tanca: "Tanca ✕", tancaVisor: "Tanca el visor", amplia: "Amplia", copiat: "Copiat", copia: "Selecciona'l i copia'l",
+        nofotos: "Encara no hi ha fotos.", error: "No s'ha pogut carregar el contingut.", obre: "Obre el menú", tancaMenu: "Tanca el menú", idioma: "Idioma" },
+  es: { destaca: "Destaca", tot: "Todo", social: "Social:", esp: "Especialidad:", disp: "Disponibilidad:", ubi: "Ubicación:", cam: "Cámara", obj: "Objetivo",
+        amunt: "Arriba ↑", tanca: "Cerrar ✕", tancaVisor: "Cerrar el visor", amplia: "Ampliar", copiat: "Copiado", copia: "Selecciónalo y cópialo",
+        nofotos: "Todavía no hay fotos.", error: "No se ha podido cargar el contenido.", obre: "Abrir el menú", tancaMenu: "Cerrar el menú", idioma: "Idioma" },
+  en: { destaca: "Highlight", tot: "All", social: "Social:", esp: "Specialties:", disp: "Availability:", ubi: "Location:", cam: "Camera", obj: "Lens",
+        amunt: "Back to top ↑", tanca: "Close ✕", tancaVisor: "Close viewer", amplia: "Enlarge", copiat: "Copied", copia: "Select it and copy it",
+        nofotos: "No photos yet.", error: "The content could not be loaded.", obre: "Open menu", tancaMenu: "Close menu", idioma: "Language" }
+};
+function pickLang() {
+  let q = null; try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+  let st = null; try { st = localStorage.getItem("lang"); } catch (e) {}
+  const nav = (navigator.language || "").slice(0, 2);
+  return [q, st, nav].find(l => LANGS.includes(l)) || "ca";
+}
+let LANG = pickLang();
+const u = k => (UI[LANG] || UI.ca)[k] || UI.ca[k];
+const L = v => v && typeof v === "object" && !Array.isArray(v) ? (v[LANG] || v.ca || "") : (v ?? "");
+const caOf = v => v && typeof v === "object" ? (v.ca || "") : (v ?? "");
+
 fetch("content/site.json", { cache: "no-store" })
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(data => { D = data; boot(); })
-  .catch(() => { $("#grid").innerHTML = `<p class="state">No s'ha pogut carregar el contingut (content/site.json).</p>`; });
+  .catch(() => { $("#grid").innerHTML = `<p class="state">${u("error")}</p>`; });
 
 /* ---- maquetació dispersa automàtica ----
    Quadrícula de 12 columnes per sota (les 4 línies visibles en marquen cada 3).
@@ -384,7 +418,7 @@ function prep(arr, grp) {
 }
 
 /* ---- imatge de mostra quan encara no hi ha foto ---- */
-function kind(cat) { cat = (cat || "").toLowerCase(); return /esport|tennis/.test(cat) ? "esport" : /retrat/.test(cat) ? "retrat" : /esdev|event/.test(cat) ? "esdev" : "social"; }
+function kind(cat) { cat = caOf(cat).toLowerCase(); return /esport|tennis/.test(cat) ? "esport" : /retrat/.test(cat) ? "retrat" : /esdev|event/.test(cat) ? "esdev" : "social"; }
 const PAL = { esport: ["#CDD2CE", "#707974", "#1D2220"], retrat: ["#D3CEC7", "#8C867F", "#2A2825"], esdev: ["#DAD4CA", "#7C756D", "#1E1C1A"], social: ["#D8D5CF", "#908C85", "#34312E"] };
 function placeholder(p) {
   const k = kind(p.categoria), [a, b, c] = PAL[k], W = 800, H = Math.round(W / p.r), m = Math.min(W, H), ang = (p.n * 41) % 360;
@@ -396,7 +430,7 @@ function placeholder(p) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" gradientTransform="rotate(${ang} .5 .5)"><stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></linearGradient><filter id="bl"><feGaussianBlur stdDeviation="${Math.round(W/45)}"/></filter><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${p.n}"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 -.12"/></filter></defs><rect width="${W}" height="${H}" fill="url(#g)"/>${motif}<rect width="${W}" height="${H}" filter="url(#n)" opacity=".5"/><text x="${W-16}" y="${H-14}" text-anchor="end" font-family="monospace" font-size="${Math.round(W/55)}" fill="#fff" fill-opacity=".6" letter-spacing="2">FOTO DE MOSTRA</text></svg>`;
   return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
 }
-const altOf = p => [p.titol, p.categoria].filter(Boolean).join(", ");
+const altOf = p => [L(p.titol), L(p.categoria)].filter(Boolean).join(", ");
 function picture(p, full) {
   const style = full ? `aspect-ratio:${p.real || p.r}` : "";
   if (p.imatge) return `<img class="ph real" src="${esc(p.imatge)}" alt="${esc(altOf(p))}" loading="lazy" style="${style}">`;
@@ -407,55 +441,72 @@ const exifLine = p => [p.diafragma, p.velocitat, p.iso && "ISO " + p.iso].filter
 /* ---- render ---- */
 function renderGrid(el, list) {
   el.innerHTML = list.map(p => `
-    <figure data-cat="${esc(p.categoria)}" class="it" style="--c:${p.c};--s:${p.s};--dy:${p.dy};--row:${p.row};--mc:${p.mc};--ms:${p.ms};--mdy:${p.mdy};--mrow:${p.mrow};--ar:${p.o === "h" ? "3/2" : "2/3"}">
-      <button type="button" data-open="${p.n}" aria-label="Amplia: ${esc(p.titol)}">
+    <figure data-cat="${esc(caOf(p.categoria))}" class="it" style="--c:${p.c};--s:${p.s};--dy:${p.dy};--row:${p.row};--mc:${p.mc};--ms:${p.ms};--mdy:${p.mdy};--mrow:${p.mrow};--ar:${p.o === "h" ? "3/2" : "2/3"}">
+      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol))}">
         <div class="fr">${picture(p)}<span class="vf"><b>${esc(p.diafragma || "")}</b></span></div>
-        <figcaption><span>${esc(p.titol)}</span></figcaption>
+        <figcaption><span>${esc(L(p.titol))}</span></figcaption>
       </button>
-    </figure>`).join("") || `<p class="state">Encara no hi ha fotos.</p>`;
+    </figure>`).join("") || `<p class="state">${u("nofotos")}</p>`;
 }
 function facts(el) {
   const g = D.general || {}, s = D.sobre_mi || {};
   const soc = (g.xarxes || []).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nom)}</a>`).join("");
-  const li = a => (a || []).map(x => `<span>${esc(x)}</span>`).join("");
+  const li = a => (a || []).map(x => `<span>${esc(L(x))}</span>`).join("");
   el.innerHTML = `
-    <div><dt>Social:</dt><dd>${soc}</dd></div>
-    <div><dt>Especialitat:</dt><dd>${li(s.especialitats)}</dd></div>
-    <div><dt>Disponibilitat:</dt><dd>${li(s.disponibilitat)}</dd></div>
-    <div><dt>Ubicació:</dt><dd><span>${esc(g.ubicacio)}</span><span class="clk-s">--:--:--</span></dd></div>`;
+    <div><dt>${u("social")}</dt><dd>${soc}</dd></div>
+    <div><dt>${u("esp")}</dt><dd>${li(s.especialitats)}</dd></div>
+    <div><dt>${u("disp")}</dt><dd>${li(s.disponibilitat)}</dd></div>
+    <div><dt>${u("ubi")}</dt><dd><span>${esc(L(g.ubicacio))}</span><span class="clk-s">--:--:--</span></dd></div>`;
 }
 
 let current = "tot";
 function renderCats() {
-  const names = [...new Set(HOME.map(p => p.categoria).filter(Boolean))];
-  const all = [["tot", "Tot", HOME.length], ...names.map(n => [n, n, HOME.filter(p => p.categoria === n).length])];
-  $("#cats").innerHTML = `<span class="lbl">Destaca</span>` + all.map(([k, nom, n]) =>
+  const keys = [...new Set(HOME.map(p => caOf(p.categoria)).filter(Boolean))];
+  const all = [["tot", u("tot"), HOME.length], ...keys.map(k => [k, L(HOME.find(p => caOf(p.categoria) === k).categoria), HOME.filter(p => caOf(p.categoria) === k).length])];
+  $("#cats").innerHTML = `<span class="lbl">${u("destaca")}</span>` + all.map(([k, nom, n]) =>
     `<button type="button" data-cat="${esc(k)}" aria-pressed="${k === current}">${esc(nom)}<sup>${pad(n)}</sup></button>`).join("");
   $("#grid").classList.toggle("f", current !== "tot");
   $("#grid").querySelectorAll(".it").forEach(el => el.classList.toggle("off", current !== "tot" && el.dataset.cat !== current));
 }
 
 function boot() {
-  const g = D.general || {};
-  document.title = g.titol_pestanya || g.nom || "Fotografia";
-  const md = document.querySelector('meta[name="description"]'); if (md) md.content = g.descripcio_seo || "";
-  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = get(D, el.dataset.t) ?? ""; });
-  document.querySelectorAll(".mailto").forEach(a => { a.href = "mailto:" + (g.correu || ""); });
-  $("#socials-intro").innerHTML = (g.xarxes || []).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nom)}${x.usuari ? ", " + esc(x.usuari) : ""}</a>`).join("");
   HOME = prep(D.treballs, "home"); PERSONAL = prep((D.personal || {}).fotos, "personal");
   ALL = [...HOME, ...PERSONAL]; ALL.forEach((p, i) => { p.n = i + 1; });
   place(HOME); place(PERSONAL);
+  ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = p.imatge; });
+  render(); wire();
+  if (document.fonts) document.fonts.ready.then(fitAll);
+  tick(); setInterval(tick, 1000);
+}
+function setLang(l) {
+  if (!LANGS.includes(l) || l === LANG) return;
+  LANG = l;
+  try { localStorage.setItem("lang", l); } catch (e) {}
+  try { const url = new URL(location.href); url.searchParams.set("lang", l); history.replaceState(null, "", url); } catch (e) {}
+  render(); tick();
+}
+function render() {
+  const g = D.general || {};
+  document.documentElement.lang = LANG;
+  document.title = L(g.titol_pestanya) || L(g.nom) || "Fotografia";
+  const md = document.querySelector('meta[name="description"]'); if (md) md.content = L(g.descripcio_seo);
+  document.querySelectorAll("[data-t]").forEach(el => { el.textContent = L(get(D, el.dataset.t)); });
+  document.querySelectorAll("[data-ui]").forEach(el => { el.textContent = u(el.dataset.ui); });
+  document.querySelectorAll("[data-ui-aria]").forEach(el => { el.setAttribute("aria-label", u(el.dataset.uiAria)); });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === LANG)));
+  $(".langs").setAttribute("aria-label", u("idioma"));
+  burger.setAttribute("aria-label", menu.hidden ? u("obre") : u("tancaMenu"));
+  document.querySelectorAll(".mailto").forEach(a => { a.href = "mailto:" + (g.correu || ""); });
+  $("#socials-intro").innerHTML = (g.xarxes || []).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nom)}${x.usuari ? ", " + esc(x.usuari) : ""}</a>`).join("");
   renderGrid($("#grid"), HOME); renderGrid($("#grid-personal"), PERSONAL);
   facts($("#facts-about")); facts($("#facts-end"));
   const eq = D.equip || {}, rows = [];
-  if (eq.camera) rows.push(["Càmera", eq.camera, eq.camera_url, eq.camera_detall]);
-  (eq.objectius || []).forEach((o, i) => rows.push([`Objectiu ${pad(i + 1)}`, o.nom, o.url, o.detall]));
+  if (eq.camera) rows.push([u("cam"), L(eq.camera), eq.camera_url, L(eq.camera_detall)]);
+  (eq.objectius || []).forEach((o, i) => rows.push([`${u("obj")} ${pad(i + 1)}`, L(o.nom), o.url, L(o.detall)]));
   $("#gear").innerHTML = rows.length ? `<dl>${rows.map(([k, n, u, d]) => `<div class="gear-row"><dt>${esc(k)}</dt><dd>${u ? `<a class="nm" href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} ↗</a>` : `<span class="nm">${esc(n)}</span>`}<span class="sp">${esc(d || "")}</span></dd></div>`).join("")}</dl>` : "";
-  renderCats();
-  ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = p.imatge; });
-  wire(); fitAll(); if (document.fonts) document.fonts.ready.then(fitAll);
-  tick(); setInterval(tick, 1000);
-  readPhoto(HOME[0] || PERSONAL[0]); inView();
+  renderCats(); fitAll();
+  shown = null; readPhoto(HOME[0] || PERSONAL[0]); inView();
+  if (lb.classList.contains("open")) show();
 }
 
 /* ---- titulars ajustats exactament a l'amplada dels marges ---- */
@@ -473,8 +524,8 @@ window.addEventListener("resize", () => { if (D) fitAll(); });
 function tick() {
   const tz = (D.general || {}).zona_horaria || "Europe/Madrid";
   try {
-    const t = new Intl.DateTimeFormat("ca", { hour: "2-digit", minute: "2-digit", timeZone: tz }).format(new Date());
-    const ts = new Intl.DateTimeFormat("ca", { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: tz }).format(new Date());
+    const t = new Intl.DateTimeFormat(LANG, { hour: "2-digit", minute: "2-digit", timeZone: tz }).format(new Date());
+    const ts = new Intl.DateTimeFormat(LANG, { hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: tz }).format(new Date());
     document.querySelectorAll(".clk").forEach(el => { el.textContent = t; });
     document.querySelectorAll(".clk-s").forEach(el => { el.textContent = ts.replace(/:/g, " : "); });
   } catch (e) {}
@@ -501,9 +552,9 @@ function readPhoto(p) {
   }
   const group = p.grp === "personal" ? PERSONAL : HOME;
   $("#lcd-n").textContent = `${pad(group.indexOf(p) + 1)}/${pad(group.length)}`;
-  $("#lcd-t").textContent = p.titol || "";
+  $("#lcd-t").textContent = L(p.titol);
   $("#lcd-d").textContent = exifLine(p);
-  $("#lcd-c").textContent = [p.objectiu, p.grp === "personal" ? (D.personal || {}).titol : p.categoria].filter(Boolean).join(" · ");
+  $("#lcd-c").textContent = [L(p.objectiu), p.grp === "personal" ? L((D.personal || {}).titol) : L(p.categoria)].filter(Boolean).join(" · ");
 }
 const byN = n => ALL.find(p => p.n === n);
 function inView() {
@@ -523,14 +574,14 @@ function show() {
   const p = list[pos], box = $("#lb-box");
   box.style.setProperty("--r", p.real || p.r);
   box.innerHTML = picture(p, true);
-  $("#lb-title").textContent = p.titol || "";
-  $("#lb-meta").textContent = [p.categoria, p.objectiu, exifLine(p)].filter(Boolean).join(" · ");
+  $("#lb-title").textContent = L(p.titol);
+  $("#lb-meta").textContent = [L(p.categoria), L(p.objectiu), exifLine(p)].filter(Boolean).join(" · ");
   $("#lb-count").textContent = `№ ${pad(pos + 1)} (${pos + 1}/${list.length})`;
 }
 function openLb(n, from) {
   const ph = byN(n);
   if (ph.grp === "personal") list = PERSONAL;
-  else { list = current === "tot" ? HOME : HOME.filter(p => p.categoria === current); if (!list.includes(ph)) list = HOME; }
+  else { list = current === "tot" ? HOME : HOME.filter(p => caOf(p.categoria) === current); if (!list.includes(ph)) list = HOME; }
   pos = list.indexOf(ph); opener = from; lb.hidden = false; lb.classList.add("open"); show();
   $("#lb-close").focus(); document.body.style.overflow = "hidden";
 }
@@ -540,12 +591,14 @@ function step(d) { pos = (pos + d + list.length) % list.length; show(); }
 function wire() {
   $("#cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (!b) return; current = b.dataset.cat === current ? "tot" : b.dataset.cat; renderCats(); });
   ["#grid", "#grid-personal"].forEach(s => $(s).addEventListener("click", e => { const o = e.target.closest("[data-open]"); if (o) openLb(+o.dataset.open, o); }));
-  document.querySelectorAll(".it button").forEach(b => {
-    const go = () => { pointed = byN(+b.dataset.open); readPhoto(pointed); };
-    const leave = () => { pointed = null; inView(); };
-    b.addEventListener("mouseenter", go); b.addEventListener("focus", go);
-    b.addEventListener("mouseleave", leave); b.addEventListener("blur", leave);
+  ["#grid", "#grid-personal"].forEach(s => {
+    const el = $(s);
+    const go = e => { const b = e.target.closest("[data-open]"); if (!b) return; pointed = byN(+b.dataset.open); readPhoto(pointed); };
+    const leave = e => { const b = e.target.closest("[data-open]"); if (!b || (e.relatedTarget && b.contains(e.relatedTarget))) return; pointed = null; inView(); };
+    el.addEventListener("mouseover", go); el.addEventListener("focusin", go);
+    el.addEventListener("mouseout", leave); el.addEventListener("focusout", leave);
   });
+  $(".langs").addEventListener("click", e => { const b = e.target.closest("[data-lang]"); if (b) { setLang(b.dataset.lang); setMenu(false); } });
   $("#lb-close").addEventListener("click", closeLb);
   $("#lb-prev").addEventListener("click", () => step(-1));
   $("#lb-next").addEventListener("click", () => step(1));
@@ -555,15 +608,15 @@ function wire() {
   });
   const mail = $("#mail"), copied = $("#copied");
   mail.addEventListener("click", async () => {
-    try { await navigator.clipboard.writeText((D.general || {}).correu || ""); copied.textContent = "Copiat"; }
-    catch (e) { copied.textContent = "Selecciona'l i copia'l"; }
+    try { await navigator.clipboard.writeText((D.general || {}).correu || ""); copied.textContent = u("copiat"); }
+    catch (e) { copied.textContent = u("copia"); }
     copied.classList.add("on"); setTimeout(() => copied.classList.remove("on"), 1600);
   });
 }
 
 /* ---- menú desplegable ---- */
 const burger = $("#burger"), menu = $("#menu");
-function setMenu(open) { menu.hidden = !open; burger.setAttribute("aria-expanded", String(open)); burger.setAttribute("aria-label", open ? "Tanca el menú" : "Obre el menú"); }
+function setMenu(open) { menu.hidden = !open; burger.setAttribute("aria-expanded", String(open)); burger.setAttribute("aria-label", open ? u("tancaMenu") : u("obre")); }
 burger.addEventListener("click", e => { e.stopPropagation(); setMenu(menu.hidden); });
 menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
 document.addEventListener("click", e => { if (!menu.hidden && !menu.contains(e.target)) setMenu(false); });

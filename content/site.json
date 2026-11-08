@@ -1,12 +1,28 @@
 {
   "general": {
     "nom": "Pau",
-    "titol_linia_1": "Pau",
-    "titol_linia_2": "Fotografia",
+    "titol_linia_1": {
+      "ca": "Pau",
+      "es": "Pau",
+      "en": "Pau"
+    },
+    "titol_linia_2": {
+      "ca": "Fotografia",
+      "es": "Fotografía",
+      "en": "Photography"
+    },
     "ubicacio": "Llinars del Vallès",
     "zona_horaria": "Europe/Madrid",
-    "presentacio": "Sóc fotògraf amb base a Llinars del Vallès, Catalunya. Faig retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens alguna idea al cap, parlem-ne.",
-    "estat": "Disponible per a projectes",
+    "presentacio": {
+      "ca": "Sóc fotògraf amb base a Llinars del Vallès, Catalunya. Faig retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens alguna idea al cap, parlem-ne.",
+      "es": "Soy fotógrafo con base en Llinars del Vallès, Cataluña. Hago retrato, familia, embarazo, eventos, deporte (sobre todo tenis) y fotografía social. Si tienes alguna idea en mente, hablemos.",
+      "en": "I'm a photographer based in Llinars del Vallès, Catalonia. I shoot portraits, families, pregnancy, events, sport (mostly tennis) and social photography. If you have an idea in mind, let's talk."
+    },
+    "estat": {
+      "ca": "Disponible per a projectes i sessions",
+      "es": "Disponible para proyectos y sesiones",
+      "en": "Available for projects and sessions"
+    },
     "correu": "pau.rp92@gmail.com",
     "xarxes": [
       {
@@ -15,19 +31,47 @@
         "url": "https://www.instagram.com/enpau_rp/"
       }
     ],
-    "titol_pestanya": "Pau, fotògraf",
-    "descripcio_seo": "Fotògraf a Llinars del Vallès (Catalunya): retrat, família, embaràs, esdeveniments, esport i fotografia social."
+    "titol_pestanya": {
+      "ca": "Pau, fotògraf",
+      "es": "Pau, fotógrafo",
+      "en": "Pau, photographer"
+    },
+    "descripcio_seo": {
+      "ca": "Fotògraf a Llinars del Vallès (Catalunya): retrat, família, embaràs, esdeveniments, esport i fotografia social.",
+      "es": "Fotógrafo en Llinars del Vallès (Cataluña): retrato, familia, embarazo, eventos, deporte y fotografía social.",
+      "en": "Photographer in Llinars del Vallès (Catalonia): portraits, family, pregnancy, events, sport and social photography."
+    }
   },
   "menu": {
-    "inici": "Home",
-    "sobre_mi": "About me",
-    "personal": "Personal"
+    "inici": {
+      "ca": "Home",
+      "es": "Inicio",
+      "en": "Home"
+    },
+    "sobre_mi": {
+      "ca": "About me",
+      "es": "Sobre mí",
+      "en": "About me"
+    },
+    "personal": {
+      "ca": "Personal",
+      "es": "Personal",
+      "en": "Personal"
+    }
   },
   "treballs": [
     {
       "imatge": "/images/uploads/elvi-01.jpg",
-      "titol": "Elvi, mans als cabells",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Elvi, mans als cabells",
+        "es": "Elvi, manos en el pelo",
+        "en": "Elvi, hands in her hair"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
@@ -36,8 +80,16 @@
     },
     {
       "imatge": "/images/uploads/elvi-02.jpg",
-      "titol": "Elvi, el riure",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Elvi, el riure",
+        "es": "Elvi, la risa",
+        "en": "Elvi, the laugh"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
@@ -46,8 +98,16 @@
     },
     {
       "imatge": "/images/uploads/elvi-03.jpg",
-      "titol": "Elvi, mirada de reüll",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Elvi, mirada de reüll",
+        "es": "Elvi, mirada de reojo",
+        "en": "Elvi, a sideways glance"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
@@ -56,8 +116,16 @@
     },
     {
       "imatge": "/images/uploads/elvi-04.jpg",
-      "titol": "Elvi, perfil a la finestra",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Elvi, perfil a la finestra",
+        "es": "Elvi, perfil en la ventana",
+        "en": "Elvi, profile by the window"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
@@ -66,8 +134,16 @@
     },
     {
       "imatge": "/images/uploads/elvi-05.jpg",
-      "titol": "Elvi, llum de cortina",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Elvi, llum de cortina",
+        "es": "Elvi, luz de cortina",
+        "en": "Elvi, curtain light"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
@@ -76,8 +152,16 @@
     },
     {
       "imatge": "",
-      "titol": "Servei, final de pista",
-      "categoria": "Esport · Tennis",
+      "titol": {
+        "ca": "Servei, final de pista",
+        "es": "Saque, fondo de pista",
+        "en": "Serve, baseline"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
       "format": "horitzontal",
       "objectiu": "85 mm",
       "diafragma": "f/2.8",
@@ -86,8 +170,16 @@
     },
     {
       "imatge": "",
-      "titol": "Llum de finestra",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Llum de finestra",
+        "es": "Luz de ventana",
+        "en": "Window light"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "85 mm",
       "diafragma": "f/1.8",
@@ -96,8 +188,16 @@
     },
     {
       "imatge": "",
-      "titol": "Brindis de mitjanit",
-      "categoria": "Esdeveniments",
+      "titol": {
+        "ca": "Brindis de mitjanit",
+        "es": "Brindis de medianoche",
+        "en": "Midnight toast"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
       "format": "vertical",
       "objectiu": "35 mm",
       "diafragma": "f/1.4",
@@ -106,8 +206,16 @@
     },
     {
       "imatge": "",
-      "titol": "Estudi, sèrie blanca",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Estudi, sèrie blanca",
+        "es": "Estudio, serie blanca",
+        "en": "Studio, white series"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "horitzontal",
       "objectiu": "85 mm",
       "diafragma": "f/5.6",
@@ -116,8 +224,16 @@
     },
     {
       "imatge": "",
-      "titol": "Revés a una mà",
-      "categoria": "Esport · Tennis",
+      "titol": {
+        "ca": "Revés a una mà",
+        "es": "Revés a una mano",
+        "en": "One-handed backhand"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
       "format": "vertical",
       "objectiu": "200 mm",
       "diafragma": "f/2.8",
@@ -126,8 +242,16 @@
     },
     {
       "imatge": "",
-      "titol": "Mirada cap a un altre lloc",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Mirada cap a un altre lloc",
+        "es": "Mirada hacia otro lado",
+        "en": "Looking elsewhere"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "105 mm",
       "diafragma": "f/2",
@@ -136,8 +260,16 @@
     },
     {
       "imatge": "",
-      "titol": "Rialles al jardí",
-      "categoria": "Social",
+      "titol": {
+        "ca": "Rialles al jardí",
+        "es": "Risas en el jardín",
+        "en": "Laughter in the garden"
+      },
+      "categoria": {
+        "ca": "Social",
+        "es": "Social",
+        "en": "Social"
+      },
       "format": "vertical",
       "objectiu": "50 mm",
       "diafragma": "f/2.2",
@@ -146,8 +278,16 @@
     },
     {
       "imatge": "",
-      "titol": "Dinar de diumenge",
-      "categoria": "Social",
+      "titol": {
+        "ca": "Dinar de diumenge",
+        "es": "Comida de domingo",
+        "en": "Sunday lunch"
+      },
+      "categoria": {
+        "ca": "Social",
+        "es": "Social",
+        "en": "Social"
+      },
       "format": "horitzontal",
       "objectiu": "50 mm",
       "diafragma": "f/2",
@@ -156,8 +296,16 @@
     },
     {
       "imatge": "",
-      "titol": "Sala plena",
-      "categoria": "Esdeveniments",
+      "titol": {
+        "ca": "Sala plena",
+        "es": "Sala llena",
+        "en": "Full house"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
       "format": "vertical",
       "objectiu": "24 mm",
       "diafragma": "f/2.8",
@@ -166,8 +314,16 @@
     },
     {
       "imatge": "",
-      "titol": "Pilota i ombra",
-      "categoria": "Esport · Tennis",
+      "titol": {
+        "ca": "Pilota i ombra",
+        "es": "Pelota y sombra",
+        "en": "Ball and shadow"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
       "format": "vertical",
       "objectiu": "135 mm",
       "diafragma": "f/3.2",
@@ -176,8 +332,16 @@
     },
     {
       "imatge": "",
-      "titol": "Peu a la línia",
-      "categoria": "Esport · Tennis",
+      "titol": {
+        "ca": "Peu a la línia",
+        "es": "Pie en la línea",
+        "en": "Foot on the line"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
       "format": "horitzontal",
       "objectiu": "70 mm",
       "diafragma": "f/4",
@@ -186,8 +350,16 @@
     },
     {
       "imatge": "",
-      "titol": "Retrat de carrer",
-      "categoria": "Retrat",
+      "titol": {
+        "ca": "Retrat de carrer",
+        "es": "Retrato callejero",
+        "en": "Street portrait"
+      },
+      "categoria": {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
       "format": "vertical",
       "objectiu": "50 mm",
       "diafragma": "f/2",
@@ -196,8 +368,16 @@
     },
     {
       "imatge": "",
-      "titol": "Arribada al port",
-      "categoria": "Social",
+      "titol": {
+        "ca": "Arribada al port",
+        "es": "Llegada al puerto",
+        "en": "Arrival at the harbour"
+      },
+      "categoria": {
+        "ca": "Social",
+        "es": "Social",
+        "en": "Social"
+      },
       "format": "horitzontal",
       "objectiu": "35 mm",
       "diafragma": "f/5.6",
@@ -206,8 +386,16 @@
     },
     {
       "imatge": "",
-      "titol": "Primer ball",
-      "categoria": "Esdeveniments",
+      "titol": {
+        "ca": "Primer ball",
+        "es": "Primer baile",
+        "en": "First dance"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
       "format": "horitzontal",
       "objectiu": "35 mm",
       "diafragma": "f/2",
@@ -216,28 +404,80 @@
     }
   ],
   "sobre_mi": {
-    "titol": "About me",
-    "text": "Sóc fotògraf. Treballo retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Disponible per a projectes a Catalunya.",
+    "titol": {
+      "ca": "About me",
+      "es": "Sobre mí",
+      "en": "About me"
+    },
+    "text": {
+      "ca": "Sóc fotògraf. Treballo retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Disponible per a projectes a Catalunya.",
+      "es": "Soy fotógrafo. Trabajo retrato, familia, embarazo, eventos, deporte (sobre todo tenis) y fotografía social. Disponible para proyectos en Cataluña.",
+      "en": "I'm a photographer. I work on portraits, family, pregnancy, events, sport (mostly tennis) and social photography. Available for projects across Catalonia."
+    },
     "especialitats": [
-      "Retrat",
-      "Família",
-      "Embaràs",
-      "Esdeveniments",
-      "Esport · Tennis",
-      "Social"
+      {
+        "ca": "Retrat",
+        "es": "Retrato",
+        "en": "Portrait"
+      },
+      {
+        "ca": "Família",
+        "es": "Familia",
+        "en": "Family"
+      },
+      {
+        "ca": "Embaràs",
+        "es": "Embarazo",
+        "en": "Pregnancy"
+      },
+      {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      {
+        "ca": "Social",
+        "es": "Social",
+        "en": "Social"
+      }
     ],
     "disponibilitat": [
-      "Sessions a mida"
+      {
+        "ca": "Sessions a mida",
+        "es": "Sesiones a medida",
+        "en": "Tailored sessions"
+      }
     ]
   },
   "personal": {
-    "titol": "Personal",
-    "subtitol": "Treball personal",
+    "titol": {
+      "ca": "Personal",
+      "es": "Personal",
+      "en": "Personal"
+    },
+    "subtitol": {
+      "ca": "Treball personal",
+      "es": "Trabajo personal",
+      "en": "Personal work"
+    },
     "fotos": [
       {
         "imatge": "",
-        "titol": "Pista buida, set del matí",
-        "categoria": "Esport · Tennis",
+        "titol": {
+          "ca": "Pista buida, set del matí",
+          "es": "Pista vacía, set de la mañana",
+          "en": "Empty court, morning set"
+        },
+        "categoria": {
+          "ca": "Esport · Tennis",
+          "es": "Deporte · Tenis",
+          "en": "Sport · Tennis"
+        },
         "format": "horitzontal",
         "objectiu": "35 mm",
         "diafragma": "f/8",
@@ -246,8 +486,16 @@
       },
       {
         "imatge": "",
-        "titol": "Vestidor",
-        "categoria": "Retrat",
+        "titol": {
+          "ca": "Vestidor",
+          "es": "Vestuario",
+          "en": "Locker room"
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
         "format": "vertical",
         "objectiu": "50 mm",
         "diafragma": "f/1.8",
@@ -256,8 +504,16 @@
       },
       {
         "imatge": "",
-        "titol": "Cordills",
-        "categoria": "Esport · Tennis",
+        "titol": {
+          "ca": "Cordills",
+          "es": "Cordaje",
+          "en": "Strings"
+        },
+        "categoria": {
+          "ca": "Esport · Tennis",
+          "es": "Deporte · Tenis",
+          "en": "Sport · Tennis"
+        },
         "format": "vertical",
         "objectiu": "105 mm",
         "diafragma": "f/2.8",
@@ -266,8 +522,16 @@
       },
       {
         "imatge": "",
-        "titol": "Última pilota",
-        "categoria": "Social",
+        "titol": {
+          "ca": "Última pilota",
+          "es": "Última pelota",
+          "en": "Last ball"
+        },
+        "categoria": {
+          "ca": "Social",
+          "es": "Social",
+          "en": "Social"
+        },
         "format": "vertical",
         "objectiu": "85 mm",
         "diafragma": "f/2",
@@ -277,14 +541,30 @@
     ]
   },
   "peu": {
-    "crida": "Treballem junts",
-    "nom_gran": "Pau Fotografia",
-    "drets": "© 2026 Pau · Totes les imatges són de l'autor"
+    "crida": {
+      "ca": "Treballem junts",
+      "es": "Trabajemos juntos",
+      "en": "Let's work together"
+    },
+    "nom_gran": {
+      "ca": "Pau Fotografia",
+      "es": "Pau Fotografía",
+      "en": "Pau Photography"
+    },
+    "drets": {
+      "ca": "© 2026 Pau · Totes les imatges són de l'autor",
+      "es": "© 2026 Pau · Todas las imágenes son del autor",
+      "en": "© 2026 Pau · All images by the author"
+    }
   },
   "equip": {
     "camera": "Fujifilm X-Pro2",
     "camera_url": "",
-    "camera_detall": "Telèmetre híbrid · APS-C",
+    "camera_detall": {
+      "ca": "Telèmetre híbrid · APS-C",
+      "es": "Telémetro híbrido · APS-C",
+      "en": "Hybrid rangefinder · APS-C"
+    },
     "objectius": [
       {
         "nom": "Fujinon XF35mmF1.4 R",
