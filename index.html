@@ -151,7 +151,8 @@ img.ph { object-fit: cover; }
 .about-top { --hfs: clamp(64px, 12vw, 190px); display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: auto 1fr;
   margin-right: calc(var(--gap) * -1); padding-bottom: clamp(30px, 4.5vw, 64px); align-items: start; }
 .about-top .sec-h { font-size: var(--hfs); grid-column: 1 / span 2; grid-row: 1; white-space: nowrap; padding-right: var(--gap); }
-.about-top p { grid-column: 1 / span 2; grid-row: 2; max-width: 46ch; padding: clamp(18px, 2.6vw, 34px) var(--gap) 0 0; }
+.about-top p { grid-column: 1 / span 2; grid-row: 2; max-width: 44ch; padding: clamp(18px, 2.6vw, 34px) var(--gap) 0 0;
+  white-space: pre-line; text-transform: none; letter-spacing: 0; font-size: clamp(14px, 1.15vw, 17px); line-height: 1.55; font-weight: 400; }
 /* la foto comença exactament a l'altura de la part de dalt de les lletres del titular */
 .about-ph { grid-column: 3 / span 2; grid-row: 1 / span 2; padding-right: var(--gap); margin-top: calc(var(--hfs) * .052); }
 .about-ph .fr { aspect-ratio: 3 / 2; overflow: hidden; background: #EFEBE0; }
