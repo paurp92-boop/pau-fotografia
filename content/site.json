@@ -25,6 +25,56 @@
   },
   "treballs": [
     {
+      "imatge": "/images/uploads/elvi-01.jpg",
+      "titol": "Elvi, mans als cabells",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "35 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/500",
+      "iso": "200"
+    },
+    {
+      "imatge": "/images/uploads/elvi-02.jpg",
+      "titol": "Elvi, el riure",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "35 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/500",
+      "iso": "200"
+    },
+    {
+      "imatge": "/images/uploads/elvi-03.jpg",
+      "titol": "Elvi, mirada de reüll",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "35 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/500",
+      "iso": "200"
+    },
+    {
+      "imatge": "/images/uploads/elvi-04.jpg",
+      "titol": "Elvi, perfil a la finestra",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "35 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/500",
+      "iso": "200"
+    },
+    {
+      "imatge": "/images/uploads/elvi-05.jpg",
+      "titol": "Elvi, llum de cortina",
+      "categoria": "Retrat",
+      "format": "vertical",
+      "objectiu": "35 mm",
+      "diafragma": "f/2.8",
+      "velocitat": "1/500",
+      "iso": "200"
+    },
+    {
       "imatge": "",
       "titol": "Servei, final de pista",
       "categoria": "Esport · Tennis",
