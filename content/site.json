@@ -414,6 +414,13 @@
       "es": "Soy fotógrafo. Trabajo retrato, familia, embarazo, eventos, deporte (sobre todo tenis) y fotografía social. Disponible para proyectos en Cataluña.",
       "en": "I'm a photographer. I work on portraits, family, pregnancy, events, sport (mostly tennis) and social photography. Available for projects across Catalonia."
     },
+    "foto": "/images/uploads/pau-autoretrat.jpg",
+    "peu_foto": {
+      "ca": "Autoretrat al mirall",
+      "es": "Autorretrato en el espejo",
+      "en": "Mirror self-portrait"
+    },
+    "dades_foto": "35 mm · B/N",
     "especialitats": [
       {
         "ca": "Retrat",
