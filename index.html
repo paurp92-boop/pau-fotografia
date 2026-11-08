@@ -464,6 +464,8 @@ function placeholder(p) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" gradientTransform="rotate(${ang} .5 .5)"><stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></linearGradient><filter id="bl"><feGaussianBlur stdDeviation="${Math.round(W/45)}"/></filter><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="${p.n}"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 -.12"/></filter></defs><rect width="${W}" height="${H}" fill="url(#g)"/>${motif}<rect width="${W}" height="${H}" filter="url(#n)" opacity=".5"/><text x="${W-16}" y="${H-14}" text-anchor="end" font-family="monospace" font-size="${Math.round(W/55)}" fill="#fff" fill-opacity=".6" letter-spacing="2">FOTO DE MOSTRA</text></svg>`;
   return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
 }
+/* el que es mostra com a títol: el nom de la sessió; si no n'hi ha, el títol de la foto */
+const capOf = p => L(p.descripcio) || L(p.titol);
 const altOf = p => [L(p.titol), L(p.categoria)].filter(Boolean).join(", ");
 function picture(p, full) {
   const style = full ? `aspect-ratio:${p.real || p.r}` : "";
@@ -476,9 +478,9 @@ const exifLine = p => [p.diafragma, p.velocitat, p.iso && "ISO " + p.iso].filter
 function renderGrid(el, list) {
   el.innerHTML = list.map(p => `
     <figure data-cat="${esc(caOf(p.categoria))}" class="it" style="--c:${p.c};--s:${p.s};--dy:${p.dy};--row:${p.row};--mc:${p.mc};--ms:${p.ms};--mdy:${p.mdy};--mrow:${p.mrow};--ar:${p.o === "h" ? "3/2" : "2/3"}">
-      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol))}">
+      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol) || capOf(p))}">
         <div class="fr">${picture(p)}<span class="vf"><b>${esc(p.diafragma || "")}</b></span></div>
-        <figcaption><span>${esc(L(p.titol))}</span>${L(p.descripcio) ? `<span class="ds">${esc(L(p.descripcio))}</span>` : ""}</figcaption>
+        <figcaption><span>${esc(capOf(p))}</span></figcaption>
       </button>
     </figure>`).join("") || `<p class="state">${u("nofotos")}</p>`;
 }
@@ -589,7 +591,7 @@ function readPhoto(p) {
   }
   const group = p.grp === "personal" ? PERSONAL : HOME;
   $("#lcd-n").textContent = `${pad(group.indexOf(p) + 1)}/${pad(group.length)}`;
-  $("#lcd-t").textContent = L(p.titol);
+  $("#lcd-t").textContent = capOf(p);
   $("#lcd-d").textContent = exifLine(p);
   $("#lcd-c").textContent = [L(p.objectiu), p.grp === "personal" ? L((D.personal || {}).titol) : L(p.categoria)].filter(Boolean).join(" · ");
 }
@@ -611,7 +613,7 @@ function show() {
   const p = list[pos], box = $("#lb-box");
   box.style.setProperty("--r", p.real || p.r);
   box.innerHTML = picture(p, true);
-  $("#lb-title").textContent = L(p.titol); $("#lb-desc").textContent = L(p.descripcio);
+  $("#lb-title").textContent = capOf(p); $("#lb-desc").textContent = "";
   $("#lb-meta").textContent = [L(p.categoria), L(p.objectiu), exifLine(p)].filter(Boolean).join(" · ");
   $("#lb-count").textContent = `№ ${pad(pos + 1)} (${pos + 1}/${list.length})`;
 }
