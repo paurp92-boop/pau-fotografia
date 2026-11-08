@@ -67,6 +67,11 @@
         "es": "Elvi, manos en el pelo",
         "en": "Elvi, hands in her hair"
       },
+      "descripcio": {
+        "ca": "Retrat sense estudi, amb llum natural",
+        "es": "Retrato sin estudio, con luz natural",
+        "en": "No studio, just natural light"
+      },
       "categoria": {
         "ca": "Retrat",
         "es": "Retrato",
@@ -84,6 +89,11 @@
         "ca": "Elvi, el riure",
         "es": "Elvi, la risa",
         "en": "Elvi, the laugh"
+      },
+      "descripcio": {
+        "ca": "Retrat sense estudi, amb llum natural",
+        "es": "Retrato sin estudio, con luz natural",
+        "en": "No studio, just natural light"
       },
       "categoria": {
         "ca": "Retrat",
@@ -103,6 +113,11 @@
         "es": "Elvi, mirada de reojo",
         "en": "Elvi, a sideways glance"
       },
+      "descripcio": {
+        "ca": "Retrat sense estudi, amb llum natural",
+        "es": "Retrato sin estudio, con luz natural",
+        "en": "No studio, just natural light"
+      },
       "categoria": {
         "ca": "Retrat",
         "es": "Retrato",
@@ -121,6 +136,11 @@
         "es": "Elvi, perfil en la ventana",
         "en": "Elvi, profile by the window"
       },
+      "descripcio": {
+        "ca": "Retrat sense estudi, amb llum natural",
+        "es": "Retrato sin estudio, con luz natural",
+        "en": "No studio, just natural light"
+      },
       "categoria": {
         "ca": "Retrat",
         "es": "Retrato",
@@ -138,6 +158,11 @@
         "ca": "Elvi, llum de cortina",
         "es": "Elvi, luz de cortina",
         "en": "Elvi, curtain light"
+      },
+      "descripcio": {
+        "ca": "Retrat sense estudi, amb llum natural",
+        "es": "Retrato sin estudio, con luz natural",
+        "en": "No studio, just natural light"
       },
       "categoria": {
         "ca": "Retrat",

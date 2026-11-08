@@ -98,7 +98,10 @@ body.menu-open { overflow: hidden; }
 .ph { display: block; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s ease; }
 img.ph { object-fit: cover; }
 .it button:hover .ph { transform: scale(1.03); }
-.it figcaption { padding: 6px 0 clamp(18px, 2.2vw, 30px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.it figcaption { padding: 6px 0 clamp(18px, 2.2vw, 30px); }
+.it figcaption span { display: block; width: fit-content; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.it figcaption .ds { color: var(--mute); text-transform: none; font-weight: 500; }
+.lb-cap .ds { color: var(--mute); text-transform: none; }
 .it button:hover figcaption span { background: var(--ball); }
 .grid.f .it.off { opacity: .1; }
 .grid.f .it.off .ph { filter: grayscale(1); }
@@ -347,7 +350,7 @@ img.ph { object-fit: cover; }
   </div>
   <div class="lb-cap">
     <span id="lb-title"></span>
-    <span></span>
+    <span class="ds" id="lb-desc"></span>
     <span class="m" id="lb-meta"></span>
   </div>
 </div>
@@ -474,7 +477,7 @@ function renderGrid(el, list) {
     <figure data-cat="${esc(caOf(p.categoria))}" class="it" style="--c:${p.c};--s:${p.s};--dy:${p.dy};--row:${p.row};--mc:${p.mc};--ms:${p.ms};--mdy:${p.mdy};--mrow:${p.mrow};--ar:${p.o === "h" ? "3/2" : "2/3"}">
       <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol))}">
         <div class="fr">${picture(p)}<span class="vf"><b>${esc(p.diafragma || "")}</b></span></div>
-        <figcaption><span>${esc(L(p.titol))}</span></figcaption>
+        <figcaption><span>${esc(L(p.titol))}</span>${L(p.descripcio) ? `<span class="ds">${esc(L(p.descripcio))}</span>` : ""}</figcaption>
       </button>
     </figure>`).join("") || `<p class="state">${u("nofotos")}</p>`;
 }
@@ -607,7 +610,7 @@ function show() {
   const p = list[pos], box = $("#lb-box");
   box.style.setProperty("--r", p.real || p.r);
   box.innerHTML = picture(p, true);
-  $("#lb-title").textContent = L(p.titol);
+  $("#lb-title").textContent = L(p.titol); $("#lb-desc").textContent = L(p.descripcio);
   $("#lb-meta").textContent = [L(p.categoria), L(p.objectiu), exifLine(p)].filter(Boolean).join(" · ");
   $("#lb-count").textContent = `№ ${pad(pos + 1)} (${pos + 1}/${list.length})`;
 }
