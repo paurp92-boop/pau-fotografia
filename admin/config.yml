@@ -69,12 +69,12 @@ collections:
             label: Treballs (galeria principal)
             label_singular: foto
             widget: list
-            summary: "{{fields.titol.ca}} · {{fields.categoria.ca}} · {{fields.format}}"
+            summary: "{{fields.descripcio.ca}} · {{fields.titol.ca}} · {{fields.format}}"
             hint: "Arrossega les fotos per canviar-ne l'ordre. La web les col·loca soles de forma dispersa."
             fields: &foto
               - { name: imatge, label: "Foto", widget: image, required: false, choose_url: false }
-              - { name: titol, label: "Títol", widget: object, fields: *curt }
-              - { name: descripcio, label: "Descripció (opcional)", widget: object, fields: *curt, required: false }
+              - { name: titol, label: "Títol de la foto (no es mostra; serveix per a cercadors i lectors de pantalla)", widget: object, fields: *curt }
+              - { name: descripcio, label: "Sessió / projecte (és el títol que es mostra)", widget: object, fields: *curt, required: false }
               - { name: categoria, label: "Categoria", widget: object, fields: *curt, hint: "Escriu el català sempre igual (Retrat, Família, Embaràs, Esdeveniments, Esport · Tennis, Social): les categories del filtre surten d'aquí." }
               - { name: format, label: "Format", widget: select, options: [ { label: "Vertical 2:3", value: vertical }, { label: "Horitzontal 3:2", value: horitzontal } ], default: vertical }
               - { name: objectiu, label: "Objectiu (p. ex. XF35mmF1.4 R)", widget: string, required: false }
