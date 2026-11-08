@@ -7,12 +7,12 @@
     "zona_horaria": "Europe/Madrid",
     "presentacio": "Sóc fotògraf amb base a Catalunya. Faig retrat, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens un encàrrec en ment, escriu-me.",
     "estat": "Disponible per a encàrrecs",
-    "correu": "hola@elteucorreu.cat",
+    "correu": "pau.rp92@gmail.com",
     "xarxes": [
       {
         "nom": "Instagram",
-        "usuari": "@elteuusuari",
-        "url": "https://www.instagram.com/"
+        "usuari": "@enpau_rp",
+        "url": "https://www.instagram.com/enpau_rp/"
       }
     ],
     "titol_pestanya": "Pau, fotògraf",
@@ -29,7 +29,7 @@
       "titol": "Elvi, mans als cabells",
       "categoria": "Retrat",
       "format": "vertical",
-      "objectiu": "35 mm",
+      "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
       "iso": "200"
@@ -39,7 +39,7 @@
       "titol": "Elvi, el riure",
       "categoria": "Retrat",
       "format": "vertical",
-      "objectiu": "35 mm",
+      "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
       "iso": "200"
@@ -49,7 +49,7 @@
       "titol": "Elvi, mirada de reüll",
       "categoria": "Retrat",
       "format": "vertical",
-      "objectiu": "35 mm",
+      "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
       "iso": "200"
@@ -59,7 +59,7 @@
       "titol": "Elvi, perfil a la finestra",
       "categoria": "Retrat",
       "format": "vertical",
-      "objectiu": "35 mm",
+      "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
       "iso": "200"
@@ -69,7 +69,7 @@
       "titol": "Elvi, llum de cortina",
       "categoria": "Retrat",
       "format": "vertical",
-      "objectiu": "35 mm",
+      "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
       "iso": "200"
@@ -278,5 +278,22 @@
     "crida": "Treballem junts",
     "nom_gran": "Pau Fotografia",
     "drets": "© 2026 Pau · Totes les imatges són de l'autor"
+  },
+  "equip": {
+    "camera": "Fujifilm X-Pro2",
+    "camera_url": "",
+    "camera_detall": "Telèmetre híbrid · APS-C",
+    "objectius": [
+      {
+        "nom": "Fujinon XF35mmF1.4 R",
+        "url": "https://www.fujifilm-x.com/es-es/products/lenses/xf35mmf14-r/",
+        "detall": "35 mm · f/1.4"
+      },
+      {
+        "nom": "Fujinon XF16-55mmF2.8 R LM WR II",
+        "url": "https://www.fujifilm-x.com/es-es/products/lenses/xf16-55mmf28-r-lm-wr-ii/",
+        "detall": "16–55 mm · f/2.8"
+      }
+    ]
   }
 }
