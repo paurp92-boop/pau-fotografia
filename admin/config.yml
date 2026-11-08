@@ -88,6 +88,9 @@ collections:
             fields:
               - { name: titol, label: "Títol de la secció", widget: object, fields: *curt }
               - { name: text, label: "Text", widget: object, fields: *llarg }
+              - { name: foto, label: "Foto (horitzontal 3:2)", widget: image, required: false, choose_url: false }
+              - { name: peu_foto, label: "Peu de foto", widget: object, fields: *curt, required: false }
+              - { name: dades_foto, label: "Dades de la foto (p. ex. 35 mm · B/N)", widget: string, required: false }
               - { name: especialitats, label: "Especialitats", label_singular: especialitat, widget: list, summary: "{{fields.ca}}", fields: *curt }
               - { name: disponibilitat, label: "Disponibilitat", label_singular: línia, widget: list, summary: "{{fields.ca}}", fields: *curt }
 
