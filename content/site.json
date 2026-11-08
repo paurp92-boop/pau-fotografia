@@ -5,8 +5,8 @@
     "titol_linia_2": "Fotografia",
     "ubicacio": "Catalunya",
     "zona_horaria": "Europe/Madrid",
-    "presentacio": "Sóc fotògraf amb base a Catalunya. Faig retrat, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens un encàrrec en ment, escriu-me.",
-    "estat": "Disponible per a encàrrecs",
+    "presentacio": "Sóc fotògraf amb base a Catalunya. Faig retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens alguna idea al cap, parlem-ne.",
+    "estat": "Disponible per a projectes",
     "correu": "pau.rp92@gmail.com",
     "xarxes": [
       {
@@ -16,7 +16,7 @@
       }
     ],
     "titol_pestanya": "Pau, fotògraf",
-    "descripcio_seo": "Fotògraf a Catalunya: retrat, esdeveniments, esport i fotografia social."
+    "descripcio_seo": "Fotògraf a Catalunya: retrat, família, embaràs, esdeveniments, esport i fotografia social."
   },
   "menu": {
     "inici": "Home",
@@ -217,20 +217,22 @@
   ],
   "sobre_mi": {
     "titol": "About me",
-    "text": "Sóc fotògraf. Treballo retrat, esdeveniments, esport (sobretot tennis) i fotografia social. Disponible per a encàrrecs a Catalunya.",
+    "text": "Sóc fotògraf. Treballo retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Disponible per a projectes a Catalunya.",
     "especialitats": [
       "Retrat",
+      "Família",
+      "Embaràs",
       "Esdeveniments",
       "Esport · Tennis",
       "Social"
     ],
     "disponibilitat": [
-      "Per encàrrec"
+      "Sessions a mida"
     ]
   },
   "personal": {
     "titol": "Personal",
-    "subtitol": "Projectes propis, fora d'encàrrec",
+    "subtitol": "Treball personal",
     "fotos": [
       {
         "imatge": "",
