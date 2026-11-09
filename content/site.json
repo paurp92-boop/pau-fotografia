@@ -419,6 +419,222 @@
       "diafragma": "f/2.8",
       "velocitat": "1/80",
       "iso": "250"
+    },
+    {
+      "imatge": "/images/uploads/madrid-01.jpg",
+      "titol": {
+        "ca": "Cop entre llum i ombra",
+        "es": "Golpe entre luz y sombra",
+        "en": "Stroke between light and shadow"
+      },
+      "descripcio": {
+        "ca": "Mútua Madrid Open",
+        "es": "Mutua Madrid Open",
+        "en": "Mutua Madrid Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "XF55-200mm · 100 mm",
+      "diafragma": "f/4.5",
+      "velocitat": "1/1000",
+      "iso": "400"
+    },
+    {
+      "imatge": "/images/uploads/madrid-02.jpg",
+      "titol": {
+        "ca": "Celebrant un punt",
+        "es": "Celebrando un punto",
+        "en": "Celebrating a point"
+      },
+      "descripcio": {
+        "ca": "Mútua Madrid Open",
+        "es": "Mutua Madrid Open",
+        "en": "Mutua Madrid Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF55-200mm · 200 mm",
+      "diafragma": "f/4.8",
+      "velocitat": "1/1000",
+      "iso": "250"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-01.jpg",
+      "titol": {
+        "ca": "Panoràmica en moviment",
+        "es": "Barrido en movimiento",
+        "en": "Panning blur"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "XF55-200mm · 105 mm",
+      "diafragma": "f/14",
+      "velocitat": "1/60",
+      "iso": "200"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-02.jpg",
+      "titol": {
+        "ca": "El cop des de dalt",
+        "es": "El golpe desde arriba",
+        "en": "The shot from above"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF18-55mm · 55 mm",
+      "diafragma": "f/4",
+      "velocitat": "1/2500",
+      "iso": "640"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-03.jpg",
+      "titol": {
+        "ca": "Preparat per respondre",
+        "es": "Listo para responder",
+        "en": "Ready to return"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF55-200mm · 200 mm",
+      "diafragma": "f/4.8",
+      "velocitat": "1/2500",
+      "iso": "400"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-04.jpg",
+      "titol": {
+        "ca": "Un gest a la pista",
+        "es": "Un gesto en la pista",
+        "en": "A gesture on court"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF55-200mm · 110 mm",
+      "diafragma": "f/4.2",
+      "velocitat": "1/3200",
+      "iso": "400"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-05.jpg",
+      "titol": {
+        "ca": "Revés a dues mans",
+        "es": "Revés a dos manos",
+        "en": "Two-handed backhand"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF55-200mm · 200 mm",
+      "diafragma": "f/4.8",
+      "velocitat": "1/2500",
+      "iso": "400"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-06.jpg",
+      "titol": {
+        "ca": "Velocitat sobre la terra batuda",
+        "es": "Velocidad sobre tierra batida",
+        "en": "Speed on clay"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF55-200mm · 55 mm",
+      "diafragma": "f/18",
+      "velocitat": "1/30",
+      "iso": "200"
+    },
+    {
+      "imatge": "/images/uploads/barcelona-07.jpg",
+      "titol": {
+        "ca": "Silueta amb raqueta",
+        "es": "Silueta con raqueta",
+        "en": "Silhouette with racket"
+      },
+      "descripcio": {
+        "ca": "Barcelona Open",
+        "es": "Barcelona Open",
+        "en": "Barcelona Open"
+      },
+      "categoria": {
+        "ca": "Esport · Tennis",
+        "es": "Deporte · Tenis",
+        "en": "Sport · Tennis"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "XF55-200mm · 149 mm",
+      "diafragma": "f/5",
+      "velocitat": "1/2000",
+      "iso": "640"
     }
   ],
   "sobre_mi": {
@@ -490,7 +706,200 @@
       "es": "Trabajo personal",
       "en": "Personal work"
     },
-    "fotos": []
+    "fotos": [
+      {
+        "imatge": "/images/uploads/personal-01.jpg",
+        "titol": {
+          "ca": "El far encès al capvespre",
+          "es": "El faro encendido al atardecer",
+          "en": "The lighthouse lit at dusk"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Paisatge",
+          "es": "Paisaje",
+          "en": "Landscape"
+        },
+        "format": "vertical",
+        "portada": true,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-02.jpg",
+        "titol": {
+          "ca": "Silueta davant la posta de sol",
+          "es": "Silueta frente a la puesta de sol",
+          "en": "Silhouette against the sunset"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-03.jpg",
+        "titol": {
+          "ca": "Gat gris mirant amunt",
+          "es": "Gato gris mirando hacia arriba",
+          "en": "Grey cat looking up"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Animals",
+          "es": "Animales",
+          "en": "Animals"
+        },
+        "format": "vertical",
+        "portada": true,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-04.jpg",
+        "titol": {
+          "ca": "Fum a contrallum",
+          "es": "Humo a contraluz",
+          "en": "Smoke in backlight"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Social",
+          "es": "Social",
+          "en": "Social"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "iPhone 12 mini · 4.2 mm",
+        "diafragma": "f/1.6",
+        "velocitat": "1/35",
+        "iso": "500"
+      },
+      {
+        "imatge": "/images/uploads/personal-05.jpg",
+        "titol": {
+          "ca": "Servint una ronda",
+          "es": "Sirviendo una ronda",
+          "en": "Pouring a round"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Social",
+          "es": "Social",
+          "en": "Social"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "iPhone 12 mini · 4.2 mm",
+        "diafragma": "f/1.6",
+        "velocitat": "1/50",
+        "iso": "500"
+      },
+      {
+        "imatge": "/images/uploads/personal-06.jpg",
+        "titol": {
+          "ca": "Al voltant de la taula",
+          "es": "Alrededor de la mesa",
+          "en": "Around the table"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Social",
+          "es": "Social",
+          "en": "Social"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "iPhone 12 mini · 4.2 mm",
+        "diafragma": "f/1.6",
+        "velocitat": "1/50",
+        "iso": "500"
+      },
+      {
+        "imatge": "/images/uploads/personal-07.jpg",
+        "titol": {
+          "ca": "Retrat en penombra",
+          "es": "Retrato en penumbra",
+          "en": "Portrait in low light"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "50 mm",
+        "diafragma": "",
+        "velocitat": "1/250",
+        "iso": "250"
+      },
+      {
+        "imatge": "/images/uploads/personal-08.jpg",
+        "titol": {
+          "ca": "Darrere el vidre entelat",
+          "es": "Detrás del cristal empañado",
+          "en": "Behind the steamed glass"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      }
+    ]
   },
   "peu": {
     "crida": {
