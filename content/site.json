@@ -564,30 +564,6 @@
         "iso": ""
       },
       {
-        "imatge": "/images/uploads/personal-06.jpg",
-        "titol": {
-          "ca": "Al voltant de la taula",
-          "es": "Alrededor de la mesa",
-          "en": "Around the table"
-        },
-        "descripcio": {
-          "ca": "",
-          "es": "",
-          "en": ""
-        },
-        "categoria": {
-          "ca": "Social",
-          "es": "Social",
-          "en": "Social"
-        },
-        "format": "horitzontal",
-        "portada": false,
-        "objectiu": "iPhone 12 mini · 4.2 mm",
-        "diafragma": "f/1.6",
-        "velocitat": "1/50",
-        "iso": "500"
-      },
-      {
         "imatge": "/images/uploads/personal-07.jpg",
         "titol": {
           "ca": "Retrat en penombra",
