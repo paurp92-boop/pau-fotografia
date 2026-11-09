@@ -81,13 +81,61 @@ body.menu-open { overflow: hidden; }
 .intro p { grid-column: 1 / span 2; max-width: 46ch; }
 .intro .who { grid-column: 3; }
 .intro .who a { display: block; width: fit-content; }
-.cats { grid-column: 4; display: flex; flex-direction: column; align-items: flex-start; }
-.cats .lbl { color: var(--mute); }
-.cats button { padding: 0 4px; margin-left: -4px; text-align: left; }
-.cats button sup { font-size: 9px; color: var(--mute); margin-left: 3px; }
-.cats button:hover { background: var(--ball); }
-.cats button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.cats button[aria-pressed="true"] sup { color: var(--paper); }
+.cats { grid-column: 4; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.cats .lbl { color: var(--mute); margin-top: 10px; }
+.cats .lbl:first-child { margin-top: 0; }
+.cats a { padding: 0 4px; margin-left: -4px; }
+.cats a sup, .col-other a sup { font-size: 9px; color: var(--mute); margin-left: 3px; }
+.cats a:hover, .col-other a:hover { background: var(--ball); }
+
+/* pàgina d'àlbum o de categoria */
+.col { padding-block: clamp(20px, 3.5vw, 48px) clamp(40px, 6vw, 90px); }
+.col-head { display: grid; gap: 10px; margin-bottom: clamp(20px, 3vw, 40px); }
+.col-back { width: fit-content; font-weight: 700; }
+.col-back:hover { background: var(--ball); }
+.col-title { padding-top: .14em; font-weight: 850; font-stretch: 62%; font-size: clamp(48px, 9vw, 150px); line-height: .86; letter-spacing: -.012em; margin-left: -.03em; text-wrap: balance; }
+.col-bar { display: flex; justify-content: space-between; align-items: center; gap: 10px 16px; flex-wrap: wrap; border-top: 1px solid var(--ink); padding-top: 10px; }
+.col-mode { display: flex; gap: 6px; }
+.col-mode button { padding: 6px 12px; border: 1px solid var(--ink); font-weight: 700; }
+.col-mode button:hover { background: var(--ball); }
+.col-mode button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.col-other { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.col-other a { padding: 0 4px; margin-left: -4px; }
+.col-other a[aria-current="page"] { background: var(--ink); color: var(--paper); }
+.col-other a[aria-current="page"] sup { color: var(--paper); }
+body.col-open #home, body.col-open #about-me { display: none; }
+
+/* pàgina d'àlbums: cada àlbum és una pila de fotos desendreçada, agrupats per categoria */
+.albs { padding-block: clamp(20px, 3.5vw, 48px) clamp(40px, 6vw, 90px); }
+.albs-group { border-top: 1px solid var(--ink); padding-top: 10px; margin-bottom: clamp(40px, 6vw, 96px); container-type: inline-size; }
+.albs-group > h3 { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 12px; font-weight: 700; }
+.albs-group > h3 .mute { font-weight: 500; }
+.stacks { display: grid; grid-template-columns: repeat(12, 1fr); margin-right: calc(var(--gap) * -1); row-gap: clamp(30px, 5cqw, 70px); padding-top: clamp(18px, 3cqw, 40px); align-items: start; }
+.stack { grid-column: var(--c) / span 4; grid-row: var(--row); padding-right: var(--gap); margin-top: calc(var(--dy, 0) * 1cqw); }
+.stack a { display: block; }
+.pile { position: relative; aspect-ratio: 1; }
+.pile img { position: absolute; left: 50%; top: 50%; width: auto; height: auto; max-width: 74%; max-height: 74%; background: #fff; padding: clamp(4px, .6cqw, 8px);
+  box-shadow: 0 1px 2px rgba(21, 19, 15, .14), 0 10px 24px rgba(21, 19, 15, .12);
+  transform: translate(-50%, -50%) translate(var(--x), var(--y)) rotate(var(--rot)); transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+.stack a:hover .pile img, .stack a:focus-visible .pile img { transform: translate(-50%, -50%) translate(calc(var(--x) * 1.9), calc(var(--y) * 1.9)) rotate(calc(var(--rot) * 1.7)); }
+.stack .nm { display: block; margin-top: 10px; font-weight: 850; font-stretch: 62%; font-size: clamp(24px, 2.6vw, 38px); line-height: .95; text-wrap: balance; width: fit-content; }
+.stack a:hover .nm { background: var(--ball); }
+.stack .ct { display: block; margin-top: 4px; color: var(--mute); }
+@media (prefers-reduced-motion: reduce) { .pile img { transition: none; } }
+
+/* carrussel: cada foto amb el seu format original */
+.car-track { display: flex; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 10px; scrollbar-width: thin; }
+.car-track figure { flex: none; scroll-snap-align: start; }
+.car-track button { display: block; text-align: left; }
+.car-track img.ph { display: block; width: auto; height: auto; max-height: min(72vh, 760px); max-width: calc(100vw - 2 * var(--gutter)); }
+.car-track div.ph { display: block; height: min(72vh, 760px); width: auto; max-width: calc(100vw - 2 * var(--gutter)); aspect-ratio: var(--r); }
+.car-track figure { max-width: calc(100vw - 2 * var(--gutter)); }
+.car-track figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 6px; }
+.car-track figcaption .mute { text-transform: none; }
+.car-end { flex: none; display: block; }
+.car-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+.car-nav button { font-size: 22px; padding: 4px 12px; border: 1px solid var(--ink); }
+.car-nav button:hover { background: var(--ball); }
 
 /* galeria: cada foto omple del tot la seva casella */
 .gallery, .personal-gallery { container-type: inline-size; }
@@ -97,6 +145,8 @@ body.menu-open { overflow: hidden; }
 .it .fr { aspect-ratio: var(--ar); overflow: hidden; background: #EFEBE0; }
 .ph { display: block; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s ease; }
 img.ph { object-fit: cover; }
+/* el text alternatiu és per a lectors de pantalla i cercadors: no es mostra mai sobre la foto */
+img { color: transparent; }
 .it button:hover .ph { transform: scale(1.03); }
 .it figcaption { padding: 6px 0 clamp(18px, 2.2vw, 30px); }
 .it figcaption span { display: block; width: fit-content; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -194,6 +244,11 @@ img.ph { object-fit: cover; }
 .mail:hover { background: var(--ball); }
 .copied { position: absolute; right: 0; top: -1.4em; font-size: 11px; font-weight: 700; letter-spacing: .06em; background: var(--ink); color: var(--paper); padding: 2px 6px; opacity: 0; transition: opacity .2s ease; }
 .copied.on { opacity: 1; }
+/* el correu només es copia (no obre cap programa de correu) */
+.copy-mail { position: relative; cursor: copy; }
+.intro-mail { display: block; width: fit-content; text-align: left; }
+.intro-mail:hover { background: var(--ball); }
+.intro-mail .copied { right: auto; left: 0; }
 .end-name { padding-block: clamp(36px, 7vw, 110px) clamp(28px, 5vw, 70px); }
 .end-name span { display: block; width: max-content; font-weight: 850; font-stretch: 62%; line-height: .84; letter-spacing: -.012em; white-space: nowrap; margin-left: -.038em; }
 .end-facts { padding-bottom: clamp(30px, 4vw, 56px); }
@@ -211,8 +266,10 @@ img.ph { object-fit: cover; }
 .lb-cap { border-top: 1px solid var(--ink); }
 .lb-cap .m { grid-column: 3 / span 2; text-align: right; color: var(--mute); }
 .lb-stage { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: clamp(10px, 2vw, 28px) var(--gutter); position: relative; }
-.lb-box { width: min(100%, calc((100vh - 200px) * var(--r))); }
-.lb-box .ph { height: auto; aspect-ratio: var(--r); }
+.lb-box { display: flex; align-items: center; justify-content: center; max-width: 100%; max-height: 100%; }
+/* el visor sempre respecta el format original de la foto */
+.lb-box img.ph { width: auto; height: auto; max-width: 100%; max-height: calc(100vh - 190px); max-height: calc(100dvh - 190px); object-fit: contain; }
+.lb-box div.ph { width: auto; height: calc(100vh - 190px); height: calc(100dvh - 190px); max-width: 100%; aspect-ratio: var(--r); }
 .lb button:hover { background: var(--ball); }
 .lb .nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 22px; padding: 10px 12px; background: var(--paper); }
 .lb .prev { left: var(--gutter); } .lb .next { right: var(--gutter); }
@@ -225,6 +282,11 @@ img.ph { object-fit: cover; }
   .intro p, .intro .who, .cats { grid-column: 1 / -1; }
   .intro .who { margin-top: 18px; }
   .cats { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; margin-top: 18px; }
+  .cats .lbl { width: 100%; margin-top: 8px; }
+  .car-track img.ph { max-height: min(62vh, 560px); }
+  .stacks { grid-template-columns: repeat(2, 1fr); }
+  .stack { grid-column: auto / span 1; grid-row: auto; margin-top: calc(var(--mdy, 0) * 1cqw); }
+  .car-track div.ph { height: min(62vh, 560px); }
   .grid { grid-template-columns: repeat(6, 1fr); row-gap: 22px; }
   .it { grid-column: var(--mc) / span var(--ms); grid-row: var(--mrow); margin-top: calc(var(--mdy, 0) * 1cqw); }
   .sec-row { grid-template-columns: 1fr; row-gap: 14px; }
@@ -270,7 +332,7 @@ img.ph { object-fit: cover; }
         <nav class="menu" id="menu" aria-label="Principal" hidden>
           <a href="#home" data-n="01" data-t="menu.inici"></a>
           <a href="#about-me" data-n="02" data-t="menu.sobre_mi"></a>
-          <a href="#personal" data-n="03" data-t="menu.personal"></a>
+          <a href="#albums" data-n="03" data-t="menu.albums"></a>
           <div class="langs" role="group" aria-label="Idioma">
             <button type="button" data-lang="ca" lang="ca">Català</button>
             <button type="button" data-lang="es" lang="es">Español</button>
@@ -280,6 +342,35 @@ img.ph { object-fit: cover; }
       </div>
     </header>
 
+    <section class="col" id="col" hidden aria-labelledby="col-title">
+      <div class="col-head">
+        <a class="col-back" href="#home" data-ui="tornar"></a>
+        <span class="mute" id="col-kind"></span>
+        <h2 class="col-title" id="col-title"></h2>
+        <div class="col-bar">
+          <span class="mute" id="col-count"></span>
+          <div class="col-mode" role="group" id="col-mode">
+            <button type="button" data-mode="grid" data-ui="mGrid"></button>
+            <button type="button" data-mode="car" data-ui="mCar"></button>
+          </div>
+        </div>
+        <nav class="col-other" id="col-other"></nav>
+      </div>
+      <div class="gallery" id="col-gal"><div class="grid" id="col-grid"></div></div>
+      <div class="car" id="col-car" hidden>
+        <div class="car-track" id="car-track" tabindex="0"></div>
+        <div class="car-nav"><button type="button" id="car-prev" data-ui-aria="anterior">←</button><span id="car-n"></span><button type="button" id="car-next" data-ui-aria="seguent">→</button></div>
+      </div>
+    </section>
+
+    <section class="albs" id="albums" hidden aria-labelledby="albs-title">
+      <div class="col-head">
+        <a class="col-back" href="#home" data-ui="tornar"></a>
+        <h2 class="col-title" id="albs-title" data-ui="albums"></h2>
+      </div>
+      <div id="albs-groups"></div>
+    </section>
+
     <div id="home">
       <section class="mast" aria-label="Presentació">
         <h1><span data-t="general.titol_linia_1"></span><span data-t="general.titol_linia_2"></span></h1>
@@ -288,11 +379,10 @@ img.ph { object-fit: cover; }
       <section class="intro">
         <p data-t="general.presentacio"></p>
         <div class="who">
-          <a class="mailto" href="#"><span data-t="general.correu"></span></a>
+          <button type="button" class="copy-mail intro-mail"><span data-t="general.correu"></span><span class="copied" aria-live="polite"></span></button>
           <span id="socials-intro"></span>
           <span class="mute" data-t="general.estat"></span>
         </div>
-        <div class="cats" id="cats" role="group" aria-label="Destacar per categoria"></div>
       </section>
 
       <main class="gallery" id="treballs">
@@ -311,17 +401,12 @@ img.ph { object-fit: cover; }
       <div class="gear" id="gear" aria-label="Equip"></div>
     </section>
 
-    <section class="sec" id="personal" aria-labelledby="h-personal">
-      <h2 class="sec-h" id="h-personal" data-t="personal.titol"></h2>
-      <div class="sec-row"><span class="note mute" data-t="personal.subtitol"></span></div>
-      <div class="personal-gallery"><div class="grid" id="grid-personal"></div></div>
-    </section>
   </div>
 
   <footer class="end" id="contacte">
     <div class="work">
       <h2 data-t="peu.crida"></h2>
-      <button type="button" class="mail" id="mail"><span data-t="general.correu"></span><span class="copied" id="copied" aria-live="polite"></span></button>
+      <button type="button" class="mail copy-mail" id="mail"><span data-t="general.correu"></span><span class="copied" aria-live="polite"></span></button>
     </div>
     <p class="end-name"><span data-t="peu.nom_gran"></span></p>
     <dl class="facts end-facts" id="facts-end"></dl>
@@ -383,13 +468,13 @@ const LANGS = ["ca", "es", "en"];
 const UI = {
   ca: { destaca: "Destaca", tot: "Tot", social: "Social:", esp: "Especialitat:", disp: "Disponibilitat:", ubi: "Ubicació:", cam: "Càmera", obj: "Objectiu",
         amunt: "Amunt ↑", tanca: "Tanca ✕", tancaVisor: "Tanca el visor", amplia: "Amplia", copiat: "Copiat", copia: "Selecciona'l i copia'l",
-        nofotos: "Encara no hi ha fotos.", error: "No s'ha pogut carregar el contingut.", obre: "Obre el menú", tancaMenu: "Tanca el menú", idioma: "Idioma" },
+        nofotos: "Encara no hi ha fotos.", error: "No s'ha pogut carregar el contingut.", obre: "Obre el menú", tancaMenu: "Tanca el menú", idioma: "Idioma", cats: "Categories", albums: "Àlbums", album: "Àlbum", categoria: "Categoria", tornar: "← Inici", tornarAlb: "← Àlbums", nAlb: "àlbum", nAlbs: "àlbums", fotos: "fotos", foto: "foto", mGrid: "Àlbum", mCar: "Carrussel", veure: "Veure l'àlbum", anterior: "Foto anterior", seguent: "Foto següent" },
   es: { destaca: "Destaca", tot: "Todo", social: "Social:", esp: "Especialidad:", disp: "Disponibilidad:", ubi: "Ubicación:", cam: "Cámara", obj: "Objetivo",
         amunt: "Arriba ↑", tanca: "Cerrar ✕", tancaVisor: "Cerrar el visor", amplia: "Ampliar", copiat: "Copiado", copia: "Selecciónalo y cópialo",
-        nofotos: "Todavía no hay fotos.", error: "No se ha podido cargar el contenido.", obre: "Abrir el menú", tancaMenu: "Cerrar el menú", idioma: "Idioma" },
+        nofotos: "Todavía no hay fotos.", error: "No se ha podido cargar el contenido.", obre: "Abrir el menú", tancaMenu: "Cerrar el menú", idioma: "Idioma", cats: "Categorías", albums: "Álbumes", album: "Álbum", categoria: "Categoría", tornar: "← Inicio", tornarAlb: "← Álbumes", nAlb: "álbum", nAlbs: "álbumes", fotos: "fotos", foto: "foto", mGrid: "Álbum", mCar: "Carrusel", veure: "Ver el álbum", anterior: "Foto anterior", seguent: "Foto siguiente" },
   en: { destaca: "Highlight", tot: "All", social: "Social:", esp: "Specialties:", disp: "Availability:", ubi: "Location:", cam: "Camera", obj: "Lens",
         amunt: "Back to top ↑", tanca: "Close ✕", tancaVisor: "Close viewer", amplia: "Enlarge", copiat: "Copied", copia: "Select it and copy it",
-        nofotos: "No photos yet.", error: "The content could not be loaded.", obre: "Open menu", tancaMenu: "Close menu", idioma: "Language" }
+        nofotos: "No photos yet.", error: "The content could not be loaded.", obre: "Open menu", tancaMenu: "Close menu", idioma: "Language", cats: "Categories", albums: "Albums", album: "Album", categoria: "Category", tornar: "← Home", tornarAlb: "← Albums", nAlb: "album", nAlbs: "albums", fotos: "photos", foto: "photo", mGrid: "Album", mCar: "Carousel", veure: "View album", anterior: "Previous photo", seguent: "Next photo" }
 };
 function pickLang() {
   let q = null; try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
@@ -467,24 +552,46 @@ function placeholder(p) {
   return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
 }
 /* el que es mostra com a títol: el nom de la sessió; si no n'hi ha, el títol de la foto */
-const capOf = p => L(p.descripcio) || L(p.titol);
+/* nom de l'àlbum d'una foto: el de "Sessió / projecte", o "Personal" per a les fotos de l'àlbum personal */
+const albumName = p => p.grp === "personal" ? L((D.personal || {}).titol) || "Personal" : (L(p.descripcio) || L(p.titol));
+const capOf = albumName;
+/* rutes de les fotos relatives a la pàgina ("/images/…" → "images/…"): funcionen a Netlify i a qualsevol vista prèvia */
+const src = f => esc(String(f || "").replace(/^\/+/, ""));
 const altOf = p => [L(p.titol), L(p.categoria)].filter(Boolean).join(", ");
 function picture(p, full) {
-  const style = full ? `aspect-ratio:${p.real || p.r}` : "";
-  if (p.imatge) return `<img class="ph real" src="${esc(p.imatge)}" alt="${esc(altOf(p))}" loading="lazy" style="${style}">`;
-  return `<div class="ph" role="img" aria-label="${esc(altOf(p))}" style="${style};background-image:url('${placeholder(p)}')"></div>`;
+  if (p.imatge) return `<img class="ph real" src="${src(p.imatge)}" alt="${esc(altOf(p))}" ${full ? "" : 'loading="lazy"'}>`;
+  return `<div class="ph" role="img" aria-label="${esc(altOf(p))}" style="--r:${p.r};background-image:url('${placeholder(p)}')"></div>`;
 }
 const exifLine = p => [p.diafragma, p.velocitat, p.iso && "ISO " + p.iso].filter(Boolean).join(" · ");
 
+/* ---- àlbums i categories ----
+   L'àlbum és la "Sessió / projecte" de cada foto; la categoria, el camp Categoria. */
+const slug = t => String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || "x";
+const albumKey = p => p.grp === "personal" ? "personal" : (caOf(p.descripcio) || caOf(p.titol));
+let ALBUMS = [], CATEGORIES = [], LISTS = {}, PLACED = {}, HOMECELLS = [], GOTO = null;
+function groupBy(arr, keyFn) {
+  const m = new Map();
+  arr.forEach(p => { const k = keyFn(p); if (!k) return; if (!m.has(k)) m.set(k, []); m.get(k).push(p); });
+  return [...m].map(([key, photos]) => ({ key, slug: slug(key), photos }));
+}
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const placed = arr => { const c = arr.map(p => ({ ...p })); place(c); return c; };
+const albumOf = p => (ALBUMS.find(a => a.key === albumKey(p)) || { photos: ALL }).photos;
+
 /* ---- render ---- */
-function renderGrid(el, list) {
+function renderGrid(el, list, opts = {}) {
   el.innerHTML = list.map(p => `
     <figure data-cat="${esc(caOf(p.categoria))}" class="it" style="--c:${p.c};--s:${p.s};--dy:${p.dy};--row:${p.row};--mc:${p.mc};--ms:${p.ms};--mdy:${p.mdy};--mrow:${p.mrow};--ar:${p.o === "h" ? "3/2" : "2/3"}">
-      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol) || capOf(p))}">
+      <button type="button" data-open="${p.n}" aria-label="${esc(opts.home ? u("veure") : u("amplia"))}: ${esc(opts.home ? capOf(p) : (L(p.titol) || capOf(p)))}">
         <div class="fr">${picture(p)}<span class="vf"><b>${esc(p.diafragma || "")}</b></span></div>
-        <figcaption><span>${esc(capOf(p))}</span></figcaption>
+        ${opts.cap === false ? "" : `<figcaption><span>${esc(opts.capFn ? opts.capFn(p) : capOf(p))}</span></figcaption>`}
       </button>
     </figure>`).join("") || `<p class="state">${u("nofotos")}</p>`;
+}
+/* pàgina d'inici: totes les fotos barrejades a l'atzar, amb el nom de l'àlbum a sota.
+   En clicar una foto s'obre la pàgina del seu àlbum. */
+function renderHome() {
+  renderGrid($("#grid"), HOMECELLS, { home: true });
 }
 function facts(el) {
   const g = D.general || {}, s = D.sobre_mi || {};
@@ -497,22 +604,23 @@ function facts(el) {
     <div><dt>${u("ubi")}</dt><dd><span>${esc(L(g.ubicacio))}</span><span class="clk-s">--:--:--</span></dd></div>`;
 }
 
-let current = "tot";
-function renderCats() {
-  const keys = [...new Set(HOME.map(p => caOf(p.categoria)).filter(Boolean))];
-  const all = [["tot", u("tot"), HOME.length], ...keys.map(k => [k, L(HOME.find(p => caOf(p.categoria) === k).categoria), HOME.filter(p => caOf(p.categoria) === k).length])];
-  $("#cats").innerHTML = `<span class="lbl">${u("destaca")}</span>` + all.map(([k, nom, n]) =>
-    `<button type="button" data-cat="${esc(k)}" aria-pressed="${k === current}">${esc(nom)}<sup>${pad(n)}</sup></button>`).join("");
-  $("#grid").classList.toggle("f", current !== "tot");
-  $("#grid").querySelectorAll(".it").forEach(el => el.classList.toggle("off", current !== "tot" && el.dataset.cat !== current));
-}
+let COL = null, MODE = "grid";
 
 function boot() {
-  HOME = prep(D.treballs, "home"); PERSONAL = prep((D.personal || {}).fotos, "personal");
-  ALL = [...HOME, ...PERSONAL]; ALL.forEach((p, i) => { p.n = i + 1; });
-  place(HOME); place(PERSONAL);
-  ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = p.imatge; });
-  render(); wire();
+  PERSONAL = prep((D.personal || {}).fotos, "personal");
+  ALL = [...prep(D.treballs, "home"), ...PERSONAL]; ALL.forEach((p, i) => { p.n = i + 1; });
+  /* a l'inici només hi surten les fotos marcades "Mostrar a la pàgina d'inici" */
+  HOME = ALL.filter(p => p.portada !== false);
+  ALBUMS = groupBy(ALL, albumKey); CATEGORIES = groupBy(ALL, p => caOf(p.categoria));
+  /* l'àlbum Personal sempre existeix (el menú hi porta), encara que estigui buit */
+  if (!ALBUMS.some(a => a.key === "personal")) ALBUMS.push({ key: "personal", slug: "personal", photos: [] });
+  ALBUMS.forEach(a => { LISTS["album:" + a.slug] = a.photos; });
+  CATEGORIES.forEach(c => { LISTS["cat:" + c.slug] = c.photos; });
+  /* inici: com a màxim 13 fotos i 4 per àlbum, triades a l'atzar entre les marcades "Mostrar a la pàgina d'inici" */
+  const MAX_HOME = 13, MAX_PER_ALBUM = 4, perAlbum = {};
+  HOMECELLS = placed(shuffle(HOME).filter(p => { const k = albumKey(p); perAlbum[k] = (perAlbum[k] || 0) + 1; return perAlbum[k] <= MAX_PER_ALBUM; }).slice(0, MAX_HOME));
+  ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = String(p.imatge).replace(/^\/+/, ""); });
+  render(); wire(); route();
   if (document.fonts) document.fonts.ready.then(fitAll);
   tick(); setInterval(tick, 1000);
 }
@@ -534,19 +642,18 @@ function render() {
   document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === LANG)));
   $(".langs").setAttribute("aria-label", u("idioma"));
   burger.setAttribute("aria-label", menu.hidden ? u("obre") : u("tancaMenu"));
-  document.querySelectorAll(".mailto").forEach(a => { a.href = "mailto:" + (g.correu || ""); });
   $("#socials-intro").innerHTML = (g.xarxes || []).map(x => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.nom)}${x.usuari ? ", " + esc(x.usuari) : ""}</a>`).join("");
-  renderGrid($("#grid"), HOME); renderGrid($("#grid-personal"), PERSONAL);
+  renderHome();
   facts($("#facts-about")); facts($("#facts-end"));
   const sm = D.sobre_mi || {}, aph = $("#about-ph");
   aph.hidden = !sm.foto;
-  aph.innerHTML = sm.foto ? `<div class="fr"><img src="${esc(sm.foto)}" alt="${esc(L(sm.peu_foto) || L(g.nom))}" loading="lazy"></div><figcaption><span>${esc(L(sm.peu_foto))}</span><span class="mute">${esc(sm.dades_foto || "")}</span></figcaption>` : "";
+  aph.innerHTML = sm.foto ? `<div class="fr"><img src="${src(sm.foto)}" alt="${esc(L(sm.peu_foto) || L(g.nom))}" loading="lazy"></div><figcaption><span>${esc(L(sm.peu_foto))}</span><span class="mute">${esc(sm.dades_foto || "")}</span></figcaption>` : "";
   const eq = D.equip || {}, rows = [];
   if (eq.camera) rows.push([u("cam"), L(eq.camera), eq.camera_url, L(eq.camera_detall)]);
   (eq.objectius || []).forEach((o, i) => rows.push([`${u("obj")} ${pad(i + 1)}`, L(o.nom), o.url, L(o.detall)]));
   $("#gear").innerHTML = rows.length ? `<dl>${rows.map(([k, n, u, d]) => `<div class="gear-row"><dt>${esc(k)}</dt><dd>${u ? `<a class="nm" href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} ↗</a>` : `<span class="nm">${esc(n)}</span>`}<span class="sp">${esc(d || "")}</span></dd></div>`).join("")}</dl>` : "";
-  renderCats(); fitAll();
-  shown = null; readPhoto(HOME[0] || PERSONAL[0]); inView();
+  if (COL) renderCol(); fitAll();
+  shown = null; readPhoto(HOME[0] || ALL[0]); inView();
   if (lb.classList.contains("open")) show();
 }
 
@@ -591,17 +698,18 @@ function readPhoto(p) {
     const near = STOPS.reduce((a, b) => Math.abs(Math.log2(+b / N)) < Math.abs(Math.log2(+a / N)) ? b : a);
     sTr.querySelectorAll(".tl").forEach(l => l.classList.toggle("on", l.dataset.f === near));
   }
-  const group = p.grp === "personal" ? PERSONAL : HOME;
+  const group = albumOf(p);
   $("#lcd-n").textContent = `${pad(group.indexOf(p) + 1)}/${pad(group.length)}`;
   $("#lcd-t").textContent = capOf(p);
   $("#lcd-d").textContent = exifLine(p);
-  $("#lcd-c").textContent = [L(p.objectiu), p.grp === "personal" ? L((D.personal || {}).titol) : L(p.categoria)].filter(Boolean).join(" · ");
+  $("#lcd-c").textContent = [L(p.objectiu), L(p.categoria)].filter(Boolean).join(" · ");
 }
 const byN = n => ALL.find(p => p.n === n);
 function inView() {
   if (pointed || !D) return;
   const mid = innerHeight * .45; let best = null, bd = Infinity;
   document.querySelectorAll(".it").forEach(el => {
+    if (!el.offsetParent) return;
     const r = el.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
     const d = Math.abs((r.top + r.bottom) / 2 - mid); if (d < bd) { bd = d; best = el; }
   });
@@ -615,14 +723,14 @@ function show() {
   const p = list[pos], box = $("#lb-box");
   box.style.setProperty("--r", p.real || p.r);
   box.innerHTML = picture(p, true);
-  $("#lb-title").textContent = capOf(p); $("#lb-desc").textContent = "";
+  $("#lb-title").textContent = capOf(p); $("#lb-desc").textContent = p.grp === "personal" ? L(p.descripcio) : "";
   $("#lb-meta").textContent = [L(p.categoria), L(p.objectiu), exifLine(p)].filter(Boolean).join(" · ");
   $("#lb-count").textContent = `№ ${pad(pos + 1)} (${pos + 1}/${list.length})`;
 }
 function openLb(n, from) {
-  const ph = byN(n);
-  if (ph.grp === "personal") list = PERSONAL;
-  else { list = current === "tot" ? HOME : HOME.filter(p => caOf(p.categoria) === current); if (!list.includes(ph)) list = HOME; }
+  const ph = byN(n), ctx = from && from.closest("[data-list]");
+  list = (ctx && LISTS[ctx.dataset.list]) || albumOf(ph);
+  if (!list.includes(ph)) list = albumOf(ph);
   pos = list.indexOf(ph); opener = from; lb.hidden = false; lb.classList.add("open"); show();
   $("#lb-close").focus(); document.body.style.overflow = "hidden";
 }
@@ -630,9 +738,20 @@ function closeLb() { lb.classList.remove("open"); lb.hidden = true; document.bod
 function step(d) { pos = (pos + d + list.length) % list.length; show(); }
 
 function wire() {
-  $("#cats").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (!b) return; current = b.dataset.cat === current ? "tot" : b.dataset.cat; renderCats(); });
-  ["#grid", "#grid-personal"].forEach(s => $(s).addEventListener("click", e => { const o = e.target.closest("[data-open]"); if (o) openLb(+o.dataset.open, o); }));
-  ["#grid", "#grid-personal"].forEach(s => {
+  $("#grid").addEventListener("click", e => {
+    const o = e.target.closest("[data-open]"); if (!o) return;
+    const p = byN(+o.dataset.open); GOTO = p; location.hash = "album-" + slug(albumKey(p));
+  });
+  ["#col-grid", "#car-track"].forEach(s => $(s).addEventListener("click", e => { const o = e.target.closest("[data-open]"); if (o) openLb(+o.dataset.open, o); }));
+  $("#col-mode").addEventListener("click", e => { const b = e.target.closest("[data-mode]"); if (!b) return; MODE = b.dataset.mode; try { localStorage.setItem("mode", MODE); } catch (x) {} renderCol(); });
+  $("#car-prev").addEventListener("click", () => carStep(-1));
+  $("#car-next").addEventListener("click", () => carStep(1));
+  $("#car-track").addEventListener("scroll", carRead, { passive: true });
+  $("#car-track").addEventListener("load", carPad, true);
+  window.addEventListener("resize", carPad);
+  $("#car-track").addEventListener("keydown", e => { if (e.key === "ArrowLeft") { e.preventDefault(); carStep(-1); } if (e.key === "ArrowRight") { e.preventDefault(); carStep(1); } });
+  window.addEventListener("hashchange", route);
+  ["#grid", "#col-grid"].forEach(s => {
     const el = $(s);
     const go = e => { const b = e.target.closest("[data-open]"); if (!b) return; pointed = byN(+b.dataset.open); readPhoto(pointed); };
     const leave = e => { const b = e.target.closest("[data-open]"); if (!b || (e.relatedTarget && b.contains(e.relatedTarget))) return; pointed = null; inView(); };
@@ -647,12 +766,111 @@ function wire() {
     if (!lb.classList.contains("open")) return;
     if (e.key === "Escape") closeLb(); if (e.key === "ArrowLeft") step(-1); if (e.key === "ArrowRight") step(1);
   });
-  const mail = $("#mail"), copied = $("#copied");
-  mail.addEventListener("click", async () => {
-    try { await navigator.clipboard.writeText((D.general || {}).correu || ""); copied.textContent = u("copiat"); }
-    catch (e) { copied.textContent = u("copia"); }
-    copied.classList.add("on"); setTimeout(() => copied.classList.remove("on"), 1600);
+  document.addEventListener("click", async e => {
+    const btn = e.target.closest(".copy-mail"); if (!btn) return;
+    const fb = btn.querySelector(".copied");
+    try { await navigator.clipboard.writeText((D.general || {}).correu || ""); fb.textContent = u("copiat"); }
+    catch (x) { fb.textContent = u("copia"); }
+    fb.classList.add("on"); clearTimeout(btn._t); btn._t = setTimeout(() => fb.classList.remove("on"), 1600);
   });
+}
+
+/* ---- pàgina d'àlbum o de categoria (#album-… / #cat-…) ---- */
+function route() {
+  if (!D) return;
+  const h = decodeURIComponent(location.hash.slice(1)), m = h.match(/^(album|cat)-(.+)$/);
+  if (h === "albums") { const changed = !COL || COL.type !== "albums"; COL = { type: "albums" }; renderCol(); if (changed) window.scrollTo(0, 0); markActive(); return; }
+  const g = m && (m[1] === "album" ? ALBUMS : CATEGORIES).find(x => x.slug === m[2]);
+  if (g) { const changed = !COL || COL.g !== g; COL = { type: m[1], g }; renderCol(); if (changed) window.scrollTo(0, 0); markActive(); return; }
+  if (COL) {
+    COL = null; document.body.classList.remove("col-open"); $("#col").hidden = true; $("#albums").hidden = true;
+    const t = h && document.getElementById(h); if (t) t.scrollIntoView(); else window.scrollTo(0, 0);
+    shown = null; inView(); markActive();
+  }
+}
+function renderCol() {
+  if (!COL) return;
+  if (COL.type === "albums") { $("#col").hidden = true; document.body.classList.add("col-open"); $("#albums").hidden = false; renderAlbums(); return; }
+  $("#albums").hidden = true;
+  try { MODE = localStorage.getItem("mode") || MODE; } catch (e) {}
+  const { type, g } = COL, key = type + ":" + g.slug, first = g.photos[0] || { grp: "personal" }, isPers = g.key === "personal";
+  document.body.classList.add("col-open"); $("#col").hidden = false;
+  const back = $("#col .col-back"); back.href = type === "album" ? "#albums" : "#home"; back.textContent = u(type === "album" ? "tornarAlb" : "tornar");
+  /* a les pàgines d'àlbum només el nom de l'àlbum; a les de categoria, l'etiqueta "Categoria" */
+  $("#col-kind").textContent = type === "album" ? "" : u("categoria"); $("#col-kind").hidden = type === "album";
+  $("#col-title").textContent = type === "album" ? albumName(first) : L(first.categoria);
+  $("#col-count").textContent = `${g.photos.length} ${u(g.photos.length === 1 ? "foto" : "fotos")}`;
+  const link = (pre, x, name) => `<a href="#${pre}-${esc(x.slug)}"${x === g ? ' aria-current="page"' : ""}>${esc(name)}<sup>${pad(x.photos.length)}</sup></a>`;
+  $("#col-other").innerHTML = CATEGORIES.map(c => link("cat", c, L(c.photos[0].categoria))).join("") +
+    ALBUMS.filter(a => a.photos.length || a === g).map(a => link("album", a, albumName(a.photos[0] || { grp: "personal" }))).join("");
+  $("#col-mode").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === MODE)));
+  $("#col-gal").hidden = MODE !== "grid"; $("#col-car").hidden = MODE !== "car";
+  $("#col-gal").dataset.list = key; $("#col-car").dataset.list = key;
+  if (!PLACED[key]) PLACED[key] = placed(g.photos);
+  renderGrid($("#col-grid"), PLACED[key], { cap: type === "cat" || isPers, capFn: isPers ? (p => L(p.descripcio) || L(p.categoria)) : null });
+  $("#car-track").innerHTML = g.photos.map(p => `
+    <figure>
+      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol) || capOf(p))}">${picture(p)}</button>
+      <figcaption><span>${esc(type === "cat" ? capOf(p) : isPers ? (L(p.descripcio) || L(p.categoria)) : L(p.categoria))}</span><span class="mute">${esc(exifLine(p))}</span></figcaption>
+    </figure>`).join("") + `<span class="car-end" aria-hidden="true"></span>`;
+  $("#car-track").scrollLeft = 0; carPad(); shown = null;
+  const target = GOTO && g.photos.includes(GOTO) ? GOTO : null; GOTO = null;
+  if (MODE === "car") {
+    const i = target ? g.photos.indexOf(target) : 0, figs = $("#car-track").querySelectorAll("figure");
+    if (i > 0) requestAnimationFrame(() => { carPad(); $("#car-track").scrollLeft = figs[i].offsetLeft - $("#car-track").offsetLeft; carRead(); });
+    carRead(); readPhoto(g.photos[i]);
+  } else inView();
+}
+/* àlbums agrupats per la seva categoria principal; Personal, a part */
+function hashN(t) { let h = 7; for (const c of String(t)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
+function renderAlbums() {
+  const full = ALBUMS.filter(a => a.photos.some(p => p.imatge));
+  const main = a => { if (a.key === "personal") return "personal"; const c = {}; a.photos.forEach(p => { const k = caOf(p.categoria); c[k] = (c[k] || 0) + 1; }); return Object.keys(c).sort((x, y) => c[y] - c[x])[0]; };
+  const groups = [];
+  full.forEach(a => { const k = main(a); let g = groups.find(x => x.k === k); if (!g) groups.push(g = { k, albums: [] }); g.albums.push(a); });
+  groups.sort((x, y) => (x.k === "personal") - (y.k === "personal"));
+  const C = [1, 5, 9], DY = [[0, 7, 2], [5, 0, 9], [2, 10, 0]];
+  $("#albs-groups").innerHTML = groups.map(g => {
+    const label = g.k === "personal" ? L((D.personal || {}).titol) : L(g.albums[0].photos.find(p => caOf(p.categoria) === g.k).categoria);
+    return `<section class="albs-group"><h3><span>${esc(label)}</span><span class="mute">${g.albums.length} ${u(g.albums.length === 1 ? "nAlb" : "nAlbs")}</span></h3>
+      <div class="stacks">${g.albums.map((a, i) => {
+        const pics = [...a.photos.filter(p => p.imatge && p.portada !== false), ...a.photos.filter(p => p.imatge && p.portada === false)].slice(0, 3).reverse();
+        const h = hashN(a.key);
+        const imgs = pics.map((p, j) => {
+          const k = pics.length - 1 - j;   // k = 0 és la de sobre; les de sota, cap a costats oposats
+          const sgn = (k % 2 ? 1 : -1) * ((h & 1) ? 1 : -1);
+          const rot = k === 0 ? sgn * (1 + h % 3) : sgn * (6 + ((h >> (k + 2)) % 6));
+          const x = k === 0 ? 0 : sgn * (8 + k * 4), y = k === 0 ? 0 : (k === 1 ? -1 : 1) * (4 + ((h >> k) % 4));
+          return `<img src="${src(p.imatge)}" alt="" loading="lazy" style="--rot:${rot}deg;--x:${x}%;--y:${y}%">`;
+        }).join("");
+        const n = a.photos.length;
+        return `<article class="stack" style="--c:${C[i % 3]};--row:${Math.floor(i / 3) + 1};--dy:${DY[Math.floor(i / 3) % 3][i % 3]};--mdy:${i % 2 ? 10 : 0}">
+          <a href="#album-${esc(a.slug)}"><div class="pile">${imgs}</div>
+          <span class="nm">${esc(albumName(a.photos[0]))}</span><span class="ct">${n} ${u(n === 1 ? "foto" : "fotos")}</span></a></article>`;
+      }).join("")}</div></section>`;
+  }).join("") || `<p class="state">${u("nofotos")}</p>`;
+}
+function carIndex() {
+  const t = $("#car-track"), kids = [...t.querySelectorAll("figure")]; if (!kids.length) return 0;
+  let best = 0, bd = Infinity;
+  kids.forEach((f, i) => { const d = Math.abs(f.offsetLeft - t.offsetLeft - t.scrollLeft); if (d < bd) { bd = d; best = i; } });
+  return best;
+}
+/* espai final perquè l'última foto també pugui quedar alineada a l'esquerra */
+function carPad() {
+  const t = $("#car-track"), figs = t.querySelectorAll("figure"), end = t.querySelector(".car-end");
+  if (!end || !figs.length) return;
+  end.style.width = Math.max(0, t.clientWidth - figs[figs.length - 1].offsetWidth - 1) + "px";
+}
+function carRead() {
+  if (!COL || MODE !== "car") return;
+  const i = carIndex(); $("#car-n").textContent = `${pad(i + 1)}/${pad(COL.g.photos.length)}`;
+  shown = null; readPhoto(COL.g.photos[i]);
+}
+function carStep(d) {
+  const t = $("#car-track"), figs = t.querySelectorAll("figure"), n = figs.length; if (!n) return;
+  const i = Math.max(0, Math.min(n - 1, carIndex() + d)), f = figs[i];
+  t.scrollTo({ left: f.offsetLeft - t.offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
 
 /* ---- menú desplegable ---- */
@@ -663,8 +881,9 @@ menu.addEventListener("click", e => { if (e.target.closest("a") || e.target === 
 document.addEventListener("click", e => { if (!menu.hidden && !menu.contains(e.target)) setMenu(false); });
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); burger.focus(); } });
 function markActive() {
+  if (document.body.classList.contains("col-open")) { menu.querySelectorAll("a").forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#albums" && /^#album/.test(location.hash))); return; }
   let on = "home";
-  ["home", "about-me", "personal"].forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= 140) on = id; });
+  ["home", "about-me"].forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= 140) on = id; });
   menu.querySelectorAll("a").forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + on));
 }
 window.addEventListener("scroll", markActive, { passive: true }); markActive();

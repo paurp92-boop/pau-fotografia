@@ -53,10 +53,10 @@
       "es": "Sobre mí",
       "en": "About me"
     },
-    "personal": {
-      "ca": "Personal",
-      "es": "Personal",
-      "en": "Personal"
+    "albums": {
+      "ca": "Àlbums",
+      "es": "Álbumes",
+      "en": "Albums"
     }
   },
   "treballs": [
@@ -68,9 +68,9 @@
         "en": "Elvi, hands in her hair"
       },
       "descripcio": {
-        "ca": "Retrat sense estudi, amb llum natural",
-        "es": "Retrato sin estudio, con luz natural",
-        "en": "No studio, just natural light"
+        "ca": "Retrat sense estudi",
+        "es": "Retrato sin estudio",
+        "en": "Studio-free portraits"
       },
       "categoria": {
         "ca": "Retrat",
@@ -78,6 +78,7 @@
         "en": "Portrait"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
@@ -91,9 +92,9 @@
         "en": "Elvi, the laugh"
       },
       "descripcio": {
-        "ca": "Retrat sense estudi, amb llum natural",
-        "es": "Retrato sin estudio, con luz natural",
-        "en": "No studio, just natural light"
+        "ca": "Retrat sense estudi",
+        "es": "Retrato sin estudio",
+        "en": "Studio-free portraits"
       },
       "categoria": {
         "ca": "Retrat",
@@ -101,6 +102,7 @@
         "en": "Portrait"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
@@ -114,9 +116,9 @@
         "en": "Elvi, a sideways glance"
       },
       "descripcio": {
-        "ca": "Retrat sense estudi, amb llum natural",
-        "es": "Retrato sin estudio, con luz natural",
-        "en": "No studio, just natural light"
+        "ca": "Retrat sense estudi",
+        "es": "Retrato sin estudio",
+        "en": "Studio-free portraits"
       },
       "categoria": {
         "ca": "Retrat",
@@ -124,6 +126,7 @@
         "en": "Portrait"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
@@ -137,9 +140,9 @@
         "en": "Elvi, profile by the window"
       },
       "descripcio": {
-        "ca": "Retrat sense estudi, amb llum natural",
-        "es": "Retrato sin estudio, con luz natural",
-        "en": "No studio, just natural light"
+        "ca": "Retrat sense estudi",
+        "es": "Retrato sin estudio",
+        "en": "Studio-free portraits"
       },
       "categoria": {
         "ca": "Retrat",
@@ -147,6 +150,7 @@
         "en": "Portrait"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
@@ -160,9 +164,9 @@
         "en": "Elvi, curtain light"
       },
       "descripcio": {
-        "ca": "Retrat sense estudi, amb llum natural",
-        "es": "Retrato sin estudio, con luz natural",
-        "en": "No studio, just natural light"
+        "ca": "Retrat sense estudi",
+        "es": "Retrato sin estudio",
+        "en": "Studio-free portraits"
       },
       "categoria": {
         "ca": "Retrat",
@@ -170,6 +174,7 @@
         "en": "Portrait"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF35mmF1.4 R",
       "diafragma": "f/2.8",
       "velocitat": "1/500",
@@ -193,6 +198,7 @@
         "en": "Portrait"
       },
       "format": "horitzontal",
+      "portada": true,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/8000",
@@ -216,6 +222,7 @@
         "en": "Portrait"
       },
       "format": "horitzontal",
+      "portada": true,
       "objectiu": "XF16-55mm · 35 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/1000",
@@ -229,9 +236,9 @@
         "en": "The little fist"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -239,6 +246,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 41 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -252,9 +260,9 @@
         "en": "Nap time"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -262,6 +270,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 47 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -275,9 +284,9 @@
         "en": "Watching over"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -285,6 +294,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 35 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -298,9 +308,9 @@
         "en": "Tiny ear"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -308,6 +318,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -321,9 +332,9 @@
         "en": "Little feet"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -331,6 +342,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -344,9 +356,9 @@
         "en": "A kiss"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -354,6 +366,7 @@
         "en": "Family"
       },
       "format": "horitzontal",
+      "portada": true,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -367,9 +380,9 @@
         "en": "A hand on the back"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -377,6 +390,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 53 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -390,9 +404,9 @@
         "en": "Skin to skin"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -400,6 +414,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -413,9 +428,9 @@
         "en": "Feeding"
       },
       "descripcio": {
-        "ca": "Primeres setmanes a casa, amb llum natural",
-        "es": "Primeras semanas en casa, con luz natural",
-        "en": "First weeks at home, natural light"
+        "ca": "Primeres setmanes a casa",
+        "es": "Primeras semanas en casa",
+        "en": "First weeks at home"
       },
       "categoria": {
         "ca": "Família",
@@ -423,6 +438,7 @@
         "en": "Family"
       },
       "format": "vertical",
+      "portada": true,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -498,80 +514,7 @@
       "es": "Trabajo personal",
       "en": "Personal work"
     },
-    "fotos": [
-      {
-        "imatge": "",
-        "titol": {
-          "ca": "Pista buida, set del matí",
-          "es": "Pista vacía, set de la mañana",
-          "en": "Empty court, morning set"
-        },
-        "categoria": {
-          "ca": "Esport · Tennis",
-          "es": "Deporte · Tenis",
-          "en": "Sport · Tennis"
-        },
-        "format": "horitzontal",
-        "objectiu": "35 mm",
-        "diafragma": "f/8",
-        "velocitat": "1/250",
-        "iso": "100"
-      },
-      {
-        "imatge": "",
-        "titol": {
-          "ca": "Vestidor",
-          "es": "Vestuario",
-          "en": "Locker room"
-        },
-        "categoria": {
-          "ca": "Retrat",
-          "es": "Retrato",
-          "en": "Portrait"
-        },
-        "format": "vertical",
-        "objectiu": "50 mm",
-        "diafragma": "f/1.8",
-        "velocitat": "1/160",
-        "iso": "320"
-      },
-      {
-        "imatge": "",
-        "titol": {
-          "ca": "Cordills",
-          "es": "Cordaje",
-          "en": "Strings"
-        },
-        "categoria": {
-          "ca": "Esport · Tennis",
-          "es": "Deporte · Tenis",
-          "en": "Sport · Tennis"
-        },
-        "format": "vertical",
-        "objectiu": "105 mm",
-        "diafragma": "f/2.8",
-        "velocitat": "1/1000",
-        "iso": "800"
-      },
-      {
-        "imatge": "",
-        "titol": {
-          "ca": "Última pilota",
-          "es": "Última pelota",
-          "en": "Last ball"
-        },
-        "categoria": {
-          "ca": "Social",
-          "es": "Social",
-          "en": "Social"
-        },
-        "format": "vertical",
-        "objectiu": "85 mm",
-        "diafragma": "f/2",
-        "velocitat": "1/500",
-        "iso": "400"
-      }
-    ]
+    "fotos": []
   },
   "peu": {
     "crida": {
