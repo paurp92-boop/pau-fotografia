@@ -780,30 +780,6 @@
         "iso": ""
       },
       {
-        "imatge": "/images/uploads/personal-02.jpg",
-        "titol": {
-          "ca": "Silueta davant la posta de sol",
-          "es": "Silueta frente a la puesta de sol",
-          "en": "Silhouette against the sunset"
-        },
-        "descripcio": {
-          "ca": "",
-          "es": "",
-          "en": ""
-        },
-        "categoria": {
-          "ca": "Retrat",
-          "es": "Retrato",
-          "en": "Portrait"
-        },
-        "format": "horitzontal",
-        "portada": false,
-        "objectiu": "",
-        "diafragma": "",
-        "velocitat": "",
-        "iso": ""
-      },
-      {
         "imatge": "/images/uploads/personal-03.jpg",
         "titol": {
           "ca": "Gat gris mirant amunt",
@@ -826,54 +802,6 @@
         "diafragma": "",
         "velocitat": "",
         "iso": ""
-      },
-      {
-        "imatge": "/images/uploads/personal-04.jpg",
-        "titol": {
-          "ca": "Fum a contrallum",
-          "es": "Humo a contraluz",
-          "en": "Smoke in backlight"
-        },
-        "descripcio": {
-          "ca": "",
-          "es": "",
-          "en": ""
-        },
-        "categoria": {
-          "ca": "Social",
-          "es": "Social",
-          "en": "Social"
-        },
-        "format": "horitzontal",
-        "portada": false,
-        "objectiu": "iPhone 12 mini · 4.2 mm",
-        "diafragma": "f/1.6",
-        "velocitat": "1/35",
-        "iso": "500"
-      },
-      {
-        "imatge": "/images/uploads/personal-05.jpg",
-        "titol": {
-          "ca": "Servint una ronda",
-          "es": "Sirviendo una ronda",
-          "en": "Pouring a round"
-        },
-        "descripcio": {
-          "ca": "",
-          "es": "",
-          "en": ""
-        },
-        "categoria": {
-          "ca": "Social",
-          "es": "Social",
-          "en": "Social"
-        },
-        "format": "horitzontal",
-        "portada": false,
-        "objectiu": "iPhone 12 mini · 4.2 mm",
-        "diafragma": "f/1.6",
-        "velocitat": "1/50",
-        "iso": "500"
       },
       {
         "imatge": "/images/uploads/personal-06.jpg",
