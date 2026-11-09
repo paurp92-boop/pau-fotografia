@@ -227,8 +227,8 @@ content:
     - name: portada
       label: Mostrar a la pàgina d'inici
       type: boolean
-      default: true
-      description: Si la desactives, la foto només surt quan s'entra a l'àlbum.
+      default: false
+      description: Les fotos de Personal no surten a l'inici tret que ho activis.
     - name: objectiu
       label: Objectiu (p. ex. XF35mmF1.4 R)
       type: string

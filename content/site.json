@@ -462,7 +462,7 @@
         "en": "Sport · Tennis"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 200 mm",
       "diafragma": "f/4.8",
       "velocitat": "1/1000",
@@ -486,7 +486,7 @@
         "en": "Sport · Tennis"
       },
       "format": "horitzontal",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 105 mm",
       "diafragma": "f/14",
       "velocitat": "1/60",
@@ -534,7 +534,7 @@
         "en": "Sport · Tennis"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 200 mm",
       "diafragma": "f/4.8",
       "velocitat": "1/2500",
@@ -558,7 +558,7 @@
         "en": "Sport · Tennis"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 110 mm",
       "diafragma": "f/4.2",
       "velocitat": "1/3200",
@@ -582,7 +582,7 @@
         "en": "Sport · Tennis"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 200 mm",
       "diafragma": "f/4.8",
       "velocitat": "1/2500",
@@ -606,7 +606,7 @@
         "en": "Sport · Tennis"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 55 mm",
       "diafragma": "f/18",
       "velocitat": "1/30",
@@ -630,7 +630,7 @@
         "en": "Sport · Tennis"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF55-200mm · 149 mm",
       "diafragma": "f/5",
       "velocitat": "1/2000",
@@ -773,7 +773,7 @@
           "en": "Landscape"
         },
         "format": "vertical",
-        "portada": true,
+        "portada": false,
         "objectiu": "",
         "diafragma": "",
         "velocitat": "",
@@ -797,7 +797,7 @@
           "en": "Portrait"
         },
         "format": "horitzontal",
-        "portada": true,
+        "portada": false,
         "objectiu": "",
         "diafragma": "",
         "velocitat": "",
@@ -821,7 +821,7 @@
           "en": "Animals"
         },
         "format": "vertical",
-        "portada": true,
+        "portada": false,
         "objectiu": "",
         "diafragma": "",
         "velocitat": "",
@@ -845,7 +845,7 @@
           "en": "Social"
         },
         "format": "horitzontal",
-        "portada": true,
+        "portada": false,
         "objectiu": "iPhone 12 mini · 4.2 mm",
         "diafragma": "f/1.6",
         "velocitat": "1/35",
@@ -869,7 +869,7 @@
           "en": "Social"
         },
         "format": "horitzontal",
-        "portada": true,
+        "portada": false,
         "objectiu": "iPhone 12 mini · 4.2 mm",
         "diafragma": "f/1.6",
         "velocitat": "1/50",
@@ -893,7 +893,7 @@
           "en": "Social"
         },
         "format": "horitzontal",
-        "portada": true,
+        "portada": false,
         "objectiu": "iPhone 12 mini · 4.2 mm",
         "diafragma": "f/1.6",
         "velocitat": "1/50",
