@@ -1,0 +1,441 @@
+# Panell d'edició (Pages CMS · https://app.pagescms.org). Inici de sessió amb GitHub.
+# Els textos tenen tres idiomes: català (obligatori), castellà i anglès (si es deixen buits, es mostra el català).
+media:
+- name: uploads
+  label: Fotos
+  input: images/uploads
+  output: /images/uploads
+content:
+- name: web
+  label: Tot el contingut de la web
+  type: file
+  path: content/site.json
+  format: json
+  fields:
+  - name: general
+    label: General
+    type: object
+    fields:
+    - name: nom
+      label: Nom a la capçalera
+      type: string
+    - name: titol_linia_1
+      label: Titular gran · línia 1
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: titol_linia_2
+      label: Titular gran · línia 2
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: presentacio
+      label: Text de presentació
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: text
+      - name: es
+        label: Castellà
+        type: text
+      - name: en
+        label: Anglès
+        type: text
+    - name: correu
+      label: Correu de contacte
+      type: string
+    - name: estat
+      label: Estat (p. ex. Disponible per a projectes)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: ubicacio
+      label: Ubicació
+      type: string
+    - name: zona_horaria
+      label: Zona horària del rellotge
+      type: string
+      default: Europe/Madrid
+      description: Deixa-ho com està si ets a Catalunya.
+    - name: xarxes
+      label: Xarxes socials
+      type: object
+      list: true
+      fields:
+      - name: nom
+        label: Nom (p. ex. Instagram)
+        type: string
+      - name: usuari
+        label: Usuari (p. ex. @pau)
+        type: string
+      - name: url
+        label: Enllaç
+        type: string
+      summary: '{fields.nom}'
+    - name: titol_pestanya
+      label: Títol de la pestanya del navegador
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: descripcio_seo
+      label: Descripció per a Google
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: text
+      - name: es
+        label: Castellà
+        type: text
+      - name: en
+        label: Anglès
+        type: text
+  - name: menu
+    label: Menú
+    type: object
+    fields:
+    - name: inici
+      label: Opció 1 (inici)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: sobre_mi
+      label: Opció 2 (sobre mi)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: albums
+      label: Opció 3 (àlbums)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+  - name: treballs
+    label: Treballs (galeria principal)
+    type: object
+    list: true
+    fields: &id001
+    - name: imatge
+      label: Foto
+      type: image
+    - name: titol
+      label: Títol de la foto (no es mostra; serveix per a cercadors i lectors de pantalla)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: descripcio
+      label: Sessió / projecte (és el títol que es mostra)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: categoria
+      label: Categoria
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+      description: 'Escriu el català sempre igual (Retrat, Família, Embaràs, Esdeveniments, Esport · Tennis, Social): les categories del filtre surten d''aquí.'
+    - name: format
+      label: Format
+      type: select
+      default: vertical
+      options:
+        values:
+        - value: vertical
+          label: Vertical 2:3
+        - value: horitzontal
+          label: Horitzontal 3:2
+    - name: portada
+      label: Mostrar a la pàgina d'inici
+      type: boolean
+      default: true
+      description: Si la desactives, la foto només surt quan s'entra a l'àlbum.
+    - name: objectiu
+      label: Objectiu (p. ex. XF35mmF1.4 R)
+      type: string
+    - name: diafragma
+      label: Diafragma (p. ex. f/2.8)
+      type: string
+    - name: velocitat
+      label: Velocitat (p. ex. 1/500)
+      type: string
+    - name: iso
+      label: ISO (p. ex. 200)
+      type: string
+    description: Arrossega les fotos per canviar-ne l'ordre. La web les col·loca soles de forma dispersa.
+    summary: '{fields.descripcio.ca} · {fields.titol.ca} · {fields.format}'
+  - name: sobre_mi
+    label: About me
+    type: object
+    fields:
+    - name: titol
+      label: Títol de la secció
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: text
+      label: Text
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: text
+      - name: es
+        label: Castellà
+        type: text
+      - name: en
+        label: Anglès
+        type: text
+    - name: foto
+      label: Foto (horitzontal 3:2)
+      type: image
+    - name: peu_foto
+      label: Peu de foto
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: dades_foto
+      label: Dades de la foto (p. ex. 35 mm · B/N)
+      type: string
+    - name: especialitats
+      label: Especialitats
+      type: object
+      list: true
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+      summary: '{fields.ca}'
+    - name: disponibilitat
+      label: Disponibilitat
+      type: object
+      list: true
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+      summary: '{fields.ca}'
+  - name: equip
+    label: Equip (càmera i objectius)
+    type: object
+    fields:
+    - name: camera
+      label: Càmera
+      type: string
+    - name: camera_detall
+      label: Detall de la càmera (opcional)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: camera_url
+      label: Enllaç de la càmera (opcional)
+      type: string
+    - name: objectius
+      label: Objectius
+      type: object
+      list: true
+      fields:
+      - name: nom
+        label: Nom
+        type: string
+      - name: detall
+        label: Detall (p. ex. 35 mm · f/1.4)
+        type: string
+      - name: url
+        label: Enllaç (opcional)
+        type: string
+      summary: '{fields.nom}'
+  - name: personal
+    label: Personal (àlbum amb fotos de diverses categories)
+    type: object
+    fields:
+    - name: titol
+      label: Nom de l'àlbum
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: subtitol
+      label: Subtítol de l'àlbum
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: fotos
+      label: Fotos
+      type: object
+      list: true
+      fields: *id001
+      summary: '{fields.categoria.ca} · {fields.titol.ca} · {fields.format}'
+  - name: peu
+    label: Peu de pàgina
+    type: object
+    fields:
+    - name: crida
+      label: Crida (p. ex. Treballem junts)
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: nom_gran
+      label: Nom gegant
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string
+    - name: drets
+      label: Text de drets
+      type: object
+      fields:
+      - name: ca
+        label: Català
+        type: string
+      - name: es
+        label: Castellà
+        type: string
+      - name: en
+        label: Anglès
+        type: string

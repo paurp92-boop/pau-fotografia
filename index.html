@@ -444,18 +444,10 @@ img { color: transparent; }
   </div>
 </div>
 
-<!-- Inici de sessió del panell d'edició (Netlify Identity): porta a /admin després d'acceptar la invitació -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-if (window.netlifyIdentity) {
-  netlifyIdentity.on("init", u => { if (!u) netlifyIdentity.on("login", () => { location.href = "/admin/"; }); });
-}
-</script>
-
 <script>
 /* =====================================================================
    El contingut NO s'edita aquí: tot ve de content/site.json,
-   que es modifica des del panell /admin.
+   que es modifica des de Pages CMS (.pages.yml).
    ===================================================================== */
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -556,7 +548,7 @@ function placeholder(p) {
 /* nom de l'àlbum d'una foto: el de "Sessió / projecte", o "Personal" per a les fotos de l'àlbum personal */
 const albumName = p => p.grp === "personal" ? L((D.personal || {}).titol) || "Personal" : (L(p.descripcio) || L(p.titol));
 const capOf = albumName;
-/* rutes de les fotos relatives a la pàgina ("/images/…" → "images/…"): funcionen a Netlify i a qualsevol vista prèvia */
+/* rutes de les fotos relatives a la pàgina ("/images/…" → "images/…"): funcionen a qualsevol allotjament i vista prèvia */
 const src = f => esc(String(f || "").replace(/^\/+/, ""));
 const altOf = p => [L(p.titol), L(p.categoria)].filter(Boolean).join(", ");
 function picture(p, full) {
