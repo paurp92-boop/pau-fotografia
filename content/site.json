@@ -442,7 +442,32 @@
       "es": "Trabajo personal",
       "en": "Personal work"
     },
-    "fotos": []
+    "fotos": [
+      {
+        "imatge": "/images/uploads/personal-01.jpg",
+        "titol": {
+          "ca": "Silueta a contrallum",
+          "es": "Silueta a contraluz",
+          "en": "Backlit silhouette"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      }
+    ]
   },
   "peu": {
     "crida": {

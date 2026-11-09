@@ -187,6 +187,7 @@ img { color: transparent; }
 .scale .tk.mj { height: 9px; width: 1.5px; }
 .scale .tl { position: absolute; bottom: 0; transform: translateX(-50%); font-size: 10px; line-height: 1; font-weight: 700; text-transform: none; color: var(--mute); transition: color .2s ease; }
 .scale .tl.on { color: var(--ink); }
+.lcd.nof .scale .nd { opacity: 0; }
 .scale .nd { position: absolute; top: 1px; left: calc(14px + (100% - 28px) * var(--p, .5)); transform: translateX(-50%); border-inline: 4px solid transparent; border-top: 7px solid var(--ink); transition: left .45s cubic-bezier(.2, .7, .2, 1); }
 .lcd-data { display: flex; justify-content: flex-end; align-items: baseline; gap: 8px; white-space: nowrap; text-transform: none; font-size: 11px; min-width: 0; }
 .lcd-data b { font-weight: 700; font-size: 12px; flex: none; }
@@ -691,11 +692,12 @@ function readPhoto(p) {
   if (!p || p === shown) return; shown = p;
   const N = parseFloat(String(p.diafragma || "").replace(/[^\d.]/g, ""));
   const lcd = $("#lcd");
+  lcd.classList.toggle("nof", !(N > 0));
   if (N > 0) {
     lcd.style.setProperty("--p", Math.max(0, Math.min(1, (2 * Math.log2(N) - 1) / 8)).toFixed(4));
     const near = STOPS.reduce((a, b) => Math.abs(Math.log2(+b / N)) < Math.abs(Math.log2(+a / N)) ? b : a);
     sTr.querySelectorAll(".tl").forEach(l => l.classList.toggle("on", l.dataset.f === near));
-  }
+  } else sTr.querySelectorAll(".tl").forEach(l => l.classList.remove("on"));
   const group = albumOf(p);
   $("#lcd-n").textContent = `${pad(group.indexOf(p) + 1)}/${pad(group.length)}`;
   $("#lcd-t").textContent = capOf(p);
