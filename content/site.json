@@ -294,7 +294,7 @@
         "en": "Family"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -342,7 +342,7 @@
         "en": "Family"
       },
       "format": "horitzontal",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -366,7 +366,7 @@
         "en": "Family"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF16-55mm · 53 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
@@ -414,7 +414,7 @@
         "en": "Family"
       },
       "format": "vertical",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
