@@ -216,6 +216,7 @@ img { color: transparent; }
 .facts dt { color: var(--mute); flex: none; }
 .facts dd { font-weight: 700; font-size: 13px; }
 .facts dd a { display: block; width: fit-content; }
+.facts dd a.esp:hover { background: var(--ball); }
 .facts dd span { display: block; }
 
 /* equip: com el gravat d'un objectiu, una línia per peça */
@@ -599,7 +600,7 @@ function facts(el) {
   const li = a => (a || []).map(x => `<span>${esc(L(x))}</span>`).join("");
   el.innerHTML = `
     <div><dt>${u("social")}</dt><dd>${soc}</dd></div>
-    <div><dt>${u("esp")}</dt><dd>${li(s.especialitats)}</dd></div>
+    <div><dt>${u("esp")}</dt><dd>${(s.especialitats || []).map(x => `<a class="esp" href="#cat-${slug(caOf(x))}">${esc(L(x))}</a>`).join("")}</dd></div>
     <div><dt>${u("disp")}</dt><dd>${li(s.disponibilitat)}</dd></div>
     <div><dt>${u("ubi")}</dt><dd><span>${esc(L(g.ubicacio))}</span><span class="clk-s">--:--:--</span></dd></div>`;
 }
@@ -612,6 +613,10 @@ function boot() {
   /* a l'inici només hi surten les fotos marcades "Mostrar a la pàgina d'inici" */
   HOME = ALL.filter(p => p.portada !== false);
   ALBUMS = groupBy(ALL, albumKey); CATEGORIES = groupBy(ALL, p => caOf(p.categoria));
+  CATEGORIES.forEach(c => { c.name = c.photos[0].categoria; });
+  ((D.sobre_mi || {}).especialitats || []).forEach(x => {
+    const k = caOf(x); if (k && !CATEGORIES.some(c => c.key === k)) CATEGORIES.push({ key: k, slug: slug(k), photos: [], name: x });
+  });
   /* l'àlbum Personal sempre existeix (el menú hi porta), encara que estigui buit */
   if (!ALBUMS.some(a => a.key === "personal")) ALBUMS.push({ key: "personal", slug: "personal", photos: [] });
   ALBUMS.forEach(a => { LISTS["album:" + a.slug] = a.photos; });
@@ -798,10 +803,10 @@ function renderCol() {
   const back = $("#col .col-back"); back.href = type === "album" ? "#albums" : "#home"; back.textContent = u(type === "album" ? "tornarAlb" : "tornar");
   /* a les pàgines d'àlbum només el nom de l'àlbum; a les de categoria, l'etiqueta "Categoria" */
   $("#col-kind").textContent = type === "album" ? "" : u("categoria"); $("#col-kind").hidden = type === "album";
-  $("#col-title").textContent = type === "album" ? albumName(first) : L(first.categoria);
+  $("#col-title").textContent = type === "album" ? albumName(first) : L(g.name);
   $("#col-count").textContent = `${g.photos.length} ${u(g.photos.length === 1 ? "foto" : "fotos")}`;
   const link = (pre, x, name) => `<a href="#${pre}-${esc(x.slug)}"${x === g ? ' aria-current="page"' : ""}>${esc(name)}<sup>${pad(x.photos.length)}</sup></a>`;
-  $("#col-other").innerHTML = CATEGORIES.map(c => link("cat", c, L(c.photos[0].categoria))).join("") +
+  $("#col-other").innerHTML = CATEGORIES.filter(c => c.photos.length || c === g).map(c => link("cat", c, L(c.name))).join("") +
     ALBUMS.filter(a => a.photos.length || a === g).map(a => link("album", a, albumName(a.photos[0] || { grp: "personal" }))).join("");
   $("#col-mode").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === MODE)));
   $("#col-gal").hidden = MODE !== "grid"; $("#col-car").hidden = MODE !== "car";
