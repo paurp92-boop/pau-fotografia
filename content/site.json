@@ -277,30 +277,6 @@
       "iso": "640"
     },
     {
-      "imatge": "/images/uploads/familia-06.jpg",
-      "titol": {
-        "ca": "Un petó",
-        "es": "Un beso",
-        "en": "A kiss"
-      },
-      "descripcio": {
-        "ca": "Primeres setmanes a casa",
-        "es": "Primeras semanas en casa",
-        "en": "First weeks at home"
-      },
-      "categoria": {
-        "ca": "Família",
-        "es": "Familia",
-        "en": "Family"
-      },
-      "format": "horitzontal",
-      "portada": false,
-      "objectiu": "XF16-55mm · 55 mm",
-      "diafragma": "f/2.8",
-      "velocitat": "1/80",
-      "iso": "250"
-    },
-    {
       "imatge": "/images/uploads/familia-07.jpg",
       "titol": {
         "ca": "La mà a l'esquena",
@@ -343,30 +319,6 @@
       },
       "format": "vertical",
       "portada": true,
-      "objectiu": "XF16-55mm · 55 mm",
-      "diafragma": "f/2.8",
-      "velocitat": "1/80",
-      "iso": "250"
-    },
-    {
-      "imatge": "/images/uploads/familia-09.jpg",
-      "titol": {
-        "ca": "Alletant",
-        "es": "Lactancia",
-        "en": "Feeding"
-      },
-      "descripcio": {
-        "ca": "Primeres setmanes a casa",
-        "es": "Primeras semanas en casa",
-        "en": "First weeks at home"
-      },
-      "categoria": {
-        "ca": "Família",
-        "es": "Familia",
-        "en": "Family"
-      },
-      "format": "vertical",
-      "portada": false,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/80",
