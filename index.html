@@ -122,23 +122,24 @@ img.ph { object-fit: cover; }
 .it button:hover .vf::after, .it button:focus-visible .vf::after { opacity: 1; }
 
 /* barra inferior: la pantalla de la càmera llegeix la foto que tens davant */
-.sheet { padding-bottom: 74px; }
+.sheet { padding-bottom: 48px; }
+/* barra compacta, sempre de la mateixa mida: una sola línia */
 .lcd { position: fixed; left: 0; right: 0; bottom: 0; z-index: 14; background: var(--paper); border-top: 1px solid var(--ink); }
-.lcd-in { max-width: 1480px; margin: 0 auto; padding: 8px var(--gutter) 10px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: end; }
+.lcd-in { max-width: 1480px; margin: 0 auto; padding: 4px var(--gutter) 5px; display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; }
 .lcd-in > * { min-width: 0; }
-.lcd-frame { display: grid; padding-right: var(--gap); }
-.lcd-frame b { font-weight: 850; font-stretch: 62%; font-size: 30px; line-height: .9; letter-spacing: -.01em; }
-.lcd-frame span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.scale { grid-column: 2 / span 2; position: relative; height: 46px; padding-inline: 14px; margin-right: var(--gap); }
+.lcd-frame { display: flex; align-items: baseline; gap: 8px; padding-right: var(--gap); white-space: nowrap; }
+.lcd-frame b { font-weight: 850; font-stretch: 62%; font-size: 18px; line-height: 1; letter-spacing: -.01em; flex: none; }
+.lcd-frame span { overflow: hidden; text-overflow: ellipsis; font-size: 11px; }
+.scale { grid-column: 2 / span 2; position: relative; height: 30px; padding-inline: 14px; margin-right: var(--gap); }
 .scale .tr { position: relative; height: 100%; }
-.scale .tk { position: absolute; bottom: 18px; width: 1px; height: 6px; background: var(--ink); }
-.scale .tk.mj { height: 14px; width: 1.5px; }
-.scale .tl { position: absolute; bottom: 0; transform: translateX(-50%); font-weight: 700; text-transform: none; color: var(--mute); transition: color .2s ease; }
+.scale .tk { position: absolute; bottom: 13px; width: 1px; height: 4px; background: var(--ink); }
+.scale .tk.mj { height: 9px; width: 1.5px; }
+.scale .tl { position: absolute; bottom: 0; transform: translateX(-50%); font-size: 10px; line-height: 1; font-weight: 700; text-transform: none; color: var(--mute); transition: color .2s ease; }
 .scale .tl.on { color: var(--ink); }
-.scale .nd { position: absolute; top: 0; left: calc(14px + (100% - 28px) * var(--p, .5)); transform: translateX(-50%); border-inline: 6px solid transparent; border-top: 11px solid var(--ink); transition: left .45s cubic-bezier(.2, .7, .2, 1); }
-.lcd-data { text-align: right; display: grid; text-transform: none; }
-.lcd-data b { font-weight: 700; font-size: 13px; }
-.lcd-data span { color: var(--mute); text-transform: uppercase; }
+.scale .nd { position: absolute; top: 1px; left: calc(14px + (100% - 28px) * var(--p, .5)); transform: translateX(-50%); border-inline: 4px solid transparent; border-top: 7px solid var(--ink); transition: left .45s cubic-bezier(.2, .7, .2, 1); }
+.lcd-data { display: flex; justify-content: flex-end; align-items: baseline; gap: 8px; white-space: nowrap; text-transform: none; font-size: 11px; min-width: 0; }
+.lcd-data b { font-weight: 700; font-size: 12px; flex: none; }
+.lcd-data span { color: var(--mute); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; }
 
 /* seccions */
 .sec { border-top: 1px solid var(--ink); padding-top: clamp(24px, 3.5vw, 44px); }
@@ -241,11 +242,12 @@ img.ph { object-fit: cover; }
   .lb .nav { top: auto; bottom: 8px; transform: none; }
 }
 @media (max-width: 760px) {
-  .lcd-in { grid-template-columns: auto 1fr; gap: 0 12px; }
-  .scale { grid-column: 1 / -1; grid-row: 1; margin-right: 0; height: 40px; padding-inline: 10px; }
+  .lcd-in { grid-template-columns: auto 1fr auto; gap: 0 10px; }
+  .lcd-frame span, .lcd-data span { display: none; }
+  .scale { grid-column: 2; margin-right: 0; padding-inline: 8px; }
   .scale .tl:nth-of-type(even) { display: none; }
-  .lcd-frame b { font-size: 24px; }
-  .sheet { padding-bottom: 120px; }
+  .lcd-frame b { font-size: 16px; }
+  .sheet { padding-bottom: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
