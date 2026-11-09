@@ -635,6 +635,54 @@
       "diafragma": "f/5",
       "velocitat": "1/2000",
       "iso": "640"
+    },
+    {
+      "imatge": "/images/uploads/casament-01.jpg",
+      "titol": {
+        "ca": "Sortida entre confeti",
+        "es": "Salida entre confeti",
+        "en": "Exit through the confetti"
+      },
+      "descripcio": {
+        "ca": "Casament",
+        "es": "Boda",
+        "en": "Wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-02.jpg",
+      "titol": {
+        "ca": "Un ram a l'aire",
+        "es": "Un ramo al aire",
+        "en": "Bouquet in the air"
+      },
+      "descripcio": {
+        "ca": "Casament",
+        "es": "Boda",
+        "en": "Wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
     }
   ],
   "sobre_mi": {
