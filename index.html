@@ -658,7 +658,7 @@ function render() {
 
 /* ---- titulars ajustats exactament a l'amplada dels marges ---- */
 function fit(el, box) {
-  if (!el || !el.textContent.trim()) return;
+  if (!el || !el.textContent.trim() || !box || !box.clientWidth) return; /* amagat (dins d'un àlbum): no es pot mesurar */
   el.style.fontSize = "100px";
   const lines = [...el.querySelectorAll("span")].filter(l => l.textContent.trim());
   const w = lines.length ? Math.max(...lines.map(l => l.getBoundingClientRect().width)) : el.getBoundingClientRect().width;
@@ -784,6 +784,7 @@ function route() {
   if (g) { const changed = !COL || COL.g !== g; COL = { type: m[1], g }; renderCol(); if (changed) window.scrollTo(0, 0); markActive(); return; }
   if (COL) {
     COL = null; document.body.classList.remove("col-open"); $("#col").hidden = true; $("#albums").hidden = true;
+    fitAll();
     const t = h && document.getElementById(h); if (t) t.scrollIntoView(); else window.scrollTo(0, 0);
     shown = null; inView(); markActive();
   }
