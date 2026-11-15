@@ -587,6 +587,366 @@
       "diafragma": "",
       "velocitat": "",
       "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-01.jpg",
+      "titol": {
+        "ca": "Revés entre ombres",
+        "es": "Revés entre sombras",
+        "en": "Backhand between shadows"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-02.jpg",
+      "titol": {
+        "ca": "Lliscant a la terra",
+        "es": "Deslizando en la tierra",
+        "en": "Sliding on clay"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-03.jpg",
+      "titol": {
+        "ca": "A tota esquerra",
+        "es": "A la desesperada",
+        "en": "Full stretch"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-04.jpg",
+      "titol": {
+        "ca": "Puny tancat",
+        "es": "Puño cerrado",
+        "en": "Clenched fist"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-05.jpg",
+      "titol": {
+        "ca": "Sobre les lletres",
+        "es": "Sobre las letras",
+        "en": "Over the letters"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-06.jpg",
+      "titol": {
+        "ca": "Dreta a contrallum",
+        "es": "Derecha a contraluz",
+        "en": "Backlit forehand"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-07.jpg",
+      "titol": {
+        "ca": "En l'aire",
+        "es": "En el aire",
+        "en": "Airborne"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-08.jpg",
+      "titol": {
+        "ca": "Braços oberts",
+        "es": "Brazos abiertos",
+        "en": "Arms wide"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-09.jpg",
+      "titol": {
+        "ca": "Celebració",
+        "es": "Celebración",
+        "en": "Celebration"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-10.jpg",
+      "titol": {
+        "ca": "El servei",
+        "es": "El saque",
+        "en": "The serve"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-11.jpg",
+      "titol": {
+        "ca": "Salt entre llum i ombra",
+        "es": "Salto entre luz y sombra",
+        "en": "Jump between light and shadow"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-12.jpg",
+      "titol": {
+        "ca": "El crit",
+        "es": "El grito",
+        "en": "The roar"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-13.jpg",
+      "titol": {
+        "ca": "Velocitat",
+        "es": "Velocidad",
+        "en": "Speed"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-14.jpg",
+      "titol": {
+        "ca": "Escombrat",
+        "es": "Barrido",
+        "en": "Panning"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-15.jpg",
+      "titol": {
+        "ca": "Moviment",
+        "es": "Movimiento",
+        "en": "Motion"
+      },
+      "descripcio": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
     }
   ],
   "sobre_mi": {
