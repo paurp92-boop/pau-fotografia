@@ -682,6 +682,102 @@
         "diafragma": "",
         "velocitat": "",
         "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-02.jpg",
+        "titol": {
+          "ca": "Silueta al capvespre",
+          "es": "Silueta al atardecer",
+          "en": "Silhouette at dusk"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-03.jpg",
+        "titol": {
+          "ca": "El far",
+          "es": "El faro",
+          "en": "The lighthouse"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Paisatge",
+          "es": "Paisaje",
+          "en": "Landscape"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-04.jpg",
+        "titol": {
+          "ca": "Contra el sol",
+          "es": "Contra el sol",
+          "en": "Into the sun"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Paisatge",
+          "es": "Paisaje",
+          "en": "Landscape"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-05.jpg",
+        "titol": {
+          "ca": "Mirant amunt",
+          "es": "Mirando arriba",
+          "en": "Looking up"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Animals",
+          "es": "Animales",
+          "en": "Animals"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
       }
     ]
   },
