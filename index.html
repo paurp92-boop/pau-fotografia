@@ -617,10 +617,18 @@ function boot() {
   if (!ALBUMS.some(a => a.key === "personal")) ALBUMS.push({ key: "personal", slug: "personal", photos: [] });
   ALBUMS.forEach(a => { LISTS["album:" + a.slug] = a.photos; });
   CATEGORIES.forEach(c => { LISTS["cat:" + c.slug] = c.photos; });
-  /* inici: com a màxim 13 fotos i 4 per àlbum, triades a l'atzar entre les marcades "Mostrar a la pàgina d'inici" */
-  /* màxim de fotos a l'inici: 13 en total; 4 per àlbum, excepte els indicats aquí */
-  const MAX_HOME = 13, MAX_PER_ALBUM = 4, MAX_ALBUM = { "Tennis": 2, "personal": 2 }, perAlbum = {};
-  HOMECELLS = placed(shuffle(HOME).filter(p => { const k = albumKey(p); perAlbum[k] = (perAlbum[k] || 0) + 1; return perAlbum[k] <= (MAX_ALBUM[k] ?? MAX_PER_ALBUM); }).slice(0, MAX_HOME));
+  /* inici: 13 fotos triades a l'atzar entre les marcades "Mostrar a la pàgina d'inici" (4 per àlbum com a màxim; Personal, 2).
+     Tennis: sempre 2, i sempre a l'últim terç. Ordre de prioritat de dalt a baix: Retrat, Família, casaments, Personal, Tennis
+     (dins de cada grup, l'ordre és aleatori i els grups veïns es barregen una mica). */
+  const MAX_HOME = 13, MAX_PER_ALBUM = 4, MAX_ALBUM = { "personal": 2 }, TENNIS = "Tennis", N_TENNIS = 2, perAlbum = {};
+  const rank = p => p.grp === "personal" ? 3 : albumKey(p) === TENNIS ? 4 : ({ "Retrat": 0, "Família": 1, "Esdeveniments": 2 })[caOf(p.categoria)] ?? 2;
+  const tennis = shuffle(HOME.filter(p => albumKey(p) === TENNIS)).slice(0, N_TENNIS);
+  const rest = shuffle(HOME.filter(p => albumKey(p) !== TENNIS)).filter(p => { const k = albumKey(p); perAlbum[k] = (perAlbum[k] || 0) + 1; return perAlbum[k] <= (MAX_ALBUM[k] ?? MAX_PER_ALBUM); }).slice(0, MAX_HOME - tennis.length);
+  const ordered = rest.map(p => [rank(p) + Math.random() * 1.3, p]).sort((x, y) => x[0] - y[0]).map(x => x[1]);
+  /* el tennis entra en posicions aleatòries de l'últim terç */
+  const n = ordered.length + tennis.length, from = Math.ceil(n * 2 / 3);
+  tennis.forEach(t => ordered.splice(from + Math.floor(Math.random() * (ordered.length + 1 - from)), 0, t));
+  HOMECELLS = placed(ordered);
   ALL.filter(p => p.imatge).forEach(p => { const im = new Image(); im.onload = () => { p.real = im.naturalWidth / im.naturalHeight; }; im.src = String(p.imatge).replace(/^\/+/, ""); });
   render(); wire(); route();
   if (document.fonts) document.fonts.ready.then(fitAll);
