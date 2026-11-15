@@ -128,8 +128,10 @@ body.col-open #home, body.col-open #about-me { display: none; }
 .car-track { display: flex; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; padding-bottom: 10px; scrollbar-width: thin; }
 .car-track figure { flex: none; scroll-snap-align: start; }
 .car-track button { display: block; text-align: left; }
-.car-track img.ph { display: block; width: auto; height: auto; max-height: min(72vh, 760px); max-width: calc(100vw - 2 * var(--gutter)); }
-.car-track div.ph { display: block; height: min(72vh, 760px); width: auto; max-width: calc(100vw - 2 * var(--gutter)); aspect-ratio: var(--r); }
+/* alçada: la que hi cap a la pantalla (sota la capçalera, amb el peu i la barra de la càmera); amplada: segons la proporció real de la foto */
+#col-car { --carh: min(760px, calc(100vh - 220px)); --carh: min(760px, calc(100dvh - 220px)); }
+.car-track img.ph { display: block; --ar: 2 / 3; aspect-ratio: var(--ar); height: auto; width: min(calc(var(--carh) * (var(--ar))), calc(100vw - 2 * var(--gutter))); object-fit: contain; }
+.car-track div.ph { display: block; height: var(--carh); width: auto; max-width: calc(100vw - 2 * var(--gutter)); aspect-ratio: var(--r); }
 .car-track figure { max-width: calc(100vw - 2 * var(--gutter)); }
 .car-track figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 6px; }
 .car-track figcaption .mute { text-transform: none; }
@@ -286,10 +288,8 @@ img { color: transparent; }
   .intro .who { margin-top: 18px; }
   .cats { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; margin-top: 18px; }
   .cats .lbl { width: 100%; margin-top: 8px; }
-  .car-track img.ph { max-height: min(62vh, 560px); }
   .stacks { grid-template-columns: repeat(2, 1fr); }
   .stack { grid-column: auto / span 1; grid-row: auto; margin-top: calc(var(--mdy, 0) * 1cqw); }
-  .car-track div.ph { height: min(62vh, 560px); }
   .grid { grid-template-columns: repeat(6, 1fr); row-gap: 22px; }
   .it { grid-column: var(--mc) / span var(--ms); grid-row: var(--mrow); margin-top: calc(var(--mdy, 0) * 1cqw); }
   .sec-row { grid-template-columns: 1fr; row-gap: 14px; }
@@ -743,11 +743,11 @@ function wire() {
     const p = byN(+o.dataset.open); GOTO = p; location.hash = "album-" + slug(albumKey(p));
   });
   ["#col-grid", "#car-track"].forEach(s => $(s).addEventListener("click", e => { const o = e.target.closest("[data-open]"); if (o) openLb(+o.dataset.open, o); }));
-  $("#col-mode").addEventListener("click", e => { const b = e.target.closest("[data-mode]"); if (!b) return; MODE = b.dataset.mode; try { localStorage.setItem("mode", MODE); } catch (x) {} renderCol(); });
+  $("#col-mode").addEventListener("click", e => { const b = e.target.closest("[data-mode]"); if (!b) return; MODE = b.dataset.mode; try { localStorage.setItem("mode", MODE); } catch (x) {} renderCol(); if (MODE === "car") carFit(); });
   $("#car-prev").addEventListener("click", () => carStep(-1));
   $("#car-next").addEventListener("click", () => carStep(1));
   $("#car-track").addEventListener("scroll", carRead, { passive: true });
-  $("#car-track").addEventListener("load", carPad, true);
+  $("#car-track").addEventListener("load", e => { const i = e.target; if (i.naturalWidth) i.style.setProperty("--ar", `${i.naturalWidth} / ${i.naturalHeight}`); carPad(); }, true);
   window.addEventListener("resize", carPad);
   $("#car-track").addEventListener("keydown", e => { if (e.key === "ArrowLeft") { e.preventDefault(); carStep(-1); } if (e.key === "ArrowRight") { e.preventDefault(); carStep(1); } });
   window.addEventListener("hashchange", route);
@@ -781,7 +781,7 @@ function route() {
   const h = decodeURIComponent(location.hash.slice(1)), m = h.match(/^(album|cat)-(.+)$/);
   if (h === "albums") { const changed = !COL || COL.type !== "albums"; COL = { type: "albums" }; renderCol(); if (changed) window.scrollTo(0, 0); markActive(); return; }
   const g = m && (m[1] === "album" ? ALBUMS : CATEGORIES).find(x => x.slug === m[2]);
-  if (g) { const changed = !COL || COL.g !== g; COL = { type: m[1], g }; renderCol(); if (changed) window.scrollTo(0, 0); markActive(); return; }
+  if (g) { const changed = !COL || COL.g !== g; COL = { type: m[1], g }; renderCol(); if (changed) { window.scrollTo(0, 0); if (MODE === "car") carFit(); } markActive(); return; }
   if (COL) {
     COL = null; document.body.classList.remove("col-open"); $("#col").hidden = true; $("#albums").hidden = true;
     fitAll();
@@ -811,7 +811,7 @@ function renderCol() {
   renderGrid($("#col-grid"), PLACED[key], { cap: type === "cat" || isPers, capFn: isPers ? (p => L(p.descripcio) || L(p.categoria)) : null });
   $("#car-track").innerHTML = g.photos.map(p => `
     <figure>
-      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol) || capOf(p))}">${picture(p)}</button>
+      <button type="button" data-open="${p.n}" aria-label="${esc(u("amplia"))}: ${esc(L(p.titol) || capOf(p))}">${picture(p).replace("<img ", `<img style="--ar:${p.format === "vertical" ? "2 / 3" : "3 / 2"}" `)}</button>
       <figcaption><span>${esc(type === "cat" ? capOf(p) : isPers ? (L(p.descripcio) || L(p.categoria)) : L(p.categoria))}</span><span class="mute">${esc(exifLine(p))}</span></figcaption>
     </figure>`).join("") + `<span class="car-end" aria-hidden="true"></span>`;
   $("#car-track").scrollLeft = 0; carPad(); shown = null;
@@ -821,6 +821,14 @@ function renderCol() {
     if (i > 0) requestAnimationFrame(() => { carPad(); $("#car-track").scrollLeft = figs[i].offsetLeft - $("#car-track").offsetLeft; carRead(); });
     carRead(); readPhoto(g.photos[i]);
   } else inView();
+}
+/* que el carrussel sencer (foto + peu) quedi dins la pantalla, per sobre de la barra de la càmera */
+function carFit() {
+  requestAnimationFrame(() => {
+    const c = $("#col-car"); if (!c || c.hidden) return;
+    const r = c.getBoundingClientRect(), top = $(".top").getBoundingClientRect().bottom + 12, bottom = innerHeight - 52;
+    if (r.bottom > bottom) window.scrollBy({ top: Math.min(r.bottom - bottom, r.top - top), behavior: "smooth" });
+  });
 }
 /* àlbums agrupats per la seva categoria principal; Personal, a part */
 function hashN(t) { let h = 7; for (const c of String(t)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return h; }
