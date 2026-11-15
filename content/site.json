@@ -421,6 +421,30 @@
       "iso": ""
     },
     {
+      "imatge": "/images/uploads/casament-pandemia-08.jpg",
+      "titol": {
+        "ca": "La cerimònia",
+        "es": "La ceremonia",
+        "en": "The ceremony"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
       "imatge": "/images/uploads/casament-pandemia-03.jpg",
       "titol": {
         "ca": "Baixant les escales",
@@ -498,6 +522,30 @@
         "ca": "Somriures a la porta",
         "es": "Sonrisas en la puerta",
         "en": "Smiles at the door"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-09.jpg",
+      "titol": {
+        "ca": "Somriures a la porta (color)",
+        "es": "Sonrisas en la puerta (color)",
+        "en": "Smiles at the door (colour)"
       },
       "descripcio": {
         "ca": "Casament en pandèmia",
