@@ -1157,7 +1157,7 @@
           "en": "Portrait"
         },
         "format": "horitzontal",
-        "portada": false,
+        "portada": true,
         "objectiu": "",
         "diafragma": "",
         "velocitat": "",
@@ -1181,7 +1181,7 @@
           "en": "Sport"
         },
         "format": "horitzontal",
-        "portada": false,
+        "portada": true,
         "objectiu": "",
         "diafragma": "",
         "velocitat": "",
@@ -1205,7 +1205,7 @@
           "en": "Sport"
         },
         "format": "horitzontal",
-        "portada": false,
+        "portada": true,
         "objectiu": "",
         "diafragma": "",
         "velocitat": "",
