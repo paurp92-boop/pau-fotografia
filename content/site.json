@@ -371,6 +371,174 @@
       "diafragma": "",
       "velocitat": "",
       "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-01.jpg",
+      "titol": {
+        "ca": "Pentinat davant del mirall",
+        "es": "Peinado frente al espejo",
+        "en": "Hair in the mirror"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-02.jpg",
+      "titol": {
+        "ca": "Ajustant el vestit",
+        "es": "Ajustando el vestido",
+        "en": "Adjusting the dress"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "vertical",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-03.jpg",
+      "titol": {
+        "ca": "Baixant les escales",
+        "es": "Bajando las escaleras",
+        "en": "Down the stairs"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "vertical",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-04.jpg",
+      "titol": {
+        "ca": "Sortida entre arròs",
+        "es": "Salida entre arroz",
+        "en": "Exit through the rice"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-05.jpg",
+      "titol": {
+        "ca": "Mirades amb mascareta",
+        "es": "Miradas con mascarilla",
+        "en": "Masked glances"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "vertical",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-06.jpg",
+      "titol": {
+        "ca": "Somriures a la porta",
+        "es": "Sonrisas en la puerta",
+        "en": "Smiles at the door"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": false,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/casament-pandemia-07.jpg",
+      "titol": {
+        "ca": "Rialles",
+        "es": "Carcajadas",
+        "en": "Laughter"
+      },
+      "descripcio": {
+        "ca": "Casament en pandèmia",
+        "es": "Boda en pandemia",
+        "en": "A pandemic wedding"
+      },
+      "categoria": {
+        "ca": "Esdeveniments",
+        "es": "Eventos",
+        "en": "Events"
+      },
+      "format": "horitzontal",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
     }
   ],
   "sobre_mi": {
