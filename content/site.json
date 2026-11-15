@@ -1210,6 +1210,54 @@
         "diafragma": "",
         "velocitat": "",
         "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-09.jpg",
+        "titol": {
+          "ca": "Futbol a la pols",
+          "es": "Fútbol en el polvo",
+          "en": "Football in the dust"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Esport",
+          "es": "Deporte",
+          "en": "Sport"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-10.jpg",
+        "titol": {
+          "ca": "Darrere del vidre",
+          "es": "Detrás del cristal",
+          "en": "Behind the glass"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "vertical",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
       }
     ]
   },
