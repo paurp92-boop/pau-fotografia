@@ -661,7 +661,7 @@ function render() {
   const eq = D.equip || {}, rows = [];
   if (eq.camera) rows.push([u("cam"), L(eq.camera), eq.camera_url, L(eq.camera_detall)]);
   (eq.objectius || []).forEach((o, i) => rows.push([`${u("obj")} ${pad(i + 1)}`, L(o.nom), o.url, L(o.detall)]));
-  $("#gear").innerHTML = rows.length ? `<dl>${rows.map(([k, n, u, d]) => `<div class="gear-row"><dt>${esc(k)}</dt><dd>${u ? `<a class="nm" href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} ↗</a>` : `<span class="nm">${esc(n)}</span>`}<span class="sp">${esc(d || "")}</span></dd></div>`).join("")}</dl>` : "";
+  $("#gear").innerHTML = rows.length ? `<dl>${rows.map(([k, n, u, d]) => `<div class="gear-row"><dt>${esc(k)}</dt><dd>${u ? `<a class="nm" href="${esc(u)}" target="_blank" rel="noopener">${esc(n)} <span class="arr" aria-hidden="true">↗\uFE0E</span></a>` : `<span class="nm">${esc(n)}</span>`}<span class="sp">${esc(d || "")}</span></dd></div>`).join("")}</dl>` : "";
   if (COL) renderCol(); fitAll();
   shown = null; readPhoto(HOME[0] || ALL[0]); inView();
   if (lb.classList.contains("open")) show();
