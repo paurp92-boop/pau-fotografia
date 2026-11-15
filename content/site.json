@@ -778,6 +778,78 @@
         "diafragma": "",
         "velocitat": "",
         "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-06.jpg",
+        "titol": {
+          "ca": "Somriure entre el fum",
+          "es": "Sonrisa entre el humo",
+          "en": "A smile through the smoke"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-07.jpg",
+        "titol": {
+          "ca": "Partit a la sorra",
+          "es": "Partido en la arena",
+          "en": "Match on the sand"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Esport",
+          "es": "Deporte",
+          "en": "Sport"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/personal-08.jpg",
+        "titol": {
+          "ca": "Descans al capvespre",
+          "es": "Descanso al atardecer",
+          "en": "Break at sunset"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Esport",
+          "es": "Deporte",
+          "en": "Sport"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
       }
     ]
   },
