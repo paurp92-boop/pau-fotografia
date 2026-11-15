@@ -475,6 +475,7 @@ const UI = {
 };
 function pickLang() {
   let q = null; try { q = new URLSearchParams(location.search).get("lang"); } catch (e) {}
+  if (LANGS.includes(q)) try { localStorage.setItem("lang", q); } catch (e) {}  /* un enllaç amb ?lang= també queda recordat */
   let st = null; try { st = localStorage.getItem("lang"); } catch (e) {}
   const nav = (navigator.language || "").slice(0, 2);
   return [q, st, nav].find(l => LANGS.includes(l)) || "ca";
@@ -638,7 +639,6 @@ function setLang(l) {
   if (!LANGS.includes(l) || l === LANG) return;
   LANG = l;
   try { localStorage.setItem("lang", l); } catch (e) {}
-  try { const url = new URL(location.href); url.searchParams.set("lang", l); history.replaceState(null, "", url); } catch (e) {}
   render(); tick();
 }
 function render() {
@@ -795,6 +795,15 @@ function wire() {
 }
 
 /* ---- pàgina d'àlbum o de categoria (#album-… / #cat-…) ---- */
+/* adreça neta: sense "?lang=…" (l'idioma es recorda al navegador) ni "#home" */
+function cleanUrl() {
+  try {
+    const url = new URL(location.href); url.searchParams.delete("lang");
+    if (url.hash === "#home") url.hash = "";
+    const s = url.pathname + url.search + url.hash;
+    if (s !== location.pathname + location.search + location.hash) history.replaceState(null, "", s);
+  } catch (e) {}
+}
 function route() {
   if (!D) return;
   const h = decodeURIComponent(location.hash.slice(1)), m = h.match(/^(album|cat)-(.+)$/);
@@ -807,6 +816,7 @@ function route() {
     const t = h && document.getElementById(h); if (t) t.scrollIntoView(); else window.scrollTo(0, 0);
     shown = null; inView(); markActive();
   }
+  cleanUrl();
 }
 function renderCol() {
   if (!COL) return;
