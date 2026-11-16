@@ -947,6 +947,78 @@
       "diafragma": "",
       "velocitat": "",
       "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-16.jpg",
+      "titol": {
+        "ca": "Revés en moviment",
+        "es": "Revés en movimiento",
+        "en": "Backhand in motion"
+      },
+      "descripcio": {
+        "ca": "Tennis",
+        "es": "Tenis",
+        "en": "Tennis"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-17.jpg",
+      "titol": {
+        "ca": "Silueta a la terra",
+        "es": "Silueta en la tierra",
+        "en": "Silhouette on clay"
+      },
+      "descripcio": {
+        "ca": "Tennis",
+        "es": "Tenis",
+        "en": "Tennis"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
+    },
+    {
+      "imatge": "/images/uploads/esport-18.jpg",
+      "titol": {
+        "ca": "Servei a l'última llum",
+        "es": "Saque con la última luz",
+        "en": "Serve in the last light"
+      },
+      "descripcio": {
+        "ca": "Tennis",
+        "es": "Tenis",
+        "en": "Tennis"
+      },
+      "categoria": {
+        "ca": "Esport",
+        "es": "Deporte",
+        "en": "Sport"
+      },
+      "format": "vertical",
+      "portada": true,
+      "objectiu": "",
+      "diafragma": "",
+      "velocitat": "",
+      "iso": ""
     }
   ],
   "sobre_mi": {
