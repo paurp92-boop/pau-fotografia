@@ -1053,30 +1053,6 @@
         "iso": ""
       },
       {
-        "imatge": "/images/uploads/personal-03.jpg",
-        "titol": {
-          "ca": "El far",
-          "es": "El faro",
-          "en": "The lighthouse"
-        },
-        "descripcio": {
-          "ca": "",
-          "es": "",
-          "en": ""
-        },
-        "categoria": {
-          "ca": "Paisatge",
-          "es": "Paisaje",
-          "en": "Landscape"
-        },
-        "format": "vertical",
-        "portada": false,
-        "objectiu": "",
-        "diafragma": "",
-        "velocitat": "",
-        "iso": ""
-      },
-      {
         "imatge": "/images/uploads/personal-04.jpg",
         "titol": {
           "ca": "Contra el sol",
