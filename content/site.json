@@ -14,9 +14,9 @@
     "ubicacio": "Llinars del Vallès",
     "zona_horaria": "Europe/Madrid",
     "presentacio": {
-      "ca": "Sóc fotògraf amb base a Llinars del Vallès, Catalunya. Faig retrat, família, embaràs, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens alguna idea al cap, parlem-ne.",
-      "es": "Soy fotógrafo con base en Llinars del Vallès, Cataluña. Hago retrato, familia, embarazo, eventos, deporte (sobre todo tenis) y fotografía social. Si tienes alguna idea en mente, hablemos.",
-      "en": "I'm a photographer based in Llinars del Vallès, Catalonia. I shoot portraits, families, pregnancy, events, sport (mostly tennis) and social photography. If you have an idea in mind, let's talk."
+      "ca": "Sóc fotògraf amb base a Llinars del Vallès, Catalunya. Faig retrat, família, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens alguna idea al cap, parlem-ne.",
+      "es": "Soy fotógrafo con base en Llinars del Vallès, Cataluña. Hago retrato, familia, eventos, deporte (sobre todo tenis) y fotografía social. Si tienes alguna idea en mente, hablemos.",
+      "en": "I'm a photographer based in Llinars del Vallès, Catalonia. I shoot portraits, families, events, sport (mostly tennis) and social photography. If you have an idea in mind, let's talk."
     },
     "estat": {
       "ca": "Disponible per a projectes i sessions",
@@ -37,9 +37,9 @@
       "en": "Pau, photographer"
     },
     "descripcio_seo": {
-      "ca": "Fotògraf a Llinars del Vallès (Catalunya): retrat, família, embaràs, esdeveniments, esport i fotografia social.",
-      "es": "Fotógrafo en Llinars del Vallès (Cataluña): retrato, familia, embarazo, eventos, deporte y fotografía social.",
-      "en": "Photographer in Llinars del Vallès (Catalonia): portraits, family, pregnancy, events, sport and social photography."
+      "ca": "Fotògraf a Llinars del Vallès (Catalunya): retrat, família, esdeveniments, esport i fotografia social.",
+      "es": "Fotógrafo en Llinars del Vallès (Cataluña): retrato, familia, eventos, deporte y fotografía social.",
+      "en": "Photographer in Llinars del Vallès (Catalonia): portraits, family, events, sport and social photography."
     }
   },
   "menu": {
@@ -977,11 +977,6 @@
         "ca": "Família",
         "es": "Familia",
         "en": "Family"
-      },
-      {
-        "ca": "Embaràs",
-        "es": "Embarazo",
-        "en": "Pregnancy"
       },
       {
         "ca": "Esdeveniments",

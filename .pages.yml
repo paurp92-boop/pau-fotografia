@@ -213,7 +213,7 @@ content:
       - name: en
         label: Anglès
         type: string
-      description: 'Escriu el català sempre igual (Retrat, Família, Embaràs, Esdeveniments, Esport · Tennis, Social): les categories del filtre surten d''aquí.'
+      description: 'Escriu el català sempre igual (Retrat, Família, Esdeveniments, Esport · Tennis, Social): les categories del filtre surten d''aquí.'
     - name: format
       label: Format
       type: select
