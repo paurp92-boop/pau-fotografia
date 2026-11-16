@@ -14,9 +14,9 @@
     "ubicacio": "Llinars del Vallès",
     "zona_horaria": "Europe/Madrid",
     "presentacio": {
-      "ca": "Sóc fotògraf amb base a Llinars del Vallès, Catalunya. Faig retrat, família, esdeveniments, esport (sobretot tennis) i fotografia social. Si tens alguna idea al cap, parlem-ne.",
-      "es": "Soy fotógrafo con base en Llinars del Vallès, Cataluña. Hago retrato, familia, eventos, deporte (sobre todo tenis) y fotografía social. Si tienes alguna idea en mente, hablemos.",
-      "en": "I'm a photographer based in Llinars del Vallès, Catalonia. I shoot portraits, families, events, sport (mostly tennis) and social photography. If you have an idea in mind, let's talk."
+      "ca": "Fotògraf social i documental amb base a Llinars del Vallès. M'interessen les persones i els moments tal com passen: famílies, celebracions, esport, vida quotidiana. Si tens alguna idea al cap, parlem-ne.",
+      "es": "Fotógrafo social y documental con base en Llinars del Vallès. Me interesan las personas y los momentos tal como suceden: familias, celebraciones, deporte, vida cotidiana. Si tienes alguna idea en mente, hablemos.",
+      "en": "Social and documentary photographer based in Llinars del Vallès. I'm interested in people and moments as they happen: families, celebrations, sport, everyday life. If you have an idea in mind, let's talk."
     },
     "estat": {
       "ca": "Disponible per a projectes i sessions",
@@ -37,9 +37,9 @@
       "en": "Pau, photographer"
     },
     "descripcio_seo": {
-      "ca": "Fotògraf a Llinars del Vallès (Catalunya): retrat, família, esdeveniments, esport i fotografia social.",
-      "es": "Fotógrafo en Llinars del Vallès (Cataluña): retrato, familia, eventos, deporte y fotografía social.",
-      "en": "Photographer in Llinars del Vallès (Catalonia): portraits, family, events, sport and social photography."
+      "ca": "Fotògraf social i documental a Llinars del Vallès (Catalunya).",
+      "es": "Fotógrafo social y documental en Llinars del Vallès (Cataluña).",
+      "en": "Social and documentary photographer in Llinars del Vallès (Catalonia)."
     }
   },
   "menu": {
@@ -969,29 +969,19 @@
     "dades_foto": "35 mm · B/N",
     "especialitats": [
       {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
+        "ca": "Fotografia social",
+        "es": "Fotografía social",
+        "en": "Social photography"
       },
       {
-        "ca": "Família",
-        "es": "Familia",
-        "en": "Family"
+        "ca": "Fotografia documental",
+        "es": "Fotografía documental",
+        "en": "Documentary photography"
       },
       {
-        "ca": "Esdeveniments",
-        "es": "Eventos",
-        "en": "Events"
-      },
-      {
-        "ca": "Esport · Tennis",
-        "es": "Deporte · Tenis",
-        "en": "Sport · Tennis"
-      },
-      {
-        "ca": "Social",
-        "es": "Social",
-        "en": "Social"
+        "ca": "Històries de família",
+        "es": "Historias de familia",
+        "en": "Family stories"
       }
     ],
     "disponibilitat": [

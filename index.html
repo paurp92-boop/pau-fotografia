@@ -597,7 +597,7 @@ function facts(el) {
   const li = a => (a || []).map(x => `<span>${esc(L(x))}</span>`).join("");
   el.innerHTML = `
     <div><dt>${u("social")}</dt><dd>${soc}</dd></div>
-    <div><dt>${u("esp")}</dt><dd>${(s.especialitats || []).map(x => `<a class="esp" href="#cat-${slug(caOf(x))}">${esc(L(x))}</a>`).join("")}</dd></div>
+    <div><dt>${u("esp")}</dt><dd>${(s.especialitats || []).map(x => { const c = CATEGORIES.find(c => c.key === caOf(x)); return c && c.photos.length ? `<a class="esp" href="#cat-${c.slug}">${esc(L(x))}</a>` : `<span class="esp">${esc(L(x))}</span>`; }).join("")}</dd></div>
     <div><dt>${u("disp")}</dt><dd>${li(s.disponibilitat)}</dd></div>
     <div><dt>${u("ubi")}</dt><dd><span>${esc(L(g.ubicacio))}</span><span class="clk-s">--:--:--</span></dd></div>`;
 }
