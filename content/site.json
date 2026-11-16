@@ -198,7 +198,7 @@
         "en": "Portrait"
       },
       "format": "horitzontal",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF16-55mm · 55 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/8000",
@@ -222,7 +222,7 @@
         "en": "Portrait"
       },
       "format": "horitzontal",
-      "portada": true,
+      "portada": false,
       "objectiu": "XF16-55mm · 35 mm",
       "diafragma": "f/2.8",
       "velocitat": "1/1000",
