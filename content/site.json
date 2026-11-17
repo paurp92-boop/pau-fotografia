@@ -995,126 +995,6 @@
       "diafragma": "",
       "velocitat": "",
       "iso": ""
-    },
-    {
-      "imatge": "/images/uploads/llum-desembre-01.jpg",
-      "titol": {
-        "ca": "Mitja cara a la llum",
-        "es": "Media cara a la luz",
-        "en": "Half in the light"
-      },
-      "descripcio": {
-        "ca": "Llum de desembre",
-        "es": "Luz de diciembre",
-        "en": "December light"
-      },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "horitzontal",
-      "portada": true,
-      "objectiu": "",
-      "diafragma": "",
-      "velocitat": "",
-      "iso": ""
-    },
-    {
-      "imatge": "/images/uploads/llum-desembre-02.jpg",
-      "titol": {
-        "ca": "Somriure amb caputxa",
-        "es": "Sonrisa con capucha",
-        "en": "Hooded smile"
-      },
-      "descripcio": {
-        "ca": "Llum de desembre",
-        "es": "Luz de diciembre",
-        "en": "December light"
-      },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "horitzontal",
-      "portada": true,
-      "objectiu": "",
-      "diafragma": "",
-      "velocitat": "",
-      "iso": ""
-    },
-    {
-      "imatge": "/images/uploads/llum-desembre-03.jpg",
-      "titol": {
-        "ca": "Ajustant les ulleres",
-        "es": "Ajustando las gafas",
-        "en": "Adjusting the glasses"
-      },
-      "descripcio": {
-        "ca": "Llum de desembre",
-        "es": "Luz de diciembre",
-        "en": "December light"
-      },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "horitzontal",
-      "portada": false,
-      "objectiu": "",
-      "diafragma": "",
-      "velocitat": "",
-      "iso": ""
-    },
-    {
-      "imatge": "/images/uploads/llum-desembre-04.jpg",
-      "titol": {
-        "ca": "Per sobre de les ulleres",
-        "es": "Por encima de las gafas",
-        "en": "Over the glasses"
-      },
-      "descripcio": {
-        "ca": "Llum de desembre",
-        "es": "Luz de diciembre",
-        "en": "December light"
-      },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "horitzontal",
-      "portada": false,
-      "objectiu": "",
-      "diafragma": "",
-      "velocitat": "",
-      "iso": ""
-    },
-    {
-      "imatge": "/images/uploads/llum-desembre-05.jpg",
-      "titol": {
-        "ca": "Cara al sol",
-        "es": "De cara al sol",
-        "en": "Facing the sun"
-      },
-      "descripcio": {
-        "ca": "Llum de desembre",
-        "es": "Luz de diciembre",
-        "en": "December light"
-      },
-      "categoria": {
-        "ca": "Retrat",
-        "es": "Retrato",
-        "en": "Portrait"
-      },
-      "format": "horitzontal",
-      "portada": false,
-      "objectiu": "",
-      "diafragma": "",
-      "velocitat": "",
-      "iso": ""
     }
   ],
   "sobre_mi": {
@@ -1172,6 +1052,126 @@
       "en": "Personal work"
     },
     "fotos": [
+      {
+        "imatge": "/images/uploads/llum-desembre-01.jpg",
+        "titol": {
+          "ca": "Mitja cara a la llum",
+          "es": "Media cara a la luz",
+          "en": "Half in the light"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/llum-desembre-02.jpg",
+        "titol": {
+          "ca": "Somriure amb caputxa",
+          "es": "Sonrisa con capucha",
+          "en": "Hooded smile"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": true,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/llum-desembre-03.jpg",
+        "titol": {
+          "ca": "Ajustant les ulleres",
+          "es": "Ajustando las gafas",
+          "en": "Adjusting the glasses"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/llum-desembre-04.jpg",
+        "titol": {
+          "ca": "Per sobre de les ulleres",
+          "es": "Por encima de las gafas",
+          "en": "Over the glasses"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
+      {
+        "imatge": "/images/uploads/llum-desembre-05.jpg",
+        "titol": {
+          "ca": "Cara al sol",
+          "es": "De cara al sol",
+          "en": "Facing the sun"
+        },
+        "descripcio": {
+          "ca": "",
+          "es": "",
+          "en": ""
+        },
+        "categoria": {
+          "ca": "Retrat",
+          "es": "Retrato",
+          "en": "Portrait"
+        },
+        "format": "horitzontal",
+        "portada": false,
+        "objectiu": "",
+        "diafragma": "",
+        "velocitat": "",
+        "iso": ""
+      },
       {
         "imatge": "/images/uploads/personal-01.jpg",
         "titol": {
