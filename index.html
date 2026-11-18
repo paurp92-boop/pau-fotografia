@@ -211,6 +211,7 @@ document.querySelectorAll('.slide:not(.mono)').forEach(function(f){
 });
 (function(){var bar=document.querySelector('.bar'),h=document.querySelector('.hero h1');
   new IntersectionObserver(function(e){var on=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;bar.classList.toggle('on',on);bar.setAttribute('aria-hidden',String(!on))}).observe(h);})();
+document.querySelectorAll('a[href="#inici"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})});
 document.querySelectorAll('a[href="#contacte"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'})})});
 document.addEventListener('contextmenu',function(e){if(e.target.closest('img,.slide,.hero'))e.preventDefault()});
 document.addEventListener('dragstart',function(e){if(e.target.closest('img'))e.preventDefault()});
@@ -238,6 +239,8 @@ function setLang(l){if(!T[l])l='ca';
 document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){setLang(b.dataset.lang)}});
 (function(){var q=new URLSearchParams(location.search).get('lang'),s=null;try{s=localStorage.getItem('lang')}catch(e){}
   if(q||s)setLang(q||s)})();
+(function(){if(location.search||location.hash){try{history.replaceState(null,'',location.pathname)}catch(e){}}})();
+
 </script>
 </body>
 </html>
