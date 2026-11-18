@@ -77,7 +77,7 @@ body{background:#0a0a0a;color:#f2ecde;font-family:Inter,system-ui,sans-serif;-we
 .nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:0;border-radius:50%;background:rgba(10,10,10,.5);color:#f2ecde;font-size:26px;line-height:1;cursor:pointer;opacity:0;transition:opacity .2s}
 .prev{left:10px}.next{right:10px}
 @media (hover:hover){.slider.multi:hover .nav{opacity:1}}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.42)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:transparent}
 .pair .count{top:8px;right:8px}
 .sw{position:absolute;left:10px;bottom:10px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:rgba(10,10,10,.5);padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .sw i{width:14px;height:14px;border-radius:50%;border:1.5px solid #fff;background:linear-gradient(90deg,#fff 50%,transparent 50%);transition:background .3s}
@@ -92,7 +92,7 @@ body{background:#0a0a0a;color:#f2ecde;font-family:Inter,system-ui,sans-serif;-we
 .hint{display:flex;align-items:center;gap:.6em;padding:calc(3.4*var(--u)) calc(5.2*var(--u))}
 /* pack */
 .pack{padding:calc(7*var(--u)) calc(5.2*var(--u)) calc(8*var(--u))}
-.pill{display:block;grid-column:1/-1;grid-row:1;white-space:nowrap;margin-bottom:calc(1.2*var(--u));justify-self:stretch;text-align:center;background:#f2ecde;color:#2d2a28;font-size:max(12px,calc(2.4*var(--u)));font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.5em .6em .45em;line-height:1.15}
+.pill{position:relative;border:0;font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;display:block;grid-column:1/-1;grid-row:1;white-space:nowrap;margin-bottom:calc(1.2*var(--u));justify-self:stretch;text-align:center;background:#f2ecde;color:#2d2a28;font-size:max(12px,calc(2.4*var(--u)));font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.5em .6em .45em;line-height:1.15}
 .prow{display:grid;grid-template-columns:max-content 1fr;column-gap:calc(8.5*var(--u));align-items:stretch}
 .price{grid-column:1;grid-row:2;font-size:calc(27*var(--u));font-weight:600;letter-spacing:-.065em;line-height:.8;white-space:nowrap;margin-left:-1.3cqw;padding-top:calc(2.6*var(--u))}
 .pinfo{grid-column:2;grid-row:2;display:flex;flex-direction:column;justify-content:space-between;gap:max(6px,calc(1.5*var(--u)));padding:calc(3.7*var(--u)) 0 0}
@@ -141,6 +141,11 @@ html.lock{overflow:hidden}
 .ht{font-size:max(15px,calc(2.9*var(--u)));font-weight:500;line-height:1.4;opacity:.85}
 .prow .pv{font-size:max(17px,calc(var(--pf,100px)*.2))}
 .prow .pi .lb{font-size:max(11px,calc(var(--pf,100px)*.062))}
+.pplus{position:absolute;right:.75em;top:50%;width:.8em;height:.8em;transform:translateY(-50%)}
+.pplus::before,.pplus::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1.5px;margin-top:-.75px;background:currentColor}
+.pplus::after{transform:rotate(90deg)}
+.pill:hover .pplus{transform:translateY(-50%) rotate(90deg);transition:transform .25s}
+.slider::after{content:"";position:absolute;inset:0;border:1px solid rgba(242,236,222,.38);pointer-events:none;z-index:4}
 .ptypes{margin-top:calc(8*var(--u));display:flex;justify-content:space-between;align-items:baseline;font-size:calc(5.3*var(--u));font-weight:600;letter-spacing:-.035em;line-height:1;white-space:nowrap}
 .ptypes i{font-style:normal;opacity:.5}
 /* contact */
@@ -228,9 +233,9 @@ body,.page{color:#f2ecde}
 .toast{background:#f2ecde;color:#2d2a28}
 .sw,.count,.nav,.dots{color:#fff}
 @media (min-width:1200px){
- .page{gap:0}
- .page>*{background:transparent;box-shadow:inset 0 0 0 .5px rgba(242,236,222,.18)}
- .page>.hero,.page>.qui{box-shadow:none}
+ .page{gap:5px}
+ .page>*{background:transparent}
+ .page>.qui{box-shadow:none}
 }
 </style>
 </head>
@@ -259,10 +264,9 @@ body,.page{color:#f2ecde}
   <div class="pair"><div class="slider multi sl-nuvis" style="aspect-ratio:540/720"><div class="track"><figure class="slide"><img class="b" data-v="nuvis" src="/pack/nuvis-color.jpg?v=20261118b" alt="Parella de nuvis rient a la porta" loading="lazy" style="object-position:50% 50%"><img class="o" data-v="nuvis" src="/pack/nuvis-bn.jpg?v=20261118b" alt="" aria-hidden="true" loading="lazy" style="object-position:50% 50%"><button class="sw" type="button" aria-label="Veure en blanc i negre"><i></i></button></figure><figure class="slide"><img class="b" data-v="casament-pandemia-05" src="/pack/casament-pandemia-05-color.jpg?v=20261118b" alt="Nuvis amb mascareta" loading="lazy" style="object-position:50% 50%"><img class="o" data-v="casament-pandemia-05" src="/pack/casament-pandemia-05-bn.jpg?v=20261118b" alt="" aria-hidden="true" loading="lazy" style="object-position:50% 50%"><button class="sw" type="button" aria-label="Veure en blanc i negre"><i></i></button></figure><figure class="slide"><img class="b" data-v="casament-pandemia-02" src="/pack/casament-pandemia-02-color.jpg?v=20261118b" alt="Ajustant el vestit" loading="lazy" style="object-position:50% 30%"><img class="o" data-v="casament-pandemia-02" src="/pack/casament-pandemia-02-bn.jpg?v=20261118b" alt="" aria-hidden="true" loading="lazy" style="object-position:50% 30%"><button class="sw" type="button" aria-label="Veure en blanc i negre"><i></i></button></figure><figure class="slide mono"><img class="b" data-v="casament-pandemia-04" src="/pack/casament-pandemia-04-bn.jpg?v=20261118b" alt="Sortida entre arròs" loading="lazy" style="object-position:50% 50%"></figure><figure class="slide mono"><img class="b" data-v="casament-pandemia-08" src="/pack/casament-pandemia-08-bn.jpg?v=20261118b" alt="La cerimònia" loading="lazy" style="object-position:50% 50%"></figure><figure class="slide mono"><img class="b" data-v="casament-pandemia-01" src="/pack/casament-pandemia-01-bn.jpg?v=20261118b" alt="Pentinat davant del mirall" loading="lazy" style="object-position:50% 50%"></figure></div><div class="dots"><i class=on></i><i></i><i></i><i></i><i></i><i></i></div><div class="count">1/6</div><button class="nav prev" aria-label="Anterior">‹</button><button class="nav next" aria-label="Següent">›</button></div><div class="slider multi sl-maneta" style="aspect-ratio:540/720"><div class="track"><figure class="slide"><img class="b" data-v="maneta" src="/pack/maneta-color.jpg?v=20261118b" alt="Mà d’un nadó sobre la pell" loading="lazy" style="object-position:50% 50%"><img class="o" data-v="maneta" src="/pack/maneta-bn.jpg?v=20261118b" alt="" aria-hidden="true" loading="lazy" style="object-position:50% 50%"><button class="sw" type="button" aria-label="Veure en blanc i negre"><i></i></button></figure><figure class="slide mono"><img class="b" data-v="familia-05" src="/pack/familia-05-bn.jpg?v=20261118b" alt="Peus petits" loading="lazy" style="object-position:50% 50%"></figure><figure class="slide"><img class="b" data-v="familia-07" src="/pack/familia-07-color.jpg?v=20261118b" alt="La mà a l’esquena" loading="lazy" style="object-position:50% 50%"><img class="o" data-v="familia-07" src="/pack/familia-07-bn.jpg?v=20261118b" alt="" aria-hidden="true" loading="lazy" style="object-position:50% 50%"><button class="sw" type="button" aria-label="Veure en blanc i negre"><i></i></button></figure></div><div class="dots"><i class=on></i><i></i><i></i></div><div class="count">1/3</div><button class="nav prev" aria-label="Anterior">‹</button><button class="nav next" aria-label="Següent">›</button></div></div>
   <div class="hl"></div>
   <section class="pack">
-    <div class="prow"><div class="pill" data-t="pack">Pack promocional – Llançament</div><div class="price">89 €<span class="ast">*</span></div>
+    <div class="prow"><button class="pill" type="button" aria-haspopup="dialog"><span data-t="pack">Pack promocional – Llançament</span><i class="pplus" aria-hidden="true"></i></button><div class="price">89 €<span class="ast">*</span></div>
       <div class="pinfo"><div class="pi"><div class="lb" data-t="durk">Sessió</div><div class="pv">45 min – 1 h</div></div><div class="pi"><div class="lb" data-t="entk">Fotografies</div><div class="pv">15 – 20</div></div></div><div class="pnote" data-t="note">*Vàlid per a reserves fetes fins al 31/12/2026</div></div>
     <div class="ptypes" data-t="tipus"><span>Retrat</span><i>·</i><span>Família</span><i>·</i><span>Embaràs</span><i>·</i><span>Parella</span></div>
-      <button class="more" type="button" aria-haspopup="dialog"><span data-t="more">Com funciona</span><i aria-hidden="true"></i></button>
   </section>
   <div class="hl"></div>
   <div class="slider sl-mocador" style="aspect-ratio:1080/720"><div class="track"><figure class="slide"><img class="b" data-v="mocador" src="/pack/mocador-color.jpg?v=20261118b" alt="Retrat d’una dona amb mocador entre el fum" loading="lazy" style="object-position:50% 40%"><img class="o" data-v="mocador" src="/pack/mocador-bn.jpg?v=20261118b" alt="" aria-hidden="true" loading="lazy" style="object-position:50% 40%"><button class="sw" type="button" aria-label="Veure en blanc i negre"><i></i></button></figure></div></div>
@@ -329,7 +333,7 @@ function fitPack(){var r=document.querySelector('.prow'),p=document.querySelecto
   while(hi-lo>0.5&&i<30){var m=(lo+hi)/2;if(fits(m))lo=m;else hi=m;i++}
   p.style.fontSize=(lo*0.995)+'px';r.parentElement.style.setProperty('--pf',(lo*0.995)+'px')}
 fitPack();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPack);addEventListener('resize',fitPack);addEventListener('load',fitPack);
-(function(){var b=document.querySelector('.more'),d=document.getElementById('howto');if(!b||!d)return;
+(function(){var b=document.querySelector('.pill'),d=document.getElementById('howto');if(!b||!d)return;
   function op(){if(d.showModal){d.showModal()}else{d.setAttribute('open','')}document.documentElement.classList.add('lock')}
   function cl(){if(d.close){d.close()}else{d.removeAttribute('open')}}
   d.addEventListener('close',function(){document.documentElement.classList.remove('lock')});
