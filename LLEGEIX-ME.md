@@ -26,3 +26,8 @@ Consell: exporta les fotos a uns 2000 px pel costat llarg i en JPG (qualitat 80)
 
 ## 5. Domini propi (opcional)
 Cloudflare → el projecte → **Custom domains → Set up a custom domain**.
+
+## Pàgina temporal: pack promocional (nov. 2026)
+Ara mateix `index.html` és la pàgina del **pack promocional** (format revista, fotos a `pack/`).
+La web de portfoli completa està guardada, sense canvis, a la branca **`web-portfoli`**.
+Per tornar-la a posar: fer merge de `web-portfoli` a `main` (o recuperar-ne `index.html`).
