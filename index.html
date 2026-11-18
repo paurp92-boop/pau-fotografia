@@ -126,11 +126,11 @@ a.grow .gn::after{content:" ↗";opacity:.6;font-weight:500}
 .crow{display:grid;grid-template-columns:28% 1fr;column-gap:calc(3*var(--u));align-items:baseline;padding:calc(2*var(--u)) 0}
 .crow .gk{grid-row:auto;padding-top:0}
 .cv{justify-self:start;font-size:max(17px,calc(3.4*var(--u)));font-weight:600;letter-spacing:-.025em;line-height:1.2;color:#fff;text-decoration:none;background:none;border:0;padding:0;font-family:inherit;text-align:left;cursor:pointer;white-space:nowrap}
-span.cv{cursor:default}
+span.cv{cursor:default;white-space:normal}
 .phone .cv{position:relative}
 .contact .big{display:block;color:#fff;text-decoration:none;font-size:max(17px,calc(3.6*var(--u)));font-weight:600;letter-spacing:-.025em;line-height:1.15;white-space:nowrap;margin-bottom:.4em}
 .copy{position:relative}
-.tip{position:absolute;left:100%;top:50%;margin-left:12px;transform:translateY(-50%);background:#fff;color:#0a0a0a;font:700 max(11px,calc(1.6*var(--u)))/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:.6em .7em .55em;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+.tip{position:absolute;left:0;bottom:100%;margin-bottom:6px;background:#fff;color:#0a0a0a;font:700 max(11px,calc(1.6*var(--u)))/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:.6em .7em .55em;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
 .copy.done .tip{opacity:1}
 .phone{position:relative;display:inline-block;justify-self:start}
 .menu{position:absolute;left:0;top:calc(100% + 8px);display:flex;border:1px solid #fff;background:#0a0a0a;z-index:5}
@@ -151,10 +151,13 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
 .page>.hl{display:none}
 .pair{display:contents}
 .bar{max-width:none}
-.hero{grid-column:1/13;grid-row:1;aspect-ratio:auto;height:min(56.24cqw,94vh)}
-.hero picture img{object-position:50% 40%}
-.hero h1{font-size:8.3cqw;left:calc(4.4*var(--u));bottom:calc(4*var(--u))}
-.page>.qui{grid-column:8/13;grid-row:1;z-index:3;background:transparent;display:flex;flex-direction:column;justify-content:center;padding:calc(10*var(--u)) calc(6*var(--u)) calc(6*var(--u)) 0}
+.hero,.page>.qui{--hh:min(48cqw,calc(100vh - 56px),calc(100svh - 56px))}
+.hero{grid-column:1/13;grid-row:1;aspect-ratio:auto;height:var(--hh)}
+.hero picture img{object-position:0 0}
+.hero .top{left:calc(var(--hh)*.052);right:calc(6*var(--u));top:calc(var(--hh)*.05)}
+.hero h1{font-size:calc(var(--hh)*.1185);left:calc(var(--hh)*.046);bottom:calc(var(--hh)*.036)}
+.page>.qui{grid-column:1/13;grid-row:1;z-index:3;background:transparent;display:flex;flex-direction:column;justify-content:center;padding:calc(8*var(--u)) calc(6*var(--u)) calc(6*var(--u)) calc(var(--hh) + 6*var(--u));max-width:calc(var(--hh) + 6*var(--u) + 720px);pointer-events:none}
+.page>.qui *{pointer-events:auto}
 .com{grid-column:1/6;grid-row:2;display:flex;flex-direction:column;justify-content:center;padding:calc(6*var(--u))}
 .sl-elvi{grid-column:6/13;grid-row:2}
 .sl-nuvis{grid-column:1/4;grid-row:3}.sl-maneta{grid-column:4/7;grid-row:3}.sl-ulleres{grid-column:7/10;grid-row:3}.sl-confeti{grid-column:10/13;grid-row:3}
@@ -215,7 +218,7 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
       <div class="crow"><span class="gk" data-t="lmail">Correu</span><button class="cv copy" type="button" data-copy="pau.rp92@gmail.com">pau.rp92@gmail.com<span class="tip" data-t="ok" aria-live="polite">Copiat</span></button></div>
       <div class="crow"><span class="gk" data-t="ltel">Telèfon</span><div class="phone"><button class="cv" type="button" aria-haspopup="true" aria-expanded="false">640 341 877</button><div class="menu" hidden><a href="tel:+34640341877" data-t="call">Trucar</a><a href="https://wa.me/34640341877" target="_blank" rel="noopener">WhatsApp</a></div></div></div>
       <div class="crow"><span class="gk">Instagram</span><a class="cv" href="https://www.instagram.com/enpau_rp/" target="_blank" rel="noopener">@enpau_rp</a></div>
-      <div class="crow"><span class="gk" data-t="lloc">Lloc</span><span class="cv">Llinars del Vallès</span></div>
+      <div class="crow"><span class="gk" data-t="lloc">Lloc</span><span class="cv">Llinars del Vallès (Barcelona)</span></div>
     </div>
     <div class="sign"><span data-t="cta">T’animes?</span><nav class="ico">
       <a href="https://wa.me/34640341877" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4.2 19.8l1.1-3.9A8.4 8.4 0 1 1 8.4 19l-4.2.8z"/><path d="M9 8.3c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.1.3 0 .5.6 1.1 1.5 2 2.6 2.6.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .4-.2.7-.6.9-.8.4-1.8.4-2.7 0-2.2-.9-4-2.7-4.9-4.9-.4-.9-.4-1.9 0-2.7z" class="f"/></svg></a>
