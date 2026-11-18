@@ -91,8 +91,8 @@ body{background:#0a0a0a;color:#fff;font-family:Inter,system-ui,sans-serif;-webki
 /* pack */
 .pack{padding:calc(7*var(--u)) calc(5.2*var(--u)) calc(8*var(--u))}
 .pill{display:block;grid-column:1/-1;grid-row:1;white-space:nowrap;margin-bottom:calc(1.2*var(--u));justify-self:stretch;text-align:center;background:#fff;color:#0a0a0a;font-size:max(12px,calc(2.4*var(--u)));font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.5em .6em .45em;line-height:1.15}
-.prow{display:grid;grid-template-columns:max-content 1fr;column-gap:calc(9.5*var(--u));align-items:stretch}
-.price{grid-column:1;grid-row:2;font-size:calc(29*var(--u));font-weight:600;letter-spacing:-.065em;line-height:.8;white-space:nowrap;margin-left:-1.3cqw;padding-top:calc(2.6*var(--u))}
+.prow{display:grid;grid-template-columns:max-content 1fr;column-gap:calc(8.5*var(--u));align-items:stretch}
+.price{grid-column:1;grid-row:2;font-size:calc(27*var(--u));font-weight:600;letter-spacing:-.065em;line-height:.8;white-space:nowrap;margin-left:-1.3cqw;padding-top:calc(2.6*var(--u))}
 .pinfo{grid-column:2;grid-row:2;display:flex;flex-direction:column;justify-content:space-between;gap:max(6px,calc(1.5*var(--u)));padding:calc(3.7*var(--u)) 0 0}
 .pi .lb{margin-bottom:max(5px,calc(1.2*var(--u)))}
 .pv{font-size:max(19px,calc(5.3*var(--u)));font-weight:700;letter-spacing:-.035em;line-height:1;white-space:nowrap}
@@ -233,7 +233,6 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
   </section>
 </main>
 <div class="toast" role="status" aria-live="polite" data-t="ok">Correu copiat</div>
-<div class="grain"></div>
 <script>
 document.querySelectorAll('.slider.multi').forEach(function(s){
   var t=s.querySelector('.track'),d=s.querySelectorAll('.dots i'),c=s.querySelector('.count'),n=d.length;
@@ -263,6 +262,9 @@ document.querySelectorAll('.slide:not(.mono)').forEach(function(f){
   new IntersectionObserver(function(e){var on=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;bar.classList.toggle('on',on);bar.setAttribute('aria-hidden',String(!on))}).observe(h);})();
 document.querySelectorAll('a[href="#inici"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})})});
 document.querySelectorAll('a[href="#contacte"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'})})});
+function fitPack(){var r=document.querySelector('.prow'),p=document.querySelector('.price');if(!r||!p)return;p.style.fontSize='';var i=0;
+  while(r.scrollWidth>r.clientWidth+1&&i<40){p.style.fontSize=(parseFloat(getComputedStyle(p).fontSize)*0.97)+'px';i++}}
+fitPack();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPack);addEventListener('resize',fitPack);addEventListener('load',fitPack);
 document.addEventListener('contextmenu',function(e){if(e.target.closest('img,.slide,.hero'))e.preventDefault()});
 document.addEventListener('dragstart',function(e){if(e.target.closest('img'))e.preventDefault()});
 document.querySelectorAll('.copy').forEach(function(b){b.onclick=function(){
