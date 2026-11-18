@@ -31,7 +31,7 @@ body{background:#0a0a0a;color:#fff;font-family:Inter,system-ui,sans-serif;-webki
 .pad{padding-inline:calc(5.2*var(--u))}
 /* hero */
 .hero{position:relative;aspect-ratio:1400/1407;overflow:hidden}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;background:linear-gradient(rgba(10,10,10,0),rgba(10,10,10,.7))}
 .hero .top{position:absolute;left:calc(5.2*var(--u));right:calc(5.2*var(--u));top:calc(5*var(--u));display:flex;justify-content:space-between;align-items:flex-start;gap:12px;z-index:2}
 .hero .top .sm{padding-top:.45em;min-width:0}
@@ -137,13 +137,35 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#fff;color:#0a0a0a;font:700 12px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:12px 16px 11px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .wa{display:inline-block;background:none;font-family:inherit;cursor:pointer;border:1px solid #fff;color:#fff;text-decoration:none;font-size:max(12px,calc(2.2*var(--u)));font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85em 1em .8em;line-height:1}
+
+@media (min-width:1200px){
+.page{max-width:1280px;display:grid;grid-template-columns:repeat(12,1fr);gap:1px;background:rgba(255,255,255,.42)}
+.page>*{background:#0a0a0a;min-width:0}
+.page>.hl{display:none}
+.pair{display:contents}
+.bar{max-width:1280px}
+.hero{grid-column:1/13;grid-row:1;aspect-ratio:2500/1406}
+.page>.qui{grid-column:8/13;grid-row:1;z-index:3;background:transparent;display:flex;flex-direction:column;justify-content:center;padding:calc(10*var(--u)) calc(6*var(--u)) calc(6*var(--u)) 0}
+.com{grid-column:1/6;grid-row:2;display:flex;flex-direction:column;justify-content:center;padding:calc(6*var(--u))}
+.sl-elvi{grid-column:6/13;grid-row:2}
+.sl-nuvis{grid-column:1/4;grid-row:3}.sl-maneta{grid-column:4/7;grid-row:3}.sl-ulleres{grid-column:7/10;grid-row:3}.sl-confeti{grid-column:10/13;grid-row:3}
+.pack{grid-column:7/13;grid-row:4;display:flex;flex-direction:column;justify-content:center;padding:calc(6*var(--u))}
+.ptypes{font-size:calc(3.6*var(--u))}
+.price{font-size:calc(25*var(--u))}
+.pv{font-size:calc(4.3*var(--u))}
+.sl-mocador{grid-column:1/7;grid-row:4;aspect-ratio:auto!important;min-height:100%}
+.contact{grid-column:1/13;grid-row:5;min-height:0;display:grid;grid-template-columns:1fr 1fr;column-gap:calc(8*var(--u));padding:calc(7*var(--u)) calc(6*var(--u)) 0}
+.contact .gear{padding-top:0;grid-column:1;grid-row:1}
+.contact .ctop{padding-top:0;grid-column:2;grid-row:1}
+.contact .sign{grid-column:1/3;margin:calc(8*var(--u)) calc(-6*var(--u)) 0;padding:calc(4.5*var(--u)) calc(6*var(--u)) calc(4*var(--u))}
+}
 </style>
 </head>
 <body>
 <header class="bar" aria-hidden="true"><a class="wm" href="#inici">Pau Fotografia</a><nav><a href="#contacte" data-t="cont">Contacte</a></nav></header>
 <main class="page" id="inici">
   <section class="hero">
-    <img src="/pack/hero.jpg" alt="Pau amb ulleres, fons desenfocat i una finestra nítida sobre mig rostre" fetchpriority="high">
+    <picture><source media="(min-width:1200px)" srcset="/pack/hero-wide.jpg"><img src="/pack/hero.jpg" alt="Pau amb ulleres, fons desenfocat i una finestra nítida sobre mig rostre" fetchpriority="high"></picture>
     <div class="top"><div class="sm" data-t="tag">Fotògraf social i documental</div>
       <div class="ctrls"><div class="toggle lang" role="group" aria-label="Idioma"><button class="on" data-lang="ca">CAT</button><span>|</span><button data-lang="es">ESP</button><span>|</span><button data-lang="en">ENG</button></div></div></div>
     <h1>Pau Fotografia</h1>
