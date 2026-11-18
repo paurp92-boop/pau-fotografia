@@ -39,6 +39,10 @@ body{background:#0a0a0a;color:#fff;font-family:Inter,system-ui,sans-serif;-webki
 .toggle{display:flex;border:1px solid rgba(255,255,255,.7)}
 .toggle button{font:700 max(10px,1.5cqw)/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:none;border:0;padding:.7em .9em .65em;cursor:pointer}
 .toggle button.on{background:#fff;color:#0a0a0a}
+.toggle.lang{border:0;align-items:center;gap:.15em}
+.toggle.lang span{font:600 max(11px,1.6cqw)/1 Inter,sans-serif;opacity:.5}
+.toggle.lang button{padding:.55em .35em;opacity:.55;font-size:max(11px,1.6cqw)}
+.toggle.lang button.on{background:none;color:#fff;opacity:1;text-decoration:underline;text-underline-offset:.35em}
 /* text blocks */
 .qui{padding-block:9cqw 8cqw}
 .qui h2{font-size:max(28px,5.2cqw);font-weight:700;letter-spacing:-.04em;line-height:1;margin:1.3cqw 0 3cqw}
@@ -89,7 +93,7 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
   <section class="hero">
     <img src="/pack/hero.jpg" alt="Pau amb ulleres, fons desenfocat i una finestra nítida sobre mig rostre" fetchpriority="high">
     <div class="top"><div class="sm" data-t="tag">Fotògraf social i documental</div>
-      <div class="ctrls"><div class="toggle lang" role="group" aria-label="Idioma"><button class="on" data-lang="ca">CA</button><button data-lang="es">ES</button><button data-lang="en">EN</button></div>
+      <div class="ctrls"><div class="toggle lang" role="group" aria-label="Idioma"><button class="on" data-lang="ca">CAT</button><span>|</span><button data-lang="es">ESP</button><span>|</span><button data-lang="en">ENG</button></div>
       <div class="toggle col" role="group" aria-label="Versió de les fotos"><button class="on" data-set="bn">B/N</button><button data-set="color">Color</button></div></div></div>
     <h1>Pau Fotografia</h1>
   </section>
