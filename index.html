@@ -132,8 +132,8 @@ span.cv{cursor:default;white-space:normal}
 .phone .cv{position:relative}
 .contact .big{display:block;color:#fff;text-decoration:none;font-size:max(17px,calc(3.6*var(--u)));font-weight:600;letter-spacing:-.025em;line-height:1.15;white-space:nowrap;margin-bottom:.4em}
 .copy{position:relative}
-.tip{position:absolute;left:0;bottom:100%;margin-bottom:6px;background:#fff;color:#0a0a0a;font:700 max(11px,calc(1.6*var(--u)))/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:.6em .7em .55em;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
-.copy.done .tip{opacity:1}
+.toast{position:fixed;left:50%;top:64px;transform:translate(-50%,-10px);z-index:60;background:#fff;color:#0a0a0a;font:700 12px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:13px 18px 12px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 .phone{position:relative;display:inline-block;justify-self:start}
 .menu{position:absolute;left:0;top:calc(100% + 8px);display:flex;border:1px solid #fff;background:#0a0a0a;z-index:5}
 .menu[hidden]{display:none}
@@ -143,8 +143,6 @@ span.cv{cursor:default;white-space:normal}
 .contact .sign{display:flex;align-items:baseline;justify-content:space-between;color:#fff;margin:calc(10*var(--u)) -5.2cqw 0;padding:calc(4.5*var(--u)) calc(5.2*var(--u)) 0 calc(4.6*var(--u));border-top:1px solid rgba(255,255,255,.42);gap:calc(4*var(--u));font-size:calc(10*var(--u));font-weight:600;letter-spacing:-.055em;line-height:1;white-space:nowrap}
 
 button.big{background:none;border:0;padding:0;font-family:inherit;text-align:left;cursor:pointer}
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#fff;color:#0a0a0a;font:700 12px/1 Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:12px 16px 11px;opacity:0;transition:.25s;pointer-events:none;z-index:60}
-.toast.show{opacity:1;transform:translate(-50%,0)}
 .wa{display:inline-block;background:none;font-family:inherit;cursor:pointer;border:1px solid #fff;color:#fff;text-decoration:none;font-size:max(12px,calc(2.2*var(--u)));font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.85em 1em .8em;line-height:1}
 
 @media (min-width:1200px){
@@ -217,7 +215,7 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
       <a class="grow" href="https://www.fujifilm-x.com/es-es/products/lenses/xf16-55mmf28-r-lm-wr-ii/" target="_blank" rel="noopener"><span class="gk"><span data-t="obj">Objectiu</span> 02</span><span class="gn">Fujinon XF16-55mmF2.8 R LM WR II</span><span class="gd">16–55 mm · f/2.8</span></a>
     </div>
     <div class="cinfo">
-      <div class="crow"><span class="gk" data-t="lmail">Correu</span><button class="cv copy" type="button" data-copy="pau.rp92@gmail.com">pau.rp92@gmail.com<span class="tip" data-t="ok" aria-live="polite">Copiat</span></button></div>
+      <div class="crow"><span class="gk" data-t="lmail">Correu</span><button class="cv copy" type="button" data-copy="pau.rp92@gmail.com">pau.rp92@gmail.com</button></div>
       <div class="crow"><span class="gk" data-t="ltel">Telèfon</span><div class="phone"><button class="cv" type="button" aria-haspopup="true" aria-expanded="false">640 341 877</button><div class="menu" hidden><a href="tel:+34640341877" data-t="call">Trucar</a><a href="https://wa.me/34640341877" target="_blank" rel="noopener">WhatsApp</a></div></div></div>
       <div class="crow"><span class="gk">Instagram</span><a class="cv" href="https://www.instagram.com/enpau_rp/" target="_blank" rel="noopener">@enpau_rp</a></div>
       <div class="crow"><span class="gk" data-t="lloc">Lloc</span><span class="cv">Llinars del Vallès (Barcelona)</span></div>
@@ -229,6 +227,7 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
     </nav></div>
   </section>
 </main>
+<div class="toast" role="status" aria-live="polite" data-t="ok">Correu copiat</div>
 <div class="grain"></div>
 <script>
 document.querySelectorAll('.slider.multi').forEach(function(s){
@@ -262,7 +261,7 @@ document.addEventListener('contextmenu',function(e){if(e.target.closest('img,.sl
 document.addEventListener('dragstart',function(e){if(e.target.closest('img'))e.preventDefault()});
 document.querySelectorAll('.copy').forEach(function(b){b.onclick=function(){
   var v=b.dataset.copy;
-  function ok(){b.classList.add('done');clearTimeout(b._t);b._t=setTimeout(function(){b.classList.remove('done')},1800)}
+  function ok(){var t=document.querySelector('.toast');t.classList.add('show');clearTimeout(window._tt);window._tt=setTimeout(function(){t.classList.remove('show')},2000)}
   function fb(){var a=document.createElement('textarea');a.value=v;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){}a.remove()}
   if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(v).then(ok,fb);else fb();
 }});
@@ -271,8 +270,8 @@ document.querySelectorAll('.copy').forEach(function(b){b.onclick=function(){
   document.addEventListener('click',function(e){if(!p.contains(e.target)){m.hidden=true;b.setAttribute('aria-expanded','false')}});
 })();
 var T={
- es:{tag:"Fotógrafo social y documental",qui:"Quién soy",soc:"Soy Pau.",qs:"Sociólogo de formación y fotógrafo de vocación. Me apasiona la fotografía y su poder para conservar recuerdos, contar historias y documentar el entorno de manera auténtica.",quote:"«El documento humano para mantener el presente y el futuro en contacto con el pasado.»",com:"Cómo trabajo",ct:"Sin estudio ni decorados, en lugares cotidianos y cómodos. Tú eliges el espacio y el vestuario. Yo me adapto e interfiero lo mínimo para que la cámara no sea un obstáculo a la hora de captar ese gesto, sonrisa o mirada espontánea y real.",pack:"Pack promocional · Primer carrete",sess:"Sesiones",tipus:"<span>Retrato</span><i>·</i><span>Familia</span><i>·</i><span>Embarazo</span><i>·</i><span>Pareja</span>",durk:"Sesión",entk:"Fotografías",cont:"Contacto",lmail:"Correo",ltel:"Teléfono",lloc:"Lugar",cta:"¿Te animas?",equip:"Equipo",cam:"Cámara",camd:"Telémetro híbrido · APS-C",obj:"Objetivo",inici:"Inicio",call:"Llamar",ok:"Copiado"},
- en:{tag:"Social and documentary photographer",qui:"About me",soc:"I'm Pau.",qs:"Sociologist by training, photographer by calling. I love photography and its power to preserve memories, tell stories and document the world around us authentically.",quote:"“The Human Document to keep the present and the future in touch with the past.”",com:"How I work",ct:"No studio, no sets: everyday, comfortable places. You choose the place and the outfit. I adapt and interfere as little as possible, so the camera never gets in the way of that spontaneous, genuine gesture, smile or look.",pack:"Promotional pack · First roll",sess:"Sessions",tipus:"<span>Portrait</span><i>·</i><span>Family</span><i>·</i><span>Pregnancy</span><i>·</i><span>Couple</span>",durk:"Session",entk:"Photos",cont:"Contact",lmail:"Email",ltel:"Phone",lloc:"Based in",cta:"Up for it?",equip:"Gear",cam:"Camera",camd:"Hybrid rangefinder · APS-C",obj:"Lens",inici:"Top",call:"Call",ok:"Copied"}
+ es:{tag:"Fotógrafo social y documental",qui:"Quién soy",soc:"Soy Pau.",qs:"Sociólogo de formación y fotógrafo de vocación. Me apasiona la fotografía y su poder para conservar recuerdos, contar historias y documentar el entorno de manera auténtica.",quote:"«El documento humano para mantener el presente y el futuro en contacto con el pasado.»",com:"Cómo trabajo",ct:"Sin estudio ni decorados, en lugares cotidianos y cómodos. Tú eliges el espacio y el vestuario. Yo me adapto e interfiero lo mínimo para que la cámara no sea un obstáculo a la hora de captar ese gesto, sonrisa o mirada espontánea y real.",pack:"Pack promocional · Primer carrete",sess:"Sesiones",tipus:"<span>Retrato</span><i>·</i><span>Familia</span><i>·</i><span>Embarazo</span><i>·</i><span>Pareja</span>",durk:"Sesión",entk:"Fotografías",cont:"Contacto",lmail:"Correo",ltel:"Teléfono",lloc:"Lugar",cta:"¿Te animas?",equip:"Equipo",cam:"Cámara",camd:"Telémetro híbrido · APS-C",obj:"Objetivo",inici:"Inicio",call:"Llamar",ok:"Correo copiado"},
+ en:{tag:"Social and documentary photographer",qui:"About me",soc:"I'm Pau.",qs:"Sociologist by training, photographer by calling. I love photography and its power to preserve memories, tell stories and document the world around us authentically.",quote:"“The Human Document to keep the present and the future in touch with the past.”",com:"How I work",ct:"No studio, no sets: everyday, comfortable places. You choose the place and the outfit. I adapt and interfere as little as possible, so the camera never gets in the way of that spontaneous, genuine gesture, smile or look.",pack:"Promotional pack · First roll",sess:"Sessions",tipus:"<span>Portrait</span><i>·</i><span>Family</span><i>·</i><span>Pregnancy</span><i>·</i><span>Couple</span>",durk:"Session",entk:"Photos",cont:"Contact",lmail:"Email",ltel:"Phone",lloc:"Based in",cta:"Up for it?",equip:"Gear",cam:"Camera",camd:"Hybrid rangefinder · APS-C",obj:"Lens",inici:"Top",call:"Call",ok:"Email copied"}
 };
 T.ca={};document.querySelectorAll('[data-t]').forEach(function(e){T.ca[e.dataset.t]=e.innerHTML});
 function setLang(l){if(!T[l])l='ca';
