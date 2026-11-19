@@ -34,13 +34,13 @@ body{background:#0a0a0a;color:#f2ecde;font-family:Heros,'Helvetica Neue',Helveti
 .pad{padding-inline:calc(5.2*var(--u))}
 /* hero */
 .hero{--ft:calc((100cqw - 10.4*var(--u))/6.475);position:relative;display:flex;flex-direction:column;padding:0 0 calc(9*var(--u))}
-.hbg{position:absolute;left:0;right:0;top:0;height:112cqw;overflow:hidden;-webkit-mask-image:linear-gradient(#000 66%,transparent);mask-image:linear-gradient(#000 66%,transparent)}
+.hbg{position:absolute;left:0;right:0;top:calc(10*var(--u));height:112cqw;overflow:hidden;-webkit-mask-image:linear-gradient(transparent 0,#000 13%,#000 66%,transparent);mask-image:linear-gradient(transparent 0,#000 13%,#000 66%,transparent)}
 .hbg picture{position:absolute;inset:0;display:block}
 .hbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,13,.35) 0,rgba(16,14,13,0) 16%,rgba(16,14,13,0) 62%,rgba(16,14,13,.55) 80%);pointer-events:none}
 .hbg picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;display:block}
 .hero .top{position:absolute;right:calc(5.2*var(--u));top:calc(4.2*var(--u) - 2px);z-index:3}
 .hero .tg{order:1;position:relative;margin:calc(2.8*var(--u)) 0 0 calc(5.2*var(--u));font-size:max(11px,calc(1.6*var(--u)));font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1;opacity:.9;z-index:2;white-space:nowrap}
-.hero .side{order:2;position:relative;margin:calc(87cqw - 13.8*var(--u) - var(--ft) - max(11px,calc(1.6*var(--u)))) calc(5.2*var(--u)) 0;width:auto;max-width:34em;z-index:2;display:flex;flex-direction:column;gap:calc(7*var(--u))}
+.hero .side{order:2;position:relative;margin:calc(87cqw - 3.8*var(--u) - var(--ft) - max(11px,calc(1.6*var(--u)))) calc(5.2*var(--u)) 0;width:auto;max-width:34em;z-index:2;display:flex;flex-direction:column;gap:calc(7*var(--u))}
 .hero .qs .lb{margin-bottom:calc(2.4*var(--u))}
 .soc{font-size:clamp(22px,6.4*var(--u),40px);font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:calc(2.6*var(--u))}
 .hero .qs .body{font-size:clamp(17px,3.35*var(--u),20px);line-height:1.4}
