@@ -58,8 +58,19 @@ body{background:#0a0a0a;color:#f2ecde;font-family:Heros,'Helvetica Neue',Helveti
 .com1m .lb{margin-bottom:calc(2.4*var(--u))}
 .com2{display:flex;flex-direction:column}
 .sl-man{order:-1;margin-bottom:calc(7*var(--u))}
-.dlg2 .body{font-size:max(16px,calc(3*var(--u)));margin-top:14px;padding-bottom:18px}
-@media (max-width:1023px){.dlg.dlg2{margin:auto auto 0;width:100%;max-width:760px;border-radius:14px 14px 0 0;border-bottom:0}}
+.dlg2 .dlgin{padding:26px 26px 28px}
+.dlg2 .dlghead{align-items:flex-start;gap:16px}
+.dlg2 .dlgt{margin:0;font-size:28px;font-weight:700}
+.dlg2 .body{font-size:17px;line-height:1.5;margin-top:18px;opacity:.92}
+@keyframes dlgup{from{transform:translateY(100%)}to{transform:none}}
+@media (max-width:1023px){
+.dlg.dlg2{margin:auto 0 0;width:100%;max-width:100%;max-height:85dvh;border:0;border-top:1px solid rgba(242,236,222,.25);border-radius:18px 18px 0 0}
+.dlg.dlg2[open]{animation:dlgup .3s cubic-bezier(.2,.8,.2,1)}
+.dlg2 .dlgin{position:relative;max-width:640px;margin:0 auto;padding:30px 22px calc(30px + env(safe-area-inset-bottom))}
+.dlg2 .dlgin::before{content:"";position:absolute;top:10px;left:50%;width:38px;height:4px;margin-left:-19px;border-radius:2px;background:rgba(242,236,222,.3)}
+.dlg2 .dlgt{font-size:26px}
+.dlg2 .body{font-size:17px}
+}
 .ctrls{flex-shrink:0}
 .ctrls{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
 .toggle{display:flex;border:1px solid rgba(255,255,255,.7)}
@@ -340,7 +351,7 @@ body,.page{color:#f2ecde}
     <div class="ltxt" id="legaltxt" hidden><h3 data-t="lt1">Les fotos</h3><p data-t="lp1">Totes les fotos d’aquesta web són meves. Si us plau, no les copieu ni les feu servir sense demanar-m’ho. Només en publico alguna amb el permís de les persones que hi surten.</p><h3 data-t="lt2">Privacitat</h3><p data-t="lp3">Aquesta web no té formularis ni galetes de seguiment: només recorda l’idioma que trieu. Si em contacteu, faré servir les vostres dades només per respondre-us i organitzar la sessió, i les podeu fer esborrar quan vulgueu.</p><p data-t="lp5">Les fotos de les sessions són per al vostre ús privat.</p></div></div>
 </main>
 <dialog class="dlg" id="howto" aria-labelledby="dlgt"><div class="dlgin"><div class="dlghead"><div class="lb" data-t="pack2">Pack promocional – Llançament</div><button class="dlgx" type="button" aria-label="Tanca"><svg viewBox="0 0 12 12" width="15" height="15" aria-hidden="true"><path d="M1.5 1.5l9 9M10.5 1.5l-9 9" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></button></div><h2 class="dlgt" id="dlgt" data-t="more2">Com funciona</h2><ol class="howto"><li><span class="hn">01</span><div><div class="hh" data-t="h1">Reserva</div><p class="ht" data-t="t1">Contacteu amb mi a través del canal que us sigui més còmode (<a href="https://www.instagram.com/enpau_rp/" target="_blank" rel="noopener">Instagram</a>, <a href="https://wa.me/34640341877" target="_blank" rel="noopener">WhatsApp</a> o <a href="#" class="cpl" data-copy="pau.rp92@gmail.com">correu</a>) i parlem de què voleu, qui hi serà i on us sentiu còmodes, i triem dia i hora.</p></div></li><li><span class="hn">02</span><div><div class="hh" data-t="h2">Confirmació</div><p class="ht" data-t="t2">Una paga i senyal de 20 € confirma la data i es descompta del total. La resta, el dia de la sessió.</p></div></li><li><span class="hn">03</span><div><div class="hh" data-t="h3">La sessió</div><p class="ht" data-t="t3">Mínim 45 min, a casa vostra o allà on us faci il·lusió (caldrà valorar la localització i la disponibilitat de llum natural). No fixo un temps límit: m'agrada dedicar el temps que calgui per captar imatges autèntiques. Cada persona és un món i necessitem un temps per sentir-nos còmodes i actuar amb normalitat. És llavors quan surten les millors fotos, aquelles que parlen de tu, de vosaltres.</p></div></li><li><span class="hn">04</span><div><div class="hh" data-t="h4">Entrega</div><p class="ht" data-t="t4">Termini de dues setmanes. 15 – 20 fotografies editades, en alta resolució, en color i/o en B/N.</p></div></li><li><span class="hn">05</span><div><div class="hh" data-t="h5">Les fotos són vostres</div><p class="ht" data-t="t5">Són per al vostre ús privat. No en publico cap sense el vostre consentiment.</p></div></li></ol></div></dialog>
-<dialog class="dlg dlg2" id="docdlg" aria-labelledby="docdt"><div class="dlgin"><div class="dlghead"><div class="lb" id="docdt" data-t="cdl">Fotografia documental</div><button class="dlgx" type="button" aria-label="Tanca"><svg viewBox="0 0 12 12" width="15" height="15" aria-hidden="true"><path d="M1.5 1.5l9 9M10.5 1.5l-9 9" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></button></div><p class="body" data-t="cdt">La fotografia social i documental consisteix a retratar la vida tal com és, sense intervenir-hi ni dirigir-la. En lloc de demanar-vos que mireu a càmera i somrigueu, observo el que passa entre vosaltres: les complicitats, els gestos espontanis i els detalls del vostre dia a dia. El resultat no són només fotos boniques, sinó records reals de qui sou en aquest moment de la vostra vida.</p></div></dialog>
+<dialog class="dlg dlg2" id="docdlg" aria-labelledby="docdt"><div class="dlgin"><div class="dlghead"><h2 class="dlgt" id="docdt" data-t="cdl">Fotografia documental</h2><button class="dlgx" type="button" aria-label="Tanca"><svg viewBox="0 0 12 12" width="15" height="15" aria-hidden="true"><path d="M1.5 1.5l9 9M10.5 1.5l-9 9" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></button></div><p class="body" data-t="cdt">La fotografia social i documental consisteix a retratar la vida tal com és, sense intervenir-hi ni dirigir-la. En lloc de demanar-vos que mireu a càmera i somrigueu, observo el que passa entre vosaltres: les complicitats, els gestos espontanis i els detalls del vostre dia a dia. El resultat no són només fotos boniques, sinó records reals de qui sou en aquest moment de la vostra vida.</p></div></dialog>
 <div class="toast" role="status" aria-live="polite" data-t="ok">Correu copiat</div>
 <script>
 document.querySelectorAll('.slider.multi').forEach(function(s){
@@ -395,6 +406,10 @@ fitPack();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitP
   document.addEventListener('click',function(e){if(!e.target.closest('.term'))return;if(d.showModal){d.showModal()}else{d.setAttribute('open','')}document.documentElement.classList.add('lock')});
   d.addEventListener('close',function(){document.documentElement.classList.remove('lock')});
   d.querySelector('.dlgx').addEventListener('click',cl);d.addEventListener('click',function(e){if(e.target===d)cl()});
+  var y0=null,dy=0;
+  d.addEventListener('touchstart',function(e){if(d.scrollTop<=0){y0=e.touches[0].clientY;dy=0}},{passive:true});
+  d.addEventListener('touchmove',function(e){if(y0===null)return;dy=Math.max(0,e.touches[0].clientY-y0);d.style.transform=dy?'translateY('+dy+'px)':''},{passive:true});
+  d.addEventListener('touchend',function(){if(y0===null)return;d.style.transform='';if(dy>80)cl();y0=null});
 })();
 document.addEventListener('contextmenu',function(e){if(e.target.closest('img,.slide,.hero'))e.preventDefault()});
 document.addEventListener('dragstart',function(e){if(e.target.closest('img'))e.preventDefault()});
