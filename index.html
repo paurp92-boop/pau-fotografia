@@ -462,6 +462,18 @@ body{font-weight:400}
  .pack{grid-row:5!important}.sl-mocador{grid-row:5!important}
  .contact{grid-row:6!important}
 }
+
+/* línies del títol d'un costat a l'altre, sense tatxar el text de l'esquerra */
+@media (min-width:1024px){
+ .hgrid .h1l,.hgrid .h2l{left:0!important;right:0!important}
+ .hgrid .h1l{-webkit-mask-image:linear-gradient(90deg,#000 calc(var(--m) - 12px),transparent calc(var(--m) - 12px),transparent calc(var(--c) - var(--g) + 12px),#000 calc(var(--c) - var(--g) + 12px));mask-image:linear-gradient(90deg,#000 calc(var(--m) - 12px),transparent calc(var(--m) - 12px),transparent calc(var(--c) - var(--g) + 12px),#000 calc(var(--c) - var(--g) + 12px))}
+ .hero .side{bottom:calc(var(--H) - var(--y) - var(--F)*.865 + 12px)!important}
+}
+
+/* línies verticals que es fonen a dalt i a baix */
+.hgrid .v1,.hgrid .v2{background:linear-gradient(180deg,rgba(242,236,222,0) 0,rgba(242,236,222,.2) 28%,rgba(242,236,222,.2) 72%,rgba(242,236,222,0) 100%)!important}
+@media (max-width:1023px){.hgrid .v1,.hgrid .v2{height:calc(var(--Y) + var(--ft)*1.6)!important}}
+@media (min-width:1024px){.hgrid .v1,.hgrid .v2{background:linear-gradient(180deg,rgba(242,236,222,0) 0,rgba(242,236,222,.2) 20%,rgba(242,236,222,.2) 80%,rgba(242,236,222,0) 100%)!important}}
 </style>
 </head>
 <body>
