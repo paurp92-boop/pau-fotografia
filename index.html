@@ -446,8 +446,8 @@ body{font-weight:400}
  .hero .side{display:flex!important;flex-direction:column;gap:18px;position:absolute!important;z-index:2;left:var(--m);top:auto!important;bottom:calc(var(--H) - var(--y) - var(--F)*.865);width:calc(var(--c) - var(--m) - var(--g));margin:0}
  .hero .qs,.hero .quote{position:static!important;width:auto!important}
  .hero .qs .lb{margin-bottom:10px}
- .hero .qs .body{font-size:clamp(13px,.98cqw,16px)!important;line-height:1.42}
- .hero .quote p{font-size:clamp(12px,.86cqw,14px)!important}
+ .hero .qs .body{font-size:clamp(15px,1.25cqw,22px)!important;line-height:1.42}
+ .hero .quote p{font-size:clamp(13px,1cqw,17px)!important}
  .hero .quote .lb{margin-top:.6em}
  .page{grid-template-rows:auto 1fr auto}
  .com2{display:contents!important}
@@ -474,6 +474,7 @@ body{font-weight:400}
 .hgrid .v1,.hgrid .v2{background:linear-gradient(180deg,rgba(242,236,222,0) 0,rgba(242,236,222,.2) 28%,rgba(242,236,222,.2) 72%,rgba(242,236,222,0) 100%)!important}
 @media (max-width:1023px){.hgrid .v1,.hgrid .v2{height:calc(var(--Y) + var(--ft)*1.6)!important}}
 @media (min-width:1024px){.hgrid .v1,.hgrid .v2{background:linear-gradient(180deg,rgba(242,236,222,0) 0,rgba(242,236,222,.2) 20%,rgba(242,236,222,.2) 80%,rgba(242,236,222,0) 100%)!important}}
+@media (min-width:1024px){.hero .side{width:calc(var(--c) - var(--m) - var(--g) - .07*var(--F))!important}}
 </style>
 </head>
 <body>
