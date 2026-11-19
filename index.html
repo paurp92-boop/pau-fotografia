@@ -409,6 +409,31 @@ body{font-weight:400}
 @media (max-width:1023px){
  .hero .tg{white-space:normal!important;max-width:calc(100% - 10.4*var(--u) - 9.6*var(--fs) - 14px)!important;line-height:1.3!important;top:calc(var(--T) - .15*var(--fs))!important}
 }
+
+/* línies: dues verticals que emmarquen el cap + les del títol */
+.hgrid .h0l{display:none!important}
+@media (max-width:1023px){
+ .hero{--L:calc(5.2*var(--u));--hb:calc(112cqw + 10*var(--u))}
+ .hbg picture img{object-position:50% 0!important}
+ .hgrid .v1,.hgrid .v2{display:block;top:0;height:calc(var(--Y) + var(--ft)*.865)}
+ .hgrid .v1{left:calc(50% - .2655*var(--hb))!important}
+ .hgrid .v2{left:calc(50% + .2655*var(--hb))!important;right:auto!important}
+}
+@media (min-width:1024px){
+ .hgrid .h1l{left:0!important;right:0}
+ .hgrid .h2l{left:var(--c)!important;right:0}
+ .hero .tg{left:auto!important;right:calc(var(--m) + 10.4*var(--fs) + 26px)!important}
+}
+
+/* línies horitzontals: alçada de majúscula i línia de base del títol */
+.hgrid .h1l{top:calc(var(--Y) + var(--ft)*.135)!important}
+.hgrid .h2l{top:calc(var(--Y) + var(--ft)*.865)!important}
+@media (min-width:1024px){
+ .hgrid .h1l{top:calc(var(--y) + var(--F)*.135)!important}
+ .hgrid .h2l{top:calc(var(--y) + var(--F)*.865)!important}
+ .hero .com{top:calc(var(--y) + var(--F)*.135 + var(--g))!important}
+}
+@media (max-width:1023px){.hgrid .v1,.hgrid .v2{height:calc(var(--Y) + var(--ft)*.865)!important}}
 </style>
 </head>
 <body>
