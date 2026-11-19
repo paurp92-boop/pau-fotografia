@@ -226,8 +226,9 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
 .hero .com{margin-top:0;grid-column:1/-1;grid-row:4;justify-self:start;width:calc(100% - var(--W)*.88 + var(--m));margin:0 0 calc(var(--H)*.06);padding:22px 0 0;border-top:1px solid rgba(242,236,222,.3)}
 .hero .com .lb{margin:0 0 14px}
 .hero .com .body{max-width:46em}
-.com2{grid-column:8/13;grid-row:2;display:flex;flex-direction:column;justify-content:flex-start;padding:calc(6*var(--u))}
-.sl-man{flex:1 1 auto;min-height:calc(20*var(--u));aspect-ratio:auto!important;margin-top:calc(5*var(--u))}
+.com2{grid-column:8/13;grid-row:2;display:flex;flex-direction:column;justify-content:flex-start;padding:0}
+.sl-man{order:-1;flex:1 1 auto;min-height:calc(20*var(--u));aspect-ratio:auto!important;margin-top:0}
+.com2 .body{padding:calc(5*var(--u)) calc(6*var(--u)) calc(6*var(--u))}
 .sl-man .track{position:absolute;inset:0;height:auto}
 .pack{grid-column:1/7;grid-row:4;display:flex;flex-direction:column;justify-content:center;padding:calc(6*var(--u))}
 .sl-elvi{grid-column:1/8;grid-row:2;aspect-ratio:auto!important;min-height:calc(58.3cqw*1.065)}
@@ -294,7 +295,7 @@ body,.page{color:#f2ecde}
     <div class="top"><div class="ctrls"><div class="toggle lang" role="group" aria-label="Idioma"><button class="on" data-lang="ca">CAT</button><span>|</span><button data-lang="es">ESP</button><span>|</span><button data-lang="en">ENG</button></div></div></div>
     <h1>Pau Fotografia</h1>
     <div class="tg" data-t="tag">Fotògraf social i documental</div>
-    <div class="side"><div class="qs"><div class="lb" data-t="qui">Qui sóc</div><div class="soc" data-t="soc">Soc en Pau.</div><p class="body" data-t="qs">Sociòleg de formació i fotògraf de vocació. M'apassiona la fotografia i el seu poder per conservar records, explicar històries i documentar l'entorn de manera autèntica.</p></div>
+    <div class="side"><div class="qs"><div class="lb" data-t="qui">Qui soc</div><div class="soc" data-t="soc">Soc en Pau.</div><p class="body" data-t="qs">Sociòleg de formació i fotògraf de vocació. M'apassiona la fotografia i el seu poder per conservar records, explicar històries i documentar l'entorn de manera autèntica.</p></div>
     <div class="quote"><p data-t="quote">«El document humà per mantenir el present i el futur en contacte amb el passat.»</p><div class="lb">Lewis Hine</div></div></div>
     <div class="com"><div class="lb" data-t="com">Com treballo</div><p class="body" data-t="ct">A través de la <button class="term" type="button" aria-haspopup="dialog">fotografia documental<i aria-hidden="true">+</i></button>, sense estudi ni decorats: a casa vostra o en aquell lloc on us sentiu com a casa. L'objectiu és que gaudiu de l'estona i us oblideu, tant com sigui possible, que hi ha una càmera al davant.</p></div>
   </section>
