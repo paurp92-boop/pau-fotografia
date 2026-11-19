@@ -109,7 +109,7 @@ body{background:#0a0a0a;color:#f2ecde;font-family:Inter,system-ui,sans-serif;-we
 .pv{font-size:max(19px,calc(5.3*var(--u)));font-weight:700;letter-spacing:-.035em;line-height:1;white-space:nowrap}
 .pv small{display:block;margin-top:.55em;font-size:max(11px,calc(1.6*var(--u)));font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.78}
 @supports (text-box:trim-both cap alphabetic){
-.price{position:relative}
+.price{position:relative;pointer-events:none}
 .ast{position:absolute;left:100%;top:-.04em;font-size:.32em;letter-spacing:0;line-height:1;margin-left:.02em;font-weight:600}
 .pnote{grid-column:1;grid-row:3;width:0;min-width:100%;margin-top:calc(3.4*var(--u));font-size:max(11px,calc(2.2*var(--u)));font-style:italic;font-weight:500;line-height:1.3;opacity:.78}
 .price{text-box:trim-both cap alphabetic;line-height:1;padding-top:0;margin-top:calc(4.2*var(--u))}
@@ -208,24 +208,22 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
 .pair{display:contents}
 .bar{max-width:none}
 .page{--hh:max(620px,min(62.5cqw,calc(100svh - 56px)))}
-.hero{--m:calc(6*var(--u));grid-column:1/13;grid-row:1;min-height:var(--hh);padding:calc(var(--hh)*.825) var(--m) calc(var(--hh)*.05)}
-.hbg{height:var(--hh);-webkit-mask-image:linear-gradient(#000 62%,transparent);mask-image:linear-gradient(#000 62%,transparent)}
-.hbg::after{background:linear-gradient(90deg,rgba(16,14,13,.5) 0,rgba(16,14,13,.42) calc(var(--hh)*.38),rgba(16,14,13,0) calc(var(--hh)*.455)),linear-gradient(180deg,rgba(16,14,13,.3) 0,rgba(16,14,13,0) 22%)}
-.hbg picture img{left:0;width:100%;height:100%;object-fit:cover;object-position:0 0}
-.hero .top{right:var(--m);top:calc(var(--hh)*.133 - .55*max(12px,var(--hh)*.0145))}
-.toggle.lang button,.toggle.lang span{font-size:max(12px,calc(var(--hh)*.0145))}
-.hero h1{left:var(--m);top:calc(var(--hh)*.04);font-size:calc(var(--hh)*.08)}
-.hero .tg{left:var(--m);top:calc(var(--hh)*.133);font-size:max(12px,calc(var(--hh)*.0145))}
-.hero .side{display:contents}
-.hero .qs{position:absolute;z-index:2;left:var(--m);top:calc(var(--hh)*.2995 - 2px);width:calc(var(--hh)*.322)}
-.hero .qs .lb{margin-bottom:calc(var(--hh)*.011)}
-.hero .qs .body{font-size:max(14px,calc(var(--hh)*.02));line-height:1.35}
-.hero .quote{position:absolute;z-index:2;left:calc(var(--hh)*.4687);top:calc(var(--hh)*.7176 + max(12px,var(--hh)*.02));width:auto;white-space:nowrap}
-.hero .quote p{font-size:max(12.5px,calc(var(--hh)*.0162));line-height:1.3}
-.hero .com{position:relative;margin:0;padding:calc(var(--hh)*.029) 0 0;display:grid;grid-template-columns:calc(var(--hh)*.4687 - var(--m)) 1fr;border-top:1px solid rgba(242,236,222,.3)}
-.hero .com .lb{margin:0}
-.hero .com .body,.com2 .body{font-size:clamp(17px,calc(var(--hh)*.0237),22px);line-height:1.4}
-.hero .com .body{max-width:var(--hh)}
+.hero{--H:clamp(640px,100svh,60cqw);--W:min(var(--H),56cqw);--m:calc(6*var(--u));--F:clamp(64px,6cqw,112px);--T:calc(var(--H)*.065);--g:calc(var(--F)*.2);--fs:clamp(12px,.85cqw,14px);grid-column:1/13;grid-row:1;min-height:var(--H);padding:0 var(--m);display:grid;grid-template-columns:minmax(0,1fr) calc(var(--W) - var(--m));grid-template-rows:auto auto 1fr auto}
+.hbg{left:auto;right:0;top:0;width:var(--W);height:var(--H);-webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 9%,#000 32%),linear-gradient(0deg,transparent 0,rgba(0,0,0,.45) 8%,#000 26%);mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 9%,#000 32%),linear-gradient(0deg,transparent 0,rgba(0,0,0,.45) 8%,#000 26%);-webkit-mask-composite:source-in;mask-composite:intersect}
+.hbg picture img{object-position:50% 28%}
+.hbg::after{background:linear-gradient(180deg,rgba(27,25,24,.4) 0,rgba(27,25,24,0) 18%)}
+.hero .top{z-index:5;right:var(--m);top:calc(var(--T) + .137*var(--F) - .687*var(--fs))}
+.toggle.lang button,.toggle.lang span{font-size:var(--fs)}
+.hero h1{position:relative;left:auto;top:auto;grid-column:1/-1;justify-self:start;grid-row:1;margin-top:var(--T);font-size:var(--F)}
+.hero .tg{position:relative;left:auto;top:auto;grid-column:1/-1;justify-self:start;grid-row:2;margin-top:var(--g);font-size:var(--fs)}
+.hero .side{grid-column:1;grid-row:3;align-self:center;margin:calc(var(--H)*.05) 0;width:auto;max-width:min(100%,34em);gap:calc(var(--H)*.055)}
+.hero .qs .lb{margin-bottom:14px}
+.hero .qs .body,.hero .com .body,.com2 .body{font-size:clamp(18px,1.3cqw,22px);line-height:1.42}
+.hero .quote p{font-size:clamp(15px,1.05cqw,18px);line-height:1.35;white-space:nowrap}
+.hero .quote .lb{margin-top:.9em}
+.hero .com{grid-column:1/-1;grid-row:4;justify-self:start;width:calc(100% - var(--W)*.88 + var(--m));margin:0 0 calc(var(--H)*.06);padding:22px 0 0;border-top:1px solid rgba(242,236,222,.3)}
+.hero .com .lb{margin:0 0 14px}
+.hero .com .body{max-width:46em}
 .com2{grid-column:1/6;grid-row:2;display:flex;flex-direction:column;justify-content:center;padding:calc(6*var(--u))}
 .pack{grid-column:7/13;grid-row:4;display:flex;flex-direction:column;justify-content:center;padding:calc(6*var(--u))}
 .sl-elvi{grid-column:6/13;grid-row:2;aspect-ratio:auto!important;min-height:calc(58.3cqw*1.065)}
@@ -245,7 +243,7 @@ button.big{background:none;border:0;padding:0;font-family:inherit;text-align:lef
 
 html,body{background:#1b1918}
 .hbg{background:#555 url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//wAALCAAcABwBAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/AKMUYC5PQVnT6uVlZIIDIq9SKvQlLuASJ1PUelQPbfNV24RjYy7PvbapeFY5GvZI9qHA6NWlLayW+sTqIwsRAPHTNMdPmNJHco0ZUnAIxWVplyum6vI5XzVI4Oa1W1WGS5ctL879ielRvdIW61zF/czRxAI5GazFuJR0c80wyuX3bjn1qyt7cBQPMNf/2Q==) center/cover no-repeat}
-@media (min-width:1200px){.hbg{background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//wAALCAAUAEABAREA/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/9oACAEBAAA/AMu6lFpbbgMseBRbi5IX7Yi7ZPuMKbJajcaha2FRm3FJ9nFH2cUfZxV3VVWWx3KMlTmr0c9rNp9quV3JyeelQyyJuPIqu7p61GXTPWk3r60b19aN6+tYWoXtwuEVyFPWqLXk+ABIQB6VZS/uSoy+aDfXH9+m/bZ/71H22f8AvUfbZ/71H22f+9X/2Q==);background-position:0 0}}
+
 body,.page{color:#f2ecde}
 .hero h1,.hero .top{color:#f2ecde}
 .page{background-color:#1b1918;background-image:url(/pack/paper-tile.png?v=2),linear-gradient(180deg,#1b1918 0%,#1b1918 12%,#2d2a28 32%,#2d2a28 100%);background-size:256px 256px,100% 100%;background-blend-mode:overlay,normal}
@@ -288,7 +286,7 @@ body,.page{color:#f2ecde}
 <header class="bar" aria-hidden="true"><a class="wm" href="#inici">Pau Fotografia</a><nav><a href="#contacte" data-t="cont">Contacte</a></nav></header>
 <main class="page" id="inici">
   <section class="hero">
-    <div class="hbg"><picture><source media="(min-width:1200px)" srcset="/pack/hero-wide.jpg?v=20261119k"><img src="/pack/hero.jpg?v=20261119k" alt="Pau amb ulleres, fons desenfocat i una finestra nítida sobre mig rostre" fetchpriority="high"></picture></div>
+    <div class="hbg"><picture><img src="/pack/hero.jpg?v=20261119k" alt="Pau amb ulleres, fons desenfocat i una finestra nítida sobre mig rostre" fetchpriority="high"></picture></div>
     <div class="top"><div class="ctrls"><div class="toggle lang" role="group" aria-label="Idioma"><button class="on" data-lang="ca">CAT</button><span>|</span><button data-lang="es">ESP</button><span>|</span><button data-lang="en">ENG</button></div></div></div>
     <h1>Pau Fotografia</h1>
     <div class="tg" data-t="tag">Fotògraf social i documental</div>
@@ -399,12 +397,16 @@ var T={
  en:{durv:"Min. 45 min",legal:"Photos and privacy",lt1:"The photos",lp1:"All the photos on this website are mine. Please don’t copy or use them without asking me first. I only publish one with the permission of the people in it.",lt2:"Privacy",lp3:"This website has no forms or tracking cookies: it only remembers the language you choose. If you contact me, I’ll only use your details to reply and arrange the session, and you can ask me to delete them at any time.",lp5:"Session photos are for your private use.",more:"How it works",more2:"How it works",pack2:"Promotional pack – Launch offer",h1:"Booking",t1:"Get in touch through whichever channel suits you best (<a href='https://www.instagram.com/enpau_rp/' target='_blank' rel='noopener'>Instagram</a>, <a href='https://wa.me/34640341877' target='_blank' rel='noopener'>WhatsApp</a> or <a href='#' class='cpl' data-copy='pau.rp92@gmail.com'>email</a>). We talk about what you want, who will be there and where you feel comfortable, and pick a day and time.",h2:"Confirmation",t2:"A €20 deposit secures the date and is deducted from the total. The rest is paid on the day of the session.",h3:"The session",t3:"At least 45 min, at your home or wherever you would love it to be (we will check the location and the available natural light). I don’t set a time limit: I like to spend as long as it takes to capture authentic images. Every person is a world of their own, and we need time to feel comfortable and act naturally. That is when the best photos happen, the ones that speak about you.",h4:"Delivery",t4:"Delivered within two weeks: 15 – 20 edited photographs, in high resolution, in colour and/or B/W.",h5:"Your photos are yours",t5:"They are for your private use. I never publish any without your consent.",tag:"Social and documentary photographer",qui:"About me",soc:"I'm Pau.",qs:"Sociologist by training, photographer by calling. I love photography and its power to preserve memories, tell stories and document the world around us authentically.",quote:"“The Human Document to keep the present and the future in touch with the past.”",cdl:"Documentary photography",com:"How I work",ct:"Through <button class='term' type='button' aria-haspopup='dialog'>documentary photography<i aria-hidden='true'>+</i></button>, with no studio or sets: at your home or in a place where you feel at home. The aim is for you to enjoy the time and forget, as much as possible, that there is a camera in front of you.",ct2:"I adapt to your pace, because every person is a world of their own and needs their own time to relax and feel comfortable. It is then, when you are simply yourselves, that the images that truly tell your story appear.",cdt:"Social and documentary photography is about portraying life as it is, without intervening or directing it. Instead of asking you to look at the camera and smile, I observe what happens between you: the complicities, the spontaneous gestures and the details of your everyday life. The result is not just nice photos, but real memories of who you are at this moment in your life.",pack:"Promotional pack – Launch offer",note:"*Valid for bookings made until 31/12/2026",sess:"Sessions",tipus:"<span>Portrait</span><i>·</i><span>Family</span><i>·</i><span>Pregnancy</span><i>·</i><span>Couple</span>",durk:"Session",entk:"Photos",cont:"Contact",lmail:"Email",ltel:"Phone",lloc:"Based in",cta:"Up for it?",equip:"Gear",cam:"Camera",camd:"Hybrid rangefinder · APS-C",obj:"Lens",inici:"Top",call:"Call",ok:"Email copied"}
 };
 T.ca={};document.querySelectorAll('[data-t]').forEach(function(e){T.ca[e.dataset.t]=e.innerHTML});
+var WA={ca:"Hola Pau! M'agradaria tenir més informació sobre el pack de sessió fotogràfica.",es:"¡Hola Pau! Me gustaría tener más información sobre el pack de sesión fotográfica.",en:"Hi Pau! I'd like more information about the photo session pack."};
+function waL(l){document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){a.href='https://wa.me/34640341877?text='+encodeURIComponent(WA[l]||WA.ca)})}
+waL('ca');
 function setLang(l){if(!T[l])l='ca';
   document.documentElement.lang=l;
   document.querySelectorAll('.sw').forEach(function(b){b.setAttribute('aria-label',L()[b.closest('.slide').classList.contains('alt')?'swc':'swb'])});
   document.querySelectorAll('[data-t]').forEach(function(e){e.innerHTML=T[l][e.dataset.t]});
   document.querySelectorAll('.lang button').forEach(function(x){x.classList.toggle('on',x.dataset.lang===l)});
   try{localStorage.setItem('lang',l)}catch(e){}
+  waL(l);
 }
 document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){setLang(b.dataset.lang)}});
 (function(){var q=new URLSearchParams(location.search).get('lang'),s=null;try{s=localStorage.getItem('lang')}catch(e){}
