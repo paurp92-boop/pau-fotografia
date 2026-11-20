@@ -174,14 +174,13 @@ html.lock{overflow:hidden}
 .ht{font-size:max(15px,calc(2.9*var(--u)));font-weight:500;line-height:1.4;opacity:.85}
 .prow .pv{font-size:max(17px,calc(var(--pf,100px)*.2))}
 .prow .pi .lb{font-size:max(11px,calc(var(--pf,100px)*.062))}
-.pplus{position:absolute;right:2.75em;top:50%;width:.62em;height:.62em;transform:translateY(-50%)}
-.pinf{position:absolute;right:.8em;top:50%;transform:translateY(-50%);font-size:.78em;font-weight:600;letter-spacing:.06em;text-transform:lowercase;line-height:1}
-.pill{text-align:left!important;padding-left:.75em!important;padding-right:4em!important}
-@media (max-width:420px){.pill span{letter-spacing:.04em}}
+.pplus{position:relative;display:inline-block;vertical-align:middle;width:.62em;height:.62em;margin:-.15em .3em 0 1.1em;transform:none}
+.pinf{display:inline-block;vertical-align:middle;margin-top:-.1em;font-size:.78em;font-weight:600;letter-spacing:.06em;text-transform:lowercase;line-height:1}
+.pill:hover .pplus{transform:rotate(90deg);transition:transform .25s}
+@media (max-width:420px){.pill span{letter-spacing:.03em}.pplus{margin-left:.7em}}
 @media (min-width:1024px) and (max-width:1299px){.pill span{letter-spacing:.03em}.pill{font-size:min(2.4cqw*.62,17px)!important}}
 .pplus::before,.pplus::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1.5px;margin-top:-.75px;background:currentColor}
 .pplus::after{transform:rotate(90deg)}
-.pill:hover .pplus{transform:translateY(-50%) rotate(90deg);transition:transform .25s}
 .slider::after{content:"";position:absolute;inset:0;border:1px solid rgba(242,236,222,.38);pointer-events:none;z-index:4}
 .ptypes{margin-top:calc(8*var(--u));display:flex;justify-content:space-between;align-items:baseline;font-size:calc(4.6*var(--u));font-weight:600;letter-spacing:-.015em;line-height:1;white-space:nowrap}
 .ptypes i{font-style:normal;opacity:.5}
