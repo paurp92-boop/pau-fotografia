@@ -590,7 +590,8 @@ fitPack();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitP
   d.addEventListener('close',function(){try{sessionStorage.setItem('promoSeen','1')}catch(e){}if(!h.open)document.documentElement.classList.remove('lock')});
   d.querySelector('.dlgx').addEventListener('click',cl);
   d.addEventListener('click',function(e){if(e.target===d)cl()});
-  d.querySelector('.rinfo').addEventListener('click',function(){cl();var b=document.querySelector('.pill');if(b)b.click()});
+  var back=false;d.querySelector('.rinfo').addEventListener('click',function(){back=true;cl();var b=document.querySelector('.pill');if(b)b.click()});
+  h.addEventListener('close',function(){if(!back)return;back=false;setTimeout(function(){if(d.showModal){d.showModal()}else{d.setAttribute('open','')}document.documentElement.classList.add('lock')},50)});
   if(!seen)setTimeout(function(){if(h.open)return;if(d.showModal){d.showModal()}else{d.setAttribute('open','')}document.documentElement.classList.add('lock')},900);
 })();
 (function(){var c=document.getElementById('chan');if(!c)return;
